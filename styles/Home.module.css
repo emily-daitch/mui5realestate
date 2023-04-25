@@ -3,7 +3,7 @@
 }
 
 .main {
-  min-height: 80vh;
+  min-width: 100vw;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -11,3 +11,37 @@
   justify-content: center;
   align-items: center;
 }
+
+.slogan {
+  background-color: transparent;
+}
+.bc1 {
+  color: #6D2164;
+  font-family: 'Bebas Neue', cursive;
+}
+.bc2 {
+  color: #8D5286;
+  font-family: 'Bebas Neue', cursive;
+}
+.bc3 {
+  color: #B28AAE;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+.bc4 {
+  color: #D8C3D5;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+/* Brand Colors */
+/*
+#6D2164
+#8D5286
+#B28AAE
+#D8C3D5
+*/
+
+/* Fonts */
+/*
+Bebas Neue Cyrillic
+Bebas Neue
+Archivo Narrow
+*/
