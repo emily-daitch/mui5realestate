@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Image from 'next/image';
+import logo from './images/PA White Logo.png';
 
 const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
 
@@ -33,7 +35,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{color:'#8D5286'}}>
+    <AppBar position="sticky" sx={{color:'#8D5286'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -51,20 +53,22 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
           </Typography>
+          <img src='/output-onlinepngtools.png' height={50} width={100} alt="Logo" />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
+            <Tooltip title="Menu">
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              </Tooltip>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -90,6 +94,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h5"
             noWrap
@@ -106,7 +111,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -121,14 +126,14 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Call Us">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <CallIcon />
               </IconButton>
             </Tooltip>
           </Box>
           <Box sx={{ flexGrow: 0, paddingLeft: 5}}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Contact Us">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <MailIcon />
               </IconButton>
