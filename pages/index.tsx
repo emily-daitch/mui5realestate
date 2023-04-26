@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import Typography from "@mui/material/Typography";
 import HeadComponent from "../components/Head";
 import Image from "next/image"
+import { HomeSearchForm } from '../components/HomeSearchForm';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
       </main>
       <p className={styles.bc1}>Test Font 1 and Property Search Form Placeholder</p>
+      <HomeSearchForm></HomeSearchForm>
       <Typography className={styles.p1}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Typography>
       <div style={{padding: '0 4rem'}}>
       <Image layout='responsive' height={5184} width={3456} src='/group-1.JPG'></Image>
