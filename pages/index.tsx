@@ -1,10 +1,29 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Typography, Stack, Grid } from "@mui/material";
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem } from "@mui/material";
 import HeadComponent from "../components/Head";
 import Image from "next/image"
 import { HomeSearchForm } from '../components/HomeSearchForm';
+
+const itemData = [
+  {
+    img: '/insta1.png',
+    title: ''
+  },
+  {
+    img: '/insta2.png',
+    title: ''
+  },
+  {
+    img: '/insta3.png',
+    title: ''
+  },
+  {
+    img: '/insta4.png',
+    title: ''
+  }
+]
 
 const Home: NextPage = () => {
   return (
@@ -38,6 +57,43 @@ const Home: NextPage = () => {
       <p className={styles.bc2}>Test Font 2 and Meet Paula / Ashley Placeholder</p>
       <p className={styles.bc3}>Test Font 3 Fatured Property Placeholder</p>
       <p className={styles.bc4}>Test Font 4 Social Media Callout Placeholder</p>
+      <p className={styles.bc1}>Follow us on Instagram!</p>
+      <Grid container sx={{justifyContent: 'center'}}>
+        <Grid item key={'about'} xs={12} md={6} lg={4}>
+          <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              @paula.ashley.homes
+            </Link>
+          </Typography>
+        </Grid>
+        <Grid item key={'pic'} xs={10} md={4} lg={4} padding={'4 4'}>
+          {/* <Image src='/insta1.png' layout='responsive' height={1} width={1}></Image>
+          <Image src='/insta2.png' layout='responsive' height={1} width={1}></Image>
+          <Image src='/insta3.png' layout='responsive' height={1} width={1}></Image>
+          <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image> */}
+          <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+            {itemData.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Grid>
+        {/* <Grid item key={'pic'} xs={10} md={4} lg={4}>
+        <Image src='/insta2.png' layout='responsive' height={1} width={1}></Image>
+        </Grid>
+        <Grid item key={'pic'} xs={10} md={4} lg={4}>
+        <Image src='/insta3.png' layout='responsive' height={1} width={1}></Image>
+        </Grid>
+        <Grid item key={'pic'} xs={10} md={4} lg={4}>
+        <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image>
+        </Grid> */}
+      </Grid>
       <p className={styles.bc4}>Testimonials Placeholder</p>
       <p className={styles.bc4}>Message Form / Apt Request Placeholder</p>
       <p className={styles.bc4}>Footer Links and Contact Info</p>
