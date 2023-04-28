@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Typography, Stack, Grid, Link, ImageList, ImageListItem } from "@mui/material";
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper } from "@mui/material";
 import HeadComponent from "../components/Head";
+import ContactForm from "../components/ContactForm";
 import Image from "next/image"
 import { HomeSearchForm } from '../components/HomeSearchForm';
 
@@ -73,7 +74,7 @@ const Home: NextPage = () => {
           <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image> */}
           <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
             {itemData.map((item) => (
-              <ImageListItem key={item.img}>
+              <ImageListItem key={item.img} sx={{border: 5, borderColor: 'grey'}}>
                 <img
                   src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                   srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -95,8 +96,67 @@ const Home: NextPage = () => {
         </Grid> */}
       </Grid>
       <p className={styles.bc4}>Testimonials Placeholder</p>
+      <Grid container sx={{justifyContent: 'center'}}>
+        <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
+          <Typography className={styles.bc1}>
+              <q>This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.</q>
+          </Typography>
+        </Grid>
+        <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
+          <Typography className={styles.bc1}>
+              <q>This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.
+              This is a testimonial. This is a testimonial.</q>
+          </Typography>
+        </Grid>
+      </Grid>
       <p className={styles.bc4}>Message Form / Apt Request Placeholder</p>
+      <ContactForm></ContactForm>
       <p className={styles.bc4}>Footer Links and Contact Info</p>
+      <Paper sx={{backgroundColor: 'grey'}}>
+      <Grid container sx={{justifyContent: 'center'}}>
+        <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
+        <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+          <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+          <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+        </Grid>
+        <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
+        <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+          <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+          <Typography className={styles.bc1}>
+            <Link href='https://www.instagram.com/paula.ashley.homes/'>
+              Link
+            </Link>
+          </Typography>
+        </Grid>
+      </Grid>
+      </Paper>
     </div>
   )
 }
