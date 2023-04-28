@@ -3,9 +3,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FormInputText } from "./form-components/FormInputText";
 import { FormInputMultiCheckbox } from "./form-components/FormInputMultiCheckbox";
 import { FormInputDropdown } from "./form-components/FormInputDropdown";
-import { FormInputDate } from "./form-components/FormInputDate";
 import { FormInputSlider } from "./form-components/FormInputSlider";
-import { FormInputRadio } from "./form-components/FormInputRadio";
 
 const defaultValues = {
   textValue: "",
@@ -26,9 +24,11 @@ export const HomeSearchForm = () => {
   const onSubmit = (data: IFormInput) => console.log(data);
 
   return (
-    <Paper>
+    <Paper sx={{
+      boxShadow: 'none'
+    }}>
       <Typography variant="h6"> Form Demo </Typography>
-        <FormProvider>
+        {/* <FormProvider> */}
             <Box sx={{
                 flex: "1",
                 display: "flex",
@@ -45,24 +45,23 @@ export const HomeSearchForm = () => {
                 <FormInputText name="textValue" control={control} label="Min. Price" />
                 <FormInputText name="textValue" control={control} label="Max. Price" />
             </Box>
-
+            <br/>
             <Box sx={{
                 flex: "1",
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "center",
                 alignContent: "center",
-                alignItems: "center",
-                border: "none"
+                alignItems: "center"
             }}>
-            <Button onClick={handleSubmit(onSubmit)} variant={"contained"}>
+              <Button onClick={handleSubmit(onSubmit)} variant={"contained"}>
                 Submit
-            </Button>
-            <Button onClick={() => reset()} variant={"outlined"}>
+              </Button>
+              <Button onClick={() => reset()} variant={"outlined"}>
                 Reset
-            </Button>
+              </Button>
             </Box>
-        </FormProvider>
+        {/* </FormProvider> */}
     </Paper>
   );
 };
