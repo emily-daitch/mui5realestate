@@ -1,11 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper } from "@mui/material";
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon } from "@mui/material";
 import HeadComponent from "../components/Head";
 import ContactForm from "../components/ContactForm";
 import Image from "next/image"
 import { HomeSearchForm } from '../components/HomeSearchForm';
+import CallIcon from '@mui/icons-material/Call';
+import FaxIcon from '@mui/icons-material/Fax';
+import MailIcon from '@mui/icons-material/Mail';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const itemData = [
   {
@@ -30,8 +35,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
-      <div>
+      <div className={styles.headerimagecontainer}>
       <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
+      <div className={styles.centered}>Passionate, Personal, Professional</div>
       </div>
       <div>
       <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
@@ -54,7 +60,7 @@ const Home: NextPage = () => {
           <Image src='/group-1.JPG' layout='responsive' height={3} width={2}></Image>
         </Grid>
       </Grid>
-      <p className={styles.bc3}>Test Font 3 Fatured Property Placeholder</p>
+      <p className={styles.bc3}>Test Font 3 Featured Property Placeholder</p>
       <p className={styles.bc1}>Follow us on Instagram!</p>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'about'} xs={12} md={6} lg={4}>
@@ -113,45 +119,47 @@ const Home: NextPage = () => {
           </Typography>
         </Grid>
       </Grid>
-      <p className={styles.bc4}>Message Form / Apt Request Placeholder</p>
       <ContactForm></ContactForm>
-      <p className={styles.bc4}>Footer Links and Contact Info</p>
+      <p className={styles.bc2}>Contact</p>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Link href='https://www.instagram.com/paula.ashley.homes/'>
+          <CallIcon />(404) - 000 - 0000
+          </Link>
           </Typography>
           <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Link href='https://www.instagram.com/paula.ashley.homes/'>
+          <CallIcon />(404) - 111 - 1111
+          </Link>
           </Typography>
           <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Link href='https://www.instagram.com/paula.ashley.homes/'>
+          <FaxIcon />(404) - 222 - 2222
+          </Link>
           </Typography>
         </Grid>
         <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
-        <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Typography className={styles.bc1}>
+          <Link href='mailto:test@email.com'>
+          <MailIcon />test@email.com
+          </Link>
           </Typography>
           <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Link href='https://www.facebook.com/paulaandashleyhomes/'>
+          <FacebookIcon />Follow us on Facebook!
+          </Link>
           </Typography>
           <Typography className={styles.bc1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              Link
-            </Link>
+          <Link href='https://www.instagram.com/paula.ashley.homes/'>
+          <InstagramIcon />Follow us on Instagram!
+          </Link>
           </Typography>
         </Grid>
+        <Typography className={styles.bc1}>
+          315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
+        </Typography>
       </Grid>
       </Paper>
     </div>
