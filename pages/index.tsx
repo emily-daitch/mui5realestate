@@ -31,18 +31,17 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
       <div>
-      <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
+      <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
       </div>
       <div>
-      <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
+      <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
       </div>
       <main className={styles.main}>
       </main>
-      <p className={styles.bc1}>Test Font 1 and Property Search Form Placeholder</p>
       <HomeSearchForm></HomeSearchForm>
       <br/>
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid item key={'about'} xs={12} md={6} lg={4}>
+        <Grid item key={'about'} xs={12} md={8} lg={8}>
           <Typography className={styles.bc1}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
@@ -51,13 +50,11 @@ const Home: NextPage = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </Typography>
         </Grid>
-        <Grid item key={'pic'} xs={12} md={6} lg={4}>
+        <Grid item key={'pic'} xs={12} md={4} lg={4}>
           <Image src='/group-1.JPG' layout='responsive' height={3} width={2}></Image>
         </Grid>
       </Grid>
-      <p className={styles.bc2}>Test Font 2 and Meet Paula / Ashley Placeholder</p>
       <p className={styles.bc3}>Test Font 3 Fatured Property Placeholder</p>
-      <p className={styles.bc4}>Test Font 4 Social Media Callout Placeholder</p>
       <p className={styles.bc1}>Follow us on Instagram!</p>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'about'} xs={12} md={6} lg={4}>
