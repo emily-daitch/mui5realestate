@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     palette: {
       mode: "light",
       primary: {
-        main: '#D8C3D5'
+        main: '#c0c0c0'
       }
     }
   });
