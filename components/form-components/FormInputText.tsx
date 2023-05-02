@@ -3,7 +3,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormInputProps } from "./FormInputProps";
 
-export const FormInputText = ({ name, control, label }: FormInputProps) => {
+export const FormInputText = ({ name, control, label, placeholder }: FormInputProps) => {
   return (
     <Controller
       name={name}
@@ -20,8 +20,8 @@ export const FormInputText = ({ name, control, label }: FormInputProps) => {
           onChange={onChange}
           value={value}
           fullWidth
-          label={label}
           variant="outlined"
+          placeholder={placeholder}
         />
       )}
     />
