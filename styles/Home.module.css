@@ -2,6 +2,23 @@
   padding: 0 0;
 }
 
+.headerimagecontainer {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  color: #D8C3D5;
+  font-size: 6vw;
+  font-family: 'Archivo Narrow', sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 .main {
   flex: 1;
   display: flex;
