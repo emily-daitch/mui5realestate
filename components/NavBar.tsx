@@ -14,12 +14,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { useScrollTrigger } from '@mui/material';
 import Image from 'next/image';
 import logo from './images/PA White Logo.png';
 
 const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar(props: any) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -34,8 +35,14 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: props.window ? window : undefined
+  });
+
   return (
-    <AppBar position="sticky" sx={{color:'#8D5286'}}>
+    <AppBar position="fixed" sx={{color:'#8D5286', background: trigger ? "#ddd" : "transparent"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -118,7 +125,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: trigger? '#a0a0a0' : '#e0e0e0', display: 'block' }}
               >
                 {page}
               </Button>
