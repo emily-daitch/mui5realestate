@@ -11,6 +11,7 @@ import FaxIcon from '@mui/icons-material/Fax';
 import MailIcon from '@mui/icons-material/Mail';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import GoogleIcon from '@mui/icons-material/Google';
 
 const itemData = [
   {
@@ -27,6 +28,14 @@ const itemData = [
   },
   {
     img: '/insta4.png',
+    title: ''
+  },
+  {
+    img: '/insta1.png',
+    title: ''
+  },
+  {
+    img: '/insta2.png',
     title: ''
   }
 ]
@@ -46,36 +55,95 @@ const Home: NextPage = () => {
       </main>
       <HomeSearchForm></HomeSearchForm>
       <br/>
-      <Grid container sx={{justifyContent: 'center'}}>
+      <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
         <Grid item key={'about'} xs={12} md={8} lg={8}>
           <Typography className={styles.bc1}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Ashley Bowman is a Georgia native. Her father and
+grandfather were on the building and construction side of real
+estate and her mother owned her own interior designing
+company. As a child, Ashley spent her summers and school
+holidays on job sites with her parents often coming home
+with Georgia’s own red clay on her shoes.
+She graduated from the University of West Georgia with a
+degree in Early Childhood Education. Soon after graduation
+she decided that being creative was one of the best parts of
+being a teacher. From there, she decided to combine her
+known experience and knowledge of the home building
+process, her creative passion, and her outward honesty
+together with the real estate market. Since moving to Atlanta
+15 years ago, Ashley has lived in Old 4th Ward, Virginia
+Highlands, East Atlanta, Inman Park, and Candler Park. She
+purchased her first home in Decatur and now currently
+resides in Tucker with her husband Craig and their two pugs,
+
+Carlton and Richard.
+          </Typography>
+        </Grid>
+        <Grid item key={'pic'} xs={12} md={4} lg={4}>
+          <Image src='/ashley.png' layout='responsive' height={3} width={2}></Image>
+        </Grid>
+      </Grid>
+      <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
+        <Grid item key={'pic'} xs={12} md={4} lg={4}>
+          <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
+        </Grid>
+        <Grid item key={'about'} xs={12} md={8} lg={8}>
+          <Typography className={styles.bc1}>
+          Paula Girvan is from the hills of Tennessee but planted her roots in
+Georgia when she was 18 years old. She decided to call Atlanta
+home and make a name for herself by owning famous
+neighborhood pubs, popular Virginia Highland boutiques, and
+running her own real estate career in the Metro Atlanta area.
+With almost 25 years of real estate under her belt, she has helped
+many friends, family, and everyone in between meet their real
+estate goals. She has continued her passion in real estate with
+investments, remodels, and developments. WIth that being said,
+her favorite part is working with people and helping them find
+their homes and making forever friends. She currently lives in her
+mid-century modern dream house in Decatur with her 2 dogs and
+
+husband Mike.
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
+        <Grid item key={'about'} xs={12} md={8} lg={8}>
+          <Typography className={styles.bc1}>
+          Paula and Ashley met at a Keller Williams convention in New Orleans. After getting to know
+          each other and realizing they know a lot of the same people and how well they work together,
+          they decided to combine forces and become a team.<br/> Together they really enjoy helping people
+          achieve their real estate dreams, making people happy, and enjoying life to the fullest!<br/><br/>
+
+          Thank you and we hope to work with you soon!<br/><br/>
+
+          -Paula & Ashley
           </Typography>
         </Grid>
         <Grid item key={'pic'} xs={12} md={4} lg={4}>
           <Image src='/group-1.JPG' layout='responsive' height={3} width={2}></Image>
         </Grid>
       </Grid>
-      <p className={styles.bc3}>Test Font 3 Featured Property Placeholder</p>
-      <p className={styles.bc1}>Follow us on Instagram!</p>
-      <Grid container sx={{justifyContent: 'center'}}>
-        <Grid item key={'about'} xs={12} md={6} lg={4}>
-          <Typography className={styles.bc1}>
+      <p className={styles.bc2}>Test Font 3 Featured Property Placeholder</p>
+      <p className={styles.bc1}>Follow us on Instagram! </p>
+      <Typography className={styles.bc1}>
             <Link href='https://www.instagram.com/paula.ashley.homes/'>
               @paula.ashley.homes
             </Link>
-          </Typography>
-        </Grid>
-        <Grid item key={'pic'} xs={10} md={4} lg={4} padding={'4 4'}>
+      </Typography>
+      <Grid container sx={{justifyContent: 'center'}}>
+        <Grid item key={'pic'} xs={10} md={8} lg={6} padding={'4 4'} sx={{
+                flex: "1",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center"
+            }}>
           {/* <Image src='/insta1.png' layout='responsive' height={1} width={1}></Image>
           <Image src='/insta2.png' layout='responsive' height={1} width={1}></Image>
           <Image src='/insta3.png' layout='responsive' height={1} width={1}></Image>
           <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image> */}
-          <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+          <ImageList sx={{ width: '25rem', height: '40rem' }} rowHeight={'auto'}>
             {itemData.map((item) => (
               <ImageListItem key={item.img} sx={{border: 5, borderColor: 'grey'}}>
                 <img
@@ -102,20 +170,38 @@ const Home: NextPage = () => {
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.bc1}>
-              <q>This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.</q>
+              <q>Ashley is hands down the best agent to work with in Decatur! She
+knows the area, is very personable and understands what you
+need (maybe even better than you do)! It’s great to work with
+someone that is part of a team as well, Paula was able to show us
+homes quickly when needed and is also a joy. Thank you Ashley
+and Paula for helping us land the perfect home for our family!</q> - Emily
+          </Typography>
+          <Typography className={styles.bc1}>
+              <q>My fiance and I cannot say enough good things about Paula!
+As first time homebuyers we asked a lot of questions,
+
+and she always made herself available to us and was extremely helpful.
+
+She made the process so smooth and stress-free,
+I don&apos;t know what we would have done without her!
+
+We will be recommending Paula to others looking to buy homes as well.</q> - Chris
           </Typography>
         </Grid>
         <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.bc1}>
-              <q>This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.
-              This is a testimonial. This is a testimonial.</q>
+              <q>We wanted to give a big shout out to Ashley Bowman and her staging
+company, Staged Right ATL. This is the second home we have sold with
+Ashley. My wife and I were tasked with selling a 30-year-old
+townhouse that had belong to a friend for many years. The place was
+very dated, needed paining, and all the fixtures needed to be updated per
+Ashley&apos;s recommendations. Once those tasks were completed there was
+still just a little something missing. In walked Ashley and her staging
+company. We were gone for four or five days while this occurred. Upon
+returning and seeing the place we did not even believe it was the same
+place. We placed the house on the market and had several offers and a
+contract within four days. Bravo to Ashley, her team, and staging company!</q> - J&S
           </Typography>
         </Grid>
       </Grid>
@@ -126,17 +212,17 @@ const Home: NextPage = () => {
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.bc1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <CallIcon />(404) - 000 - 0000
+          Office <CallIcon /> (404)-564-5560
           </Link>
           </Typography>
           <Typography className={styles.bc1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <CallIcon />(404) - 111 - 1111
+          Cell <CallIcon /> (404)-217-0212
           </Link>
           </Typography>
           <Typography className={styles.bc1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <FaxIcon />(404) - 222 - 2222
+          <FaxIcon /> (404)-564-5561
           </Link>
           </Typography>
         </Grid>
@@ -159,6 +245,11 @@ const Home: NextPage = () => {
         </Grid>
         <Typography className={styles.bc1}>
           315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
+        </Typography>
+        <Typography className={styles.bc1}>
+          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+            <GoogleIcon/>We would love to hear your feedback, write a review!
+          </Link>
         </Typography>
       </Grid>
       </Paper>

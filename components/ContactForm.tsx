@@ -3,18 +3,18 @@ import { Typography, Grid, Button, TextField } from '@mui/material';
 import validate from 'validate.js';
 import emailjs from 'emailjs-com';
 
-const USER_ID = process.env.REACT_APP_EMAILJS_USERID
-const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATEID
-const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICEID
+const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USERID
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID as string
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICEID as string
 
 const schema = {
-  name: {
+  from_name: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
       maximum: 128,
     },
   } as any,
-  email: {
+  reply_to: {
     presence: { allowEmpty: false, message: 'is required' },
     email: true,
     length: {
@@ -34,15 +34,16 @@ const ContactForm = () => {
 
   const sendEmail = (e: Event) => {
     e.preventDefault();
-
-        // emailjs.sendForm(
-        //   SERVICE_ID,
-        //   TEMPLATE_ID,
-        //   e.target,
-        //   USER_ID
-        // )
-        // .then((res) => console.log('SUCCESS!', res.status, res.text))
-        // .catch(error => console.log('FAILED...', error));
+        console.log('user id', USER_ID);
+        console.log('service id', SERVICE_ID);
+        emailjs.sendForm(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          e.target as any,
+          USER_ID
+        )
+        .then((res) => console.log('SUCCESS!', res.status, res.text))
+        .catch(error => console.log('FAILED...', error));
 
         setFormState(formState => ({
           ...formState,
@@ -114,16 +115,16 @@ const ContactForm = () => {
               label="Name *"
               variant="outlined"
               size="medium"
-              name="name"
-              id="name"
+              name="from_name"
+              id="from_name"
               fullWidth
               helperText={
-                hasError('name') ? formState.errors.name[0] : null
+                hasError('from_name') ? formState.errors.from_name[0] : null
               }
-              error={hasError('name')}
+              error={hasError('from_name')}
               onChange={handleChange}
               type="text"
-              value={formState.values.name || ''}
+              value={formState.values.from_name || ''}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -132,13 +133,28 @@ const ContactForm = () => {
               label="E-mail *"
               variant="outlined"
               size="medium"
-              name="email"
+              name="reply_to"
               fullWidth
-              helperText={hasError('email') ? formState.errors.email[0] : null}
-              error={hasError('email')}
+              helperText={hasError('reply_to') ? formState.errors.reply_to[0] : null}
+              error={hasError('reply_to')}
               onChange={handleChange}
               type="email"
-              value={formState.values.email || ''}
+              value={formState.values.reply_to || ''}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              placeholder="Subject"
+              label="Subject *"
+              variant="outlined"
+              size="medium"
+              name="subject"
+              fullWidth
+              helperText={hasError('subject') ? formState.errors.subject[0] : null}
+              error={hasError('subject')}
+              onChange={handleChange}
+              type="text"
+              value={formState.values.subject || ''}
             />
           </Grid>
           <Grid item xs={12}>
@@ -154,9 +170,18 @@ const ContactForm = () => {
               onChange={handleChange}
               type="text"
               value={formState.values.message || ''}
+              multiline={true}
+              rows={7}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{
+                flex: "1",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center"
+            }}>
             <Button
               size="large"
               variant="contained"

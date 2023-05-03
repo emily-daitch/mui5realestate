@@ -28,7 +28,7 @@ export const HomeSearchForm = () => {
     <Paper sx={{
       boxShadow: 'none'
     }}>
-      <Typography variant="h6"> Form Demo </Typography>
+      {/* <Typography variant="h6"> Form Demo </Typography> */}
         {/* <FormProvider> */}
             <Box sx={{
                 flex: "1",
