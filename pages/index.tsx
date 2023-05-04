@@ -47,6 +47,7 @@ const Home: NextPage = () => {
       <div className={styles.headerimagecontainer}>
       <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
       <div className={styles.centered}>Passionate, Personal, Professional</div>
+      <div className={styles.construction}>Site Under Construction</div>
       </div>
       <div>
       <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>

@@ -19,6 +19,17 @@
   width: 100%;
 }
 
+.construction {
+  color: #D8C3D5;
+  font-size: 6vw;
+  font-family: 'Archivo Narrow', sans-serif;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 .main {
   flex: 1;
   display: flex;
