@@ -1,5 +1,5 @@
 import { Button, Typography, Paper, Box, Grid } from "@mui/material";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import {useRouter} from 'next/router'
 import { FormInputText } from "./form-components/FormInputText";
 import { FormInputMultiCheckbox } from "./form-components/FormInputMultiCheckbox";
@@ -10,16 +10,56 @@ const defaultValues = {
 };
 
 interface IFormInput {
+  cityZip: string;
+  propertyType: string;
+  beds: string;
+  baths: string;
+  minPrice: string;
+  maxPrice: string;
+};
 
+const getPropertyData = async (data: IFormInput) => {
+  const propertyType = data.propertyType === 'House' ? 'Residential' : 'Residential Lease';
+  const beds = data.beds === '4+' ? '4' : data.beds;
+  const baths = data.baths === '4+' ? '4' : data.baths;
+  const url = 'https://api.bridgedataoutput.com/api/v2/OData/actris_ref/' +
+    `Property?$filter=PropertyType eq \'${propertyType}\' ` +
+    `and PostalCode eq \'${data.cityZip}\' and StandardStatus eq \'Active\' ` +
+    `and BedroomsTotal ge ${beds} ` +
+    `and BathroomsTotalDecimal ge ${baths} ` +
+    `and ListPrice ge ${data.minPrice} ` +
+    `and ListPrice le ${data.maxPrice}`;
+  const urlWithSpaces = url.replace(/%20/g, ' ');
+
+
+  const response = await fetch(urlWithSpaces, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${process.env.BRIDGE_SECRET}`
+    },
+  });
+
+  if (response.ok) {
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+    return jsonResponse;
+  } else {
+    console.error(`Error fetching data: ${response.status} ${response.statusText}`);
+    return null;
+  }
 };
 
 export const HomeSearchForm = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   const methods = useForm({ defaultValues: defaultValues });
   const { handleSubmit, reset, control, setValue } = methods;
-  const onSubmit = (data: IFormInput) => {
+  const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
     console.log(data);
+
+    const pData = await getPropertyData(data);
+    console.log('pData', pData);
     //e.preventDefault();
     router.push("searchResult/searchResult");
   };
