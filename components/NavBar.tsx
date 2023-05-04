@@ -103,7 +103,7 @@ function ResponsiveAppBar(props: any) {
                     key={page}
                     href={`/${page == 'Home' ? '' : page}`}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: trigger? '#a0a0a0' : '#e0e0e0', display: 'block' }}
+                    sx={{ my: 2, color: '#808080', display: 'block' }}
                   >
                     {page}
                   </Button>
