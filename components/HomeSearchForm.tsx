@@ -53,7 +53,8 @@ const getPropertyData = async (data: IFormInput) => {
 export const HomeSearchForm = () => {
   const router = useRouter();
 
-  const methods = useForm({ defaultValues: defaultValues });
+  const methods = useForm<IFormInput>({ defaultValues: defaultValues });
+
   const { handleSubmit, reset, control, setValue } = methods;
   const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
     console.log(data);
