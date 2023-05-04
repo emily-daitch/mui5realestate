@@ -8,6 +8,12 @@
   color: white;
 }
 
+.logocontainer {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 .centered {
   color: #D8C3D5;
   font-size: 6vw;
@@ -55,6 +61,16 @@
   align-items: center;
   text-align: center;
 }
+
+.link1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .box:before {
   aspect-ratio: 1/1;
   width: 30%;
@@ -81,6 +97,9 @@
   align-content: center;
   align-items: center;
   text-align: center;
+}
+.bc1i {
+  background-image: url("/atl.jpg");
 }
 .p1 {
   color: #6D2164;

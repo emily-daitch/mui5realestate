@@ -14,11 +14,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Link from '@mui/material/Link';
 import { useScrollTrigger } from '@mui/material';
 import Image from 'next/image';
 import logo from './images/PA White Logo.png';
 
-const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
+// const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
+const pages = ['Home', 'About', 'Contact'];
 
 function ResponsiveAppBar(props: any) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -96,7 +98,15 @@ function ResponsiveAppBar(props: any) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  {/* <Typography textAlign="center">{page}</Typography> */}
+                  <Button
+                    key={page}
+                    href={`/${page == 'Home' ? '' : page}`}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: trigger? '#a0a0a0' : '#e0e0e0', display: 'block' }}
+                  >
+                    {page}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -124,6 +134,7 @@ function ResponsiveAppBar(props: any) {
             {pages.map((page) => (
               <Button
                 key={page}
+                href={`/${page == 'Home' ? '' : page}`}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: trigger? '#a0a0a0' : '#e0e0e0', display: 'block' }}
               >

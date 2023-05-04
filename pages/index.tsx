@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon } from "@mui/material";
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box } from "@mui/material";
 import HeadComponent from "../components/Head";
 import ContactForm from "../components/ContactForm";
 import Image from "next/image"
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
       </main>
       <HomeSearchForm></HomeSearchForm>
       <br/>
-      <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
+      <Grid className={styles.bc1i} container sx={{justifyContent: 'center', alignItems: 'center'}}>
         <Grid item key={'about'} xs={12} md={8} lg={8}>
           <Typography className={styles.bc1}>
           Ashley Bowman is a Georgia native. Her father and
@@ -88,7 +88,8 @@ Carlton and Richard.
         <Grid item key={'pic'} xs={12} md={4} lg={4}>
           <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
         </Grid>
-        <Grid item key={'about'} xs={12} md={8} lg={8}>
+        <Grid item key={'about'} xs={12} md={8} lg={8} padding={3}>
+          <Box border={6}>
           <Typography className={styles.bc1}>
           Paula Girvan is from the hills of Tennessee but planted her roots in
 Georgia when she was 18 years old. She decided to call Atlanta
@@ -105,6 +106,7 @@ mid-century modern dream house in Decatur with her 2 dogs and
 
 husband Mike.
           </Typography>
+          </Box>
         </Grid>
       </Grid>
       <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
@@ -210,7 +212,10 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
       <p className={styles.bc2}>Contact</p>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
+        <Grid className={styles.logocontainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
+          <Image src='/PAPurpleLogo.png' layout='fixed' height={250} width={250}></Image>
+        </Grid>
+        <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.bc1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
           Office <CallIcon /> (404)-564-5560
@@ -227,7 +232,7 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
           </Link>
           </Typography>
         </Grid>
-        <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
+        <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.bc1}>
           <Link href='mailto:test@email.com'>
           <MailIcon />test@email.com
@@ -245,12 +250,10 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
           </Typography>
         </Grid>
         <Typography className={styles.bc1}>
+            <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+              <GoogleIcon/>We would love to hear your feedback, write a review!
+            </Link>
           315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
-        </Typography>
-        <Typography className={styles.bc1}>
-          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-            <GoogleIcon/>We would love to hear your feedback, write a review!
-          </Link>
         </Typography>
       </Grid>
       </Paper>

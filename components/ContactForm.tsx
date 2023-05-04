@@ -94,7 +94,7 @@ const ContactForm = () => {
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
-    <div>
+    <div id='contact'>
       <form 
         //headers='application/json'
         name="contact-form"
