@@ -631,9 +631,9 @@ const getPropertyData = async (data: IFormInput) => {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
-      'Authorization': `Bearer ${process.env.BRIDGE_SECRET}`
+      //'Authorization': `Bearer ${process.env.BRIDGE_SECRET}`
       //For local development
-      //'Authorization': `Bearer ${process.env.NEXT_PUBLIC_BRIDGE_SECRET}`
+      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_BRIDGE_SECRET}`
     },
   });
 
