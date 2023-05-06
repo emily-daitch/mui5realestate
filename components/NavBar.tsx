@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@mui/material';
 import Link from '@mui/material/Link';
 import { useScrollTrigger } from '@mui/material';
 import Image from 'next/image';
@@ -35,6 +36,16 @@ function ResponsiveAppBar(props: any) {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const [openDialog, setOpenDialog] = React.useState(false);
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
   };
 
   const trigger = useScrollTrigger({
@@ -145,11 +156,24 @@ function ResponsiveAppBar(props: any) {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Call Us">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <CallIcon />
-              </IconButton>
+              <a href="tel:+4045645560" onClick={(e) => { if (window.innerWidth > 768) { e.preventDefault(); handleOpenDialog(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <IconButton sx={{ p: 0 }}>
+                  <CallIcon />
+                </IconButton>
+              </a>
             </Tooltip>
           </Box>
+          <Dialog open={openDialog} onClose={handleCloseDialog}>
+            <DialogTitle>Call Us</DialogTitle>
+            <DialogContent>
+              <DialogContentText>Please call us at: +4045645560</DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleCloseDialog} color="primary">
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>
           <Box sx={{ flexGrow: 0, paddingLeft: 5}}>
             <Tooltip title="Contact Us">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
