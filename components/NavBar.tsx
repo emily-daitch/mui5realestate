@@ -30,7 +30,7 @@ function ResponsiveAppBar(props: any) {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleContactUs = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -176,7 +176,7 @@ function ResponsiveAppBar(props: any) {
           </Dialog>
           <Box sx={{ flexGrow: 0, paddingLeft: 5}}>
             <Tooltip title="Contact Us">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton href={`/Contact`} sx={{ p: 0 }}>
                 <MailIcon />
               </IconButton>
             </Tooltip>
