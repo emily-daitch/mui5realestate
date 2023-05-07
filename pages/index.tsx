@@ -56,9 +56,12 @@ const Home: NextPage = () => {
       </main>
       <HomeSearchForm></HomeSearchForm>
       <br/>
-      <Grid className={styles.bc1i} container sx={{justifyContent: 'center', alignItems: 'center'}}>
-        <Grid item key={'about'} xs={12} md={8} lg={8}>
-          <Typography className={styles.bc1}>
+      {/* <Grid className={styles.bc1i} container sx={{justifyContent: 'center', alignItems: 'center'}}> */}
+      <Grid className={styles.pg} container sx={{justifyContent: 'center', alignItems: 'center'}}>
+      <Grid item key={'about'} xs={12} sm= {8} md={8} lg={8}>
+      {/* <Grid item key={'about'} xs={12} md={8} lg={8}> */}
+      <Typography className={styles.pgt} padding={3}>
+      {/* <Typography className={styles.bc1}> */}
           Ashley Bowman is a Georgia native. Her father and
 grandfather were on the building and construction side of real
 estate and her mother owned her own interior designing
@@ -80,15 +83,15 @@ resides in Tucker with her husband Craig and their two pugs,
 Carlton and Richard.
           </Typography>
         </Grid>
-        <Grid item key={'pic'} xs={12} md={4} lg={4}>
+        <Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
           <Image src='/ashley.png' layout='responsive' height={3} width={2}></Image>
         </Grid>
       </Grid>
       <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
-        <Grid item key={'pic'} xs={12} md={4} lg={4}>
+        <Grid item key={'pic'} xs={12} sm={4}  md={4} lg={4} padding={3}>
           <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
         </Grid>
-        <Grid item key={'about'} xs={12} md={8} lg={8} padding={3}>
+        <Grid item key={'about'} xs={12} sm={8} md={8} lg={8} padding={3}>
           <Box border={6}>
           <Typography className={styles.bc1}>
           Paula Girvan is from the hills of Tennessee but planted her roots in
@@ -122,7 +125,7 @@ husband Mike.
           -Paula & Ashley
           </Typography>
         </Grid>
-        <Grid item key={'pic'} xs={12} md={4} lg={4}>
+        <Grid item key={'pic'} xs={12} md={4} lg={4} padding={3}>
           <Image src='/group-1.JPG' layout='responsive' height={3} width={2}></Image>
         </Grid>
       </Grid>

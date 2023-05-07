@@ -103,7 +103,7 @@ const ContactForm = () => {
         onSubmit={sendEmail as any}
       >
         <Grid container spacing={2}>
-      <Grid item xs={12} md={8} spacing={2}>
+      <Grid item xs={12} md={8}>
         {/* Place your form component here */}
         <Grid item>
               <Typography className={styles.bc1} variant="h4" align="center">
@@ -113,7 +113,7 @@ const ContactForm = () => {
                 Contact Us
               </Typography>
             </Grid>
-            <Grid>
+            <Grid item spacing={2} padding={2}>
               <TextField
                 placeholder="Name"
                 label="Name *"
@@ -131,7 +131,7 @@ const ContactForm = () => {
                 value={formState.values.from_name || ''}
               />
             </Grid>
-            <Grid item>
+            <Grid item spacing={2} padding={2}>
               <TextField
                 placeholder="E-mail"
                 label="E-mail *"
@@ -146,7 +146,7 @@ const ContactForm = () => {
                 value={formState.values.reply_to || ''}
               />
             </Grid>
-            <Grid item>
+            <Grid item spacing={2} padding={2}>
               <TextField
                 placeholder="Subject"
                 label="Subject *"
@@ -161,7 +161,7 @@ const ContactForm = () => {
                 value={formState.values.subject || ''}
               />
             </Grid>
-            <Grid item>
+            <Grid item spacing={2} padding={2}>
               <TextField
                 placeholder="Message"
                 label="Message *"
@@ -178,7 +178,7 @@ const ContactForm = () => {
                 rows={7}
               />
             </Grid>
-            <Grid item paddingBottom={20} sx={{
+            <Grid item paddingBottom={2} sx={{
                   flex: "1",
                   display: "flex",
                   flexDirection: "row",
