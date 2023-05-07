@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Grid, Button, TextField } from '@mui/material';
+import Image from "next/image"
 import validate from 'validate.js';
 import emailjs from 'emailjs-com';
+import styles from '../styles/Home.module.css'
 
 const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USERID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID as string
@@ -94,105 +96,115 @@ const ContactForm = () => {
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
-    <div id='contact'>
-      <form 
+    <div id='contact' style={{marginTop: 100}}>
+    <form 
         //headers='application/json'
         name="contact-form"
         onSubmit={sendEmail as any}
       >
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h4" align="center">
-              <strong>Contact Form</strong>
-            </Typography>
-            <Typography variant="h6" color="textSecondary" align="center">
-              Contact Us
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              placeholder="Name"
-              label="Name *"
-              variant="outlined"
-              size="medium"
-              name="from_name"
-              id="from_name"
-              fullWidth
-              helperText={
-                hasError('from_name') ? formState.errors.from_name[0] : null
-              }
-              error={hasError('from_name')}
-              onChange={handleChange}
-              type="text"
-              value={formState.values.from_name || ''}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              placeholder="E-mail"
-              label="E-mail *"
-              variant="outlined"
-              size="medium"
-              name="reply_to"
-              fullWidth
-              helperText={hasError('reply_to') ? formState.errors.reply_to[0] : null}
-              error={hasError('reply_to')}
-              onChange={handleChange}
-              type="email"
-              value={formState.values.reply_to || ''}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              placeholder="Subject"
-              label="Subject *"
-              variant="outlined"
-              size="medium"
-              name="subject"
-              fullWidth
-              helperText={hasError('subject') ? formState.errors.subject[0] : null}
-              error={hasError('subject')}
-              onChange={handleChange}
-              type="text"
-              value={formState.values.subject || ''}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              placeholder="Message"
-              label="Message *"
-              variant="outlined"
-              size="medium"
-              name="message"
-              fullWidth
-              helperText={hasError('message') ? formState.errors.message[0] : null}
-              error={hasError('message')}
-              onChange={handleChange}
-              type="text"
-              value={formState.values.message || ''}
-              multiline={true}
-              rows={7}
-            />
-          </Grid>
-          <Grid item xs={12} sx={{
-                flex: "1",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignContent: "center",
-                alignItems: "center"
-            }}>
-            <Button
-              size="large"
-              variant="contained"
-              type="submit"
-              color="primary"
-              disabled={!formState.isValid}
-            >
-              Send
-            </Button>
-          </Grid>
-        </Grid>
+      <Grid item xs={12} md={8} spacing={2}>
+        {/* Place your form component here */}
+        <Grid item>
+              <Typography className={styles.bc1} variant="h4" align="center">
+                <strong>Contact Form</strong>
+              </Typography>
+              <Typography className={styles.bc2} variant="h6" color="textSecondary" align="center">
+                Contact Us
+              </Typography>
+            </Grid>
+            <Grid>
+              <TextField
+                placeholder="Name"
+                label="Name *"
+                variant="outlined"
+                size="medium"
+                name="from_name"
+                id="from_name"
+                fullWidth
+                helperText={
+                  hasError('from_name') ? formState.errors.from_name[0] : null
+                }
+                error={hasError('from_name')}
+                onChange={handleChange}
+                type="text"
+                value={formState.values.from_name || ''}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                placeholder="E-mail"
+                label="E-mail *"
+                variant="outlined"
+                size="medium"
+                name="reply_to"
+                fullWidth
+                helperText={hasError('reply_to') ? formState.errors.reply_to[0] : null}
+                error={hasError('reply_to')}
+                onChange={handleChange}
+                type="email"
+                value={formState.values.reply_to || ''}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                placeholder="Subject"
+                label="Subject *"
+                variant="outlined"
+                size="medium"
+                name="subject"
+                fullWidth
+                helperText={hasError('subject') ? formState.errors.subject[0] : null}
+                error={hasError('subject')}
+                onChange={handleChange}
+                type="text"
+                value={formState.values.subject || ''}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                placeholder="Message"
+                label="Message *"
+                variant="outlined"
+                size="medium"
+                name="message"
+                fullWidth
+                helperText={hasError('message') ? formState.errors.message[0] : null}
+                error={hasError('message')}
+                onChange={handleChange}
+                type="text"
+                value={formState.values.message || ''}
+                multiline={true}
+                rows={7}
+              />
+            </Grid>
+            <Grid item paddingBottom={20} sx={{
+                  flex: "1",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignContent: "center",
+                  alignItems: "center"
+              }}>
+              <Button
+                size="large"
+                variant="contained"
+                type="submit"
+                color="primary"
+                disabled={!formState.isValid}
+              >
+                Send
+              </Button>
+            </Grid>
+      </Grid>
+      <Grid item xs={0} md={4}>
+        {/* Place your image component here */}
+        <br/>
+        <br/>
+        <br/>
+        <Image src='/PAPurpleLogo.png' layout='responsive' height={250} width={250}></Image>
+      </Grid>
+    </Grid>
       </form>
     </div>
   );
