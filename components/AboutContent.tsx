@@ -7,9 +7,9 @@ const AboutContent = () => {
 
   return (
     <>
-    <Grid className={styles.pg} container sx={{justifyContent: 'center', alignItems: 'center'}}>
+    <Grid className={styles.ashley} container sx={{justifyContent: 'center', alignItems: 'center'}}>
         <Grid item key={'about'} xs={12} sm= {8} md={8} lg={8}>
-            <Typography className={styles.pgt} padding={3}>
+            <Typography className={styles.ashleyt} padding={3}>
                 Ashley Bowman is a Georgia native. Her father and
                 grandfather were on the building and construction side of real
                 estate and her mother owned her own interior designing
@@ -40,7 +40,7 @@ const AboutContent = () => {
       </Grid>
       <Grid item key={'about'} xs={12} sm={8} md={8} lg={8} padding={3}>
         <Box border={6}>
-            <Typography className={styles.bc1}>
+            <Typography className={styles.text1}>
                 Paula Girvan is from the hills of Tennessee but planted her roots in
                 Georgia when she was 18 years old. She decided to call Atlanta
                 home and make a name for herself by owning famous
@@ -60,7 +60,7 @@ const AboutContent = () => {
     </Grid>
     <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
       <Grid item key={'about'} xs={12} md={8} lg={8}>
-        <Typography className={styles.bc1}>
+        <Typography className={styles.text1}>
             Paula and Ashley met at a Keller Williams convention in New Orleans. After getting to know
             each other and realizing they know a lot of the same people and how well they work together,
             they decided to combine forces and become a team.<br/> Together they really enjoy helping people

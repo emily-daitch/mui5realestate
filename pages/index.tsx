@@ -45,9 +45,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
-      <div className={styles.headerimagecontainer}>
+      <div className={styles.headerImageContainer}>
       <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
-      <div className={styles.centered}>Passionate, Personal, Professional</div>
+      <div className={styles.centeredSlogan}>Passionate, Personal, Professional</div>
       <div className={styles.construction}>Site Under Construction</div>
       </div>
       <div>
@@ -58,9 +58,9 @@ const Home: NextPage = () => {
       <HomeSearchForm></HomeSearchForm>
       <br/>
       <AboutContent></AboutContent>
-      <p className={styles.bc2}>Test Font 3 Featured Property Placeholder</p>
-      <p className={styles.bc1}>Follow us on Instagram! </p>
-      <Typography className={styles.bc1}>
+      <p className={styles.text2}>Test Font 3 Featured Property Placeholder</p>
+      <p className={styles.text1}>Follow us on Instagram! </p>
+      <Typography className={styles.text1}>
             <Link href='https://www.instagram.com/paula.ashley.homes/'>
               @paula.ashley.homes
             </Link>
@@ -101,10 +101,10 @@ const Home: NextPage = () => {
         <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image>
         </Grid> */}
       </Grid>
-      <p className={styles.bc4}>Testimonials Placeholder</p>
+      <p className={styles.text4}>Testimonials Placeholder</p>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
               <q>Ashley is hands down the best agent to work with in Decatur! She
 knows the area, is very personable and understands what you
 need (maybe even better than you do)! It’s great to work with
@@ -112,7 +112,7 @@ someone that is part of a team as well, Paula was able to show us
 homes quickly when needed and is also a joy. Thank you Ashley
 and Paula for helping us land the perfect home for our family!</q> - Emily
           </Typography>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
               <q>My fiance and I cannot say enough good things about Paula!
 As first time homebuyers we asked a lot of questions,
 
@@ -125,7 +125,7 @@ We will be recommending Paula to others looking to buy homes as well.</q> - Chri
           </Typography>
         </Grid>
         <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
               <q>We wanted to give a big shout out to Ashley Bowman and her staging
 company, Staged Right ATL. This is the second home we have sold with
 Ashley. My wife and I were tasked with selling a 30-year-old
@@ -141,47 +141,47 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
         </Grid>
       </Grid>
       <ContactForm></ContactForm>
-      <p className={styles.bc2}>Contact</p>
+      <p className={styles.text2}>Contact</p>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid className={styles.logocontainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
+        <Grid className={styles.logoContainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
           <Image src='/PAPurpleLogo.png' layout='fixed' height={250} width={250}></Image>
         </Grid>
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
-        <Typography className={styles.bc1}>
+        <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
           Office <CallIcon /> (404)-564-5560
           </Link>
           </Typography>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
           Cell <CallIcon /> (404)-217-0212
           </Link>
           </Typography>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
           <FaxIcon /> (404)-564-5561
           </Link>
           </Typography>
         </Grid>
         <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
           <Link href='mailto:test@email.com'>
           <MailIcon />test@email.com
           </Link>
           </Typography>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
           <Link href='https://www.facebook.com/paulaandashleyhomes/'>
           <FacebookIcon />Follow us on Facebook!
           </Link>
           </Typography>
-          <Typography className={styles.bc1}>
+          <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
           <InstagramIcon />Follow us on Instagram!
           </Link>
           </Typography>
         </Grid>
-        <Typography className={styles.bc1}>
+        <Typography className={styles.text1}>
             <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
               <GoogleIcon/>We would love to hear your feedback, write a review!
             </Link>

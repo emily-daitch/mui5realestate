@@ -106,10 +106,10 @@ const ContactForm = () => {
       <Grid item xs={12} md={8}>
         {/* Place your form component here */}
         <Grid item>
-              <Typography className={styles.bc1} variant="h4" align="center">
+              <Typography className={styles.text1} variant="h4" align="center">
                 <strong>Contact Form</strong>
               </Typography>
-              <Typography className={styles.bc2} variant="h6" color="textSecondary" align="center">
+              <Typography className={styles.text2} variant="h6" color="textSecondary" align="center">
                 Contact Us
               </Typography>
             </Grid>
