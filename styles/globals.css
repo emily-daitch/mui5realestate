@@ -11,6 +11,24 @@ a {
   text-decoration: none;
 }
 
+/*
+The * selector in CSS stands for a universal selector, which means it targets all elements in a document.
+
+border-box: This is a box model introduced in CSS3. Here, the width and height properties include content,
+padding, and border, but do not include the margin. This makes it easier to size elements, because you can
+add padding and borders without increasing the total width or height of the elements.
+(as opposed to the default box-sizing of content-box)
+
+The rule * { box-sizing: border-box; } is often used in CSS resets and it's often seen as a best practice.
+This is because it can make layout easier and more intuitive. Without this, if you set the width of an 
+element to be 50% of its parent, but then also apply padding or borders, the actual space it takes up 
+would be more than 50%, which can lead to unexpected layout issues. By setting everything to
+box-sizing: border-box, you ensure that the padding and border are included in the width, which makes the 
+element truly 50% of the parent width.
+
+You might need to override the box-sizing value for specific elements.
+*/
+
 * {
   box-sizing: border-box;
 }
