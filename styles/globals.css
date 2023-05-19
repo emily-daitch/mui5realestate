@@ -6,6 +6,16 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+/*
+The color: inherit; rule means that all links will inherit their text color from their parent 
+elements. Without this rule, browsers usually apply their own default color to links 
+(typically blue). The inherit value can be useful when you want your links to blend into the
+surrounding text or when you want to control their color centrally using parent elements.
+
+The text-decoration: none; rule is used to remove the default underline that appears under links.
+This can be useful when you want more control over the appearance of your links. For example, you
+might want to apply your own hover effects, or you might want to distinguish links using color alone.
+*/
 a {
   color: inherit;
   text-decoration: none;
