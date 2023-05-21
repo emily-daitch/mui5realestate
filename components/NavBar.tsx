@@ -1,22 +1,11 @@
 // from https://mui.com/material-ui/react-app-bar/
 
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@mui/material';
-import Link from '@mui/material/Link';
-import { useScrollTrigger } from '@mui/material';
+import { AppBar, Box, Button, Container, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions,
+  IconButton, Link, Menu, MenuItem, Toolbar, Tooltip, Typography, useScrollTrigger  } from '@mui/material';
 import Image from 'next/image';
 import logo from './images/PA White Logo.png';
 
