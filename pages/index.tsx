@@ -1,18 +1,16 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box } from "@mui/material";
-import HeadComponent from "../components/Head";
-import ContactForm from "../components/ContactForm";
-import AboutContent from '../components/AboutContent';
 import Image from "next/image"
+
+import { motion } from 'framer-motion';
+
+import styles from '../styles/Home.module.css'
+import AboutContent from '../components/AboutContent';
+import ContactForm from "../components/ContactForm";
+import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
-import CallIcon from '@mui/icons-material/Call';
-import FaxIcon from '@mui/icons-material/Fax';
-import MailIcon from '@mui/icons-material/Mail';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleIcon from '@mui/icons-material/Google';
+
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box } from "@mui/material";
+import { Call, Facebook, Fax, Google, Instagram, Mail } from '@mui/icons-material';
 
 const itemData = [
   {
@@ -47,7 +45,21 @@ const Home: NextPage = () => {
       <HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
       <div className={styles.headerImageContainer}>
       <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
-      <div className={styles.centeredSlogan}>Passionate, Personal, Professional</div>
+      <motion.div initial="hidden" animate="visible" variants={{
+        hidden: {
+          scale: .8,
+          opacity: 0
+        },
+        visible: {
+          scale: 1,
+          opacity: 1,
+          transition: {
+            delay: .4
+          }
+        }
+      }}>
+        <div className={styles.centeredSlogan}>Passionate, Personal, Professional</div>
+      </motion.div>
       <div className={styles.construction}>Site Under Construction</div>
       </div>
       <div>
@@ -150,40 +162,40 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          Office <CallIcon /> (404)-564-5560
+          Office <Call /> (404)-564-5560
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          Cell <CallIcon /> (404)-217-0212
+          Cell <Call /> (404)-217-0212
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <FaxIcon /> (404)-564-5561
+          <Fax /> (404)-564-5561
           </Link>
           </Typography>
         </Grid>
         <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>
           <Link href='mailto:test@email.com'>
-          <MailIcon />test@email.com
+          <Mail />test@email.com
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.facebook.com/paulaandashleyhomes/'>
-          <FacebookIcon />Follow us on Facebook!
+          <Facebook />Follow us on Facebook!
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <InstagramIcon />Follow us on Instagram!
+          <Instagram />Follow us on Instagram!
           </Link>
           </Typography>
         </Grid>
         <Typography className={styles.text1}>
             <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-              <GoogleIcon/>We would love to hear your feedback, write a review!
+              <Google/>We would love to hear your feedback, write a review!
             </Link>
           315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
         </Typography>
