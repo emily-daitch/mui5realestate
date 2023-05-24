@@ -70,7 +70,6 @@ const Home: NextPage = () => {
       <HomeSearchForm></HomeSearchForm>
       <br/>
       <AboutContent></AboutContent>
-      <p className={styles.text2}>Test Font 3 Featured Property Placeholder</p>
       <p className={styles.text1}>Follow us on Instagram! </p>
       <Typography className={styles.text1}>
             <Link href='https://www.instagram.com/paula.ashley.homes/'>
@@ -86,10 +85,6 @@ const Home: NextPage = () => {
                 alignContent: "center",
                 alignItems: "center"
             }}>
-          {/* <Image src='/insta1.png' layout='responsive' height={1} width={1}></Image>
-          <Image src='/insta2.png' layout='responsive' height={1} width={1}></Image>
-          <Image src='/insta3.png' layout='responsive' height={1} width={1}></Image>
-          <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image> */}
           <ImageList sx={{ width: '25rem', height: '40rem' }} rowHeight={'auto'}>
             {itemData.map((item) => (
               <ImageListItem key={item.img} sx={{border: 5, borderColor: 'grey'}}>
@@ -103,17 +98,7 @@ const Home: NextPage = () => {
             ))}
           </ImageList>
         </Grid>
-        {/* <Grid item key={'pic'} xs={10} md={4} lg={4}>
-        <Image src='/insta2.png' layout='responsive' height={1} width={1}></Image>
-        </Grid>
-        <Grid item key={'pic'} xs={10} md={4} lg={4}>
-        <Image src='/insta3.png' layout='responsive' height={1} width={1}></Image>
-        </Grid>
-        <Grid item key={'pic'} xs={10} md={4} lg={4}>
-        <Image src='/insta4.png' layout='responsive' height={1} width={1}></Image>
-        </Grid> */}
       </Grid>
-      <p className={styles.text4}>Testimonials Placeholder</p>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>

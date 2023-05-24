@@ -1,7 +1,39 @@
 import React from 'react';
-import { Typography, Grid, Box } from '@mui/material';
+import { motion, Variants } from 'framer-motion';
 import Image from "next/image"
 import styles from '../styles/Home.module.css'
+
+import { Typography, Grid, Box } from '@mui/material';
+
+const imageAnimateVariants: Variants = {
+  offscreen: {
+    x: 500
+  },
+  onscreen: {
+    x: 0,
+    //rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+};
+
+const imageAnimateVariantsPaula: Variants = {
+  offscreen: {
+    x: -400
+  },
+  onscreen: {
+    x: 0,
+    //rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+};
 
 const AboutContent = () => {
 
@@ -9,7 +41,7 @@ const AboutContent = () => {
     <>
     <Grid className={styles.ashley} container sx={{justifyContent: 'center', alignItems: 'center'}}>
         <Grid item key={'about'} xs={12} sm= {8} md={8} lg={8}>
-            <Typography className={styles.ashleyt} padding={3}>
+            <Typography className={styles.backdropAshley} padding={3}>
                 Ashley Bowman is a Georgia native. Her father and
                 grandfather were on the building and construction side of real
                 estate and her mother owned her own interior designing
@@ -31,16 +63,34 @@ const AboutContent = () => {
             </Typography>
         </Grid>
         <Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
+        <motion.div
+                    className="card-container"
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.2 }}
+                  >
+              <motion.div className="card" variants={imageAnimateVariants}>
             <Image src='/ashley.png' layout='responsive' height={3} width={2}></Image>
+            </motion.div>
+            </motion.div>
         </Grid>
     </Grid>
     <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
       <Grid item key={'pic'} xs={12} sm={4}  md={4} lg={4} padding={3}>
-        <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
+        <motion.div
+          className="card-container"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className="card" variants={imageAnimateVariantsPaula}>
+            <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
+          </motion.div>
+        </motion.div>
       </Grid>
       <Grid item key={'about'} xs={12} sm={8} md={8} lg={8} padding={3}>
-        <Box border={6}>
-            <Typography className={styles.text1}>
+        <Box border={2} borderColor={'#6D2164'}>
+            <Typography className={styles.text1b}>
                 Paula Girvan is from the hills of Tennessee but planted her roots in
                 Georgia when she was 18 years old. She decided to call Atlanta
                 home and make a name for herself by owning famous
