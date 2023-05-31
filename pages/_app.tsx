@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from "../components/Layout";
+import Maintenance from "../components/Maintenance";
 import { createTheme, ThemeProvider } from '@mui/material'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,13 +14,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   });
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  )
+    if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'false') {
+      return (
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      )
+    } else {
+      return <Maintenance />
+  }
+
 }
 
 export default MyApp
