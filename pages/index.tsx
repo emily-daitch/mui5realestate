@@ -63,7 +63,7 @@ const Home: NextPage = () => {
       <div className={styles.construction}>Landing Page Slogan</div>
       </div>
       <div>
-      <Image layout='responsive' height={306} width={1078} src='/logo.jpg'></Image>
+      <Image layout='responsive' height={612} width={510} src='/logo.jpg'></Image>
       </div>
       <main className={styles.main}>
       </main>
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
         </Grid>
       </Grid> */}
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid item key={'testimonial1'} xs={12} md={12} lg={12} padding={5}>
+        {/* <Grid item key={'testimonial1'} xs={12} md={12} lg={12} padding={5}> */}
           <Typography className={styles.text1}>
               <q>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?<br/><br/> [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </q> - Emily
           </Typography>
@@ -115,7 +115,7 @@ I don&apos;t know what we would have done without her!
 
 We will be recommending Paula to others looking to buy homes as well.</q> - Chris
           </Typography> */}
-        </Grid>
+        {/* </Grid> */}
         {/* <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>
               <q>We wanted to give a big shout out to Ashley Bowman and her staging
