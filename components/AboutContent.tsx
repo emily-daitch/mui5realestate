@@ -42,24 +42,7 @@ const AboutContent = () => {
     <Grid className={styles.ashley} container sx={{justifyContent: 'center', alignItems: 'center'}}>
         <Grid item key={'about'} xs={12} sm= {8} md={8} lg={8}>
             <Typography className={styles.backdropAshley} padding={3}>
-                Ashley Bowman is a Georgia native. Her father and
-                grandfather were on the building and construction side of real
-                estate and her mother owned her own interior designing
-                company. As a child, Ashley spent her summers and school
-                holidays on job sites with her parents often coming home
-                with Georgia’s own red clay on her shoes.
-                She graduated from the University of West Georgia with a
-                degree in Early Childhood Education. Soon after graduation
-                she decided that being creative was one of the best parts of
-                being a teacher. From there, she decided to combine her
-                known experience and knowledge of the home building
-                process, her creative passion, and her outward honesty
-                together with the real estate market. Since moving to Atlanta
-                15 years ago, Ashley has lived in Old 4th Ward, Virginia
-                Highlands, East Atlanta, Inman Park, and Candler Park. She
-                purchased her first home in Decatur and now currently
-                resides in Tucker with her husband Craig and their two pugs,
-                Carlton and Richard.
+            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
             </Typography>
         </Grid>
         <Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
@@ -70,7 +53,7 @@ const AboutContent = () => {
                     viewport={{ once: true, amount: 0.2 }}
                   >
               <motion.div className="card" variants={imageAnimateVariants}>
-            <Image src='/ashley.png' layout='responsive' height={3} width={2}></Image>
+            <Image src='/headshot1.webp' layout='responsive' height={3} width={2}></Image>
             </motion.div>
             </motion.div>
         </Grid>
@@ -84,26 +67,14 @@ const AboutContent = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className="card" variants={imageAnimateVariantsPaula}>
-            <Image src='/paula.png' layout='responsive' height={3} width={2}></Image>
+            <Image src='/headshot1.webp' layout='responsive' height={3} width={2}></Image>
           </motion.div>
         </motion.div>
       </Grid>
       <Grid item key={'about'} xs={12} sm={8} md={8} lg={8} padding={3}>
         <Box border={2} borderColor={'#6D2164'}>
             <Typography className={styles.text1b}>
-                Paula Girvan is from the hills of Tennessee but planted her roots in
-                Georgia when she was 18 years old. She decided to call Atlanta
-                home and make a name for herself by owning famous
-                neighborhood pubs, popular Virginia Highland boutiques, and
-                running her own real estate career in the Metro Atlanta area.
-                With almost 25 years of real estate under her belt, she has helped
-                many friends, family, and everyone in between meet their real
-                estate goals. She has continued her passion in real estate with
-                investments, remodels, and developments. WIth that being said,
-                her favorite part is working with people and helping them find
-                their homes and making forever friends. She currently lives in her
-                mid-century modern dream house in Decatur with her 2 dogs and
-                husband Mike.
+            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
             </Typography>
         </Box>
       </Grid>
@@ -111,16 +82,11 @@ const AboutContent = () => {
     <Grid container sx={{justifyContent: 'center', alignItems: 'center'}}>
       <Grid item key={'about'} xs={12} md={8} lg={8}>
         <Typography className={styles.text1}>
-            Paula and Ashley met at a Keller Williams convention in New Orleans. After getting to know
-            each other and realizing they know a lot of the same people and how well they work together,
-            they decided to combine forces and become a team.<br/> Together they really enjoy helping people
-            achieve their real estate dreams, making people happy, and enjoying life to the fullest!<br/><br/>
-            Thank you and we hope to work with you soon!<br/><br/>
-            -Paula & Ashley
+        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
         </Typography>
       </Grid>
       <Grid item key={'pic'} xs={12} md={4} lg={4} padding={3}>
-        <Image src='/group-1.JPG' layout='responsive' height={3} width={2}></Image>
+        <Image src='/lgo.jpg' layout='responsive' height={3} width={2}></Image>
       </Grid>
     </Grid>
     </>

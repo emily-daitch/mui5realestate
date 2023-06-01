@@ -42,7 +42,7 @@ const itemData = [
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
+      <HeadComponent title={'Test Site'} metaData={'Test Site'} />
       <div className={styles.headerImageContainer}>
       <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
@@ -67,13 +67,13 @@ const Home: NextPage = () => {
       </div>
       <main className={styles.main}>
       </main>
-      <HomeSearchForm></HomeSearchForm>
+      {/* <HomeSearchForm></HomeSearchForm> */}
       <br/>
       <AboutContent></AboutContent>
       <p className={styles.text1}>Follow us on Instagram! </p>
       <Typography className={styles.text1}>
-            <Link href='https://www.instagram.com/paula.ashley.homes/'>
-              @paula.ashley.homes
+            <Link href='https://www.instagram.com/'>
+              @example
             </Link>
       </Typography>
       <Grid container sx={{justifyContent: 'center'}}>
@@ -102,14 +102,9 @@ const Home: NextPage = () => {
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>
-              <q>Ashley is hands down the best agent to work with in Decatur! She
-knows the area, is very personable and understands what you
-need (maybe even better than you do)! It’s great to work with
-someone that is part of a team as well, Paula was able to show us
-homes quickly when needed and is also a joy. Thank you Ashley
-and Paula for helping us land the perfect home for our family!</q> - Emily
+              <q>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?<br/><br/> [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </q> - Emily
           </Typography>
-          <Typography className={styles.text1}>
+          {/* <Typography className={styles.text1}>
               <q>My fiance and I cannot say enough good things about Paula!
 As first time homebuyers we asked a lot of questions,
 
@@ -135,14 +130,14 @@ returning and seeing the place we did not even believe it was the same
 place. We placed the house on the market and had several offers and a
 contract within four days. Bravo to Ashley, her team, and staging company!</q> - J&S
           </Typography>
-        </Grid>
+        </Grid> */}
       </Grid>
       <ContactForm></ContactForm>
       <p className={styles.text2}>Contact</p>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid className={styles.logoContainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
-          <Image src='/PAPurpleLogo.png' layout='fixed' height={250} width={250}></Image>
+          <Image src='/logo.jpg' layout='fixed' height={250} width={250}></Image>
         </Grid>
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.text1}>

@@ -14,17 +14,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   });
 
-    if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'false') {
-      return (
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
-      )
-    } else {
-      return <Maintenance />
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  )
 
 }
 
