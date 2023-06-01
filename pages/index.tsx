@@ -114,9 +114,9 @@ She made the process so smooth and stress-free,
 I don&apos;t know what we would have done without her!
 
 We will be recommending Paula to others looking to buy homes as well.</q> - Chris
-          </Typography>
+          </Typography> */}
         </Grid>
-        <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
+        {/* <Grid item key={'testimonial2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>
               <q>We wanted to give a big shout out to Ashley Bowman and her staging
 company, Staged Right ATL. This is the second home we have sold with
