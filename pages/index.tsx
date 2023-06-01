@@ -58,9 +58,9 @@ const Home: NextPage = () => {
           }
         }
       }}>
-        <div className={styles.centeredSlogan}>Passionate, Personal, Professional</div>
+        <div className={styles.centeredSlogan}>Company Title</div>
       </motion.div>
-      <div className={styles.construction}>Site Under Construction</div>
+      <div className={styles.construction}>Landing Page Slogan</div>
       </div>
       <div>
       <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
