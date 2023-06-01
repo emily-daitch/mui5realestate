@@ -63,7 +63,7 @@ const Home: NextPage = () => {
       <div className={styles.construction}>Landing Page Slogan</div>
       </div>
       <div>
-      <Image layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
+      <Image layout='responsive' height={306} width={1078} src='/logo.jpg'></Image>
       </div>
       <main className={styles.main}>
       </main>
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
               @example
             </Link>
       </Typography>
-      <Grid container sx={{justifyContent: 'center'}}>
+      {/* <Grid container sx={{justifyContent: 'center'}}>
         <Grid item key={'pic'} xs={10} md={8} lg={6} padding={'4 4'} sx={{
                 flex: "1",
                 display: "flex",
@@ -98,9 +98,9 @@ const Home: NextPage = () => {
             ))}
           </ImageList>
         </Grid>
-      </Grid>
+      </Grid> */}
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid item key={'testimonial1'} xs={12} md={6} lg={4} padding={5}>
+        <Grid item key={'testimonial1'} xs={12} md={12} lg={12} padding={5}>
           <Typography className={styles.text1}>
               <q>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?<br/><br/> [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </q> - Emily
           </Typography>
@@ -141,19 +141,19 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
         </Grid>
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.text1}>
-          <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          Office <Call /> (404)-564-5560
-          </Link>
+          {/* <Link href='https://www.instagram.com/paula.ashley.homes/'> */}
+          Office <Call /> (111)-111-1111
+          {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          Cell <Call /> (404)-217-0212
-          </Link>
+          {/* <Link href='https://www.instagram.com/paula.ashley.homes/'> */}
+          Cell <Call /> (111)-111-1111
+          {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <Fax /> (404)-564-5561
-          </Link>
+          {/* <Link href='https://www.instagram.com/paula.ashley.homes/'> */}
+          <Fax /> (111)-111-1111
+          {/* </Link> */}
           </Typography>
         </Grid>
         <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
@@ -163,21 +163,21 @@ contract within four days. Bravo to Ashley, her team, and staging company!</q> -
           </Link>
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.facebook.com/paulaandashleyhomes/'>
+          <Link href='https://www.facebook.com/'>
           <Facebook />Follow us on Facebook!
           </Link>
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.instagram.com/paula.ashley.homes/'>
+          <Link href='https://www.instagram.com/'>
           <Instagram />Follow us on Instagram!
           </Link>
           </Typography>
         </Grid>
         <Typography className={styles.text1}>
-            <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+            {/* <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'> */}
               <Google/>We would love to hear your feedback, write a review!
-            </Link>
-          315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
+            {/* </Link> */}
+          Test Address, Decatur, GA 30030
         </Typography>
       </Grid>
       </Paper>
