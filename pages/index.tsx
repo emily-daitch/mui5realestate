@@ -62,8 +62,8 @@ const Home: NextPage = () => {
       </motion.div>
       <div className={styles.construction}>Landing Page Slogan</div>
       </div>
-      <div>
-      <Image layout='responsive' height={612} width={510} src='/logo.jpg'></Image>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <Image layout='fixed' height={510} width={612} src='/logo.jpg'></Image>
       </div>
       <main className={styles.main}>
       </main>
