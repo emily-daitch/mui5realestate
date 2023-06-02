@@ -44,7 +44,7 @@ function ResponsiveAppBar(props: any) {
   });
 
   return (
-    <AppBar position="fixed" sx={{color:'#8D5286', background: trigger ? "#ddd" : "transparent"}}>
+    <AppBar position="fixed" sx={{color:'#8D5286', height: 70, background: trigger ? "#ddd" : "transparent"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -120,7 +120,7 @@ function ResponsiveAppBar(props: any) {
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
+              flexGrow: 0,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',

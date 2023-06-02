@@ -9,8 +9,9 @@ const About = () => {
         <meta name="description" content="About" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-
-      <AboutContent></AboutContent>
+      <div style={{marginTop: 70}}>
+        <AboutContent></AboutContent>
+      </div>
     </>
   )
 }
