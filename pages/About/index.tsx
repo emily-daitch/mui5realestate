@@ -6,7 +6,7 @@ const About = () => {
     <>
       <Head>
         <title>About</title>
-        <meta name="description" content="About Paula and Ashley" />
+        <meta name="description" content="About" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
