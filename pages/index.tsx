@@ -44,7 +44,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <HeadComponent title={'Test Site'} metaData={'Test Site'} />
       <div className={styles.headerImageContainer}>
-      <Image layout='responsive' height={1589} width={2400} src='/Michael Lewis Postcard.jpg'></Image>
+      <Image alt="background photo" layout='responsive' height={1589} width={2400} src='/Michael Lewis Postcard.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
           scale: .8,
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
       <div className={styles.slogan}>Landing Page Slogan</div>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Image layout='fixed' height={515} width={422} src='/logo.png'></Image>
+      <Image alt="logo" layout='fixed' height={515} width={422} src='/logo.png'></Image>
       </div>
       <main className={styles.main}>
       </main>
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
         <Grid className={styles.logoContainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
-          <Image src='/logo.png' layout='fixed' height={240} width={200}></Image>
+          <Image alt="logo" src='/logo.png' layout='fixed' height={240} width={200}></Image>
         </Grid>
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.text1}>

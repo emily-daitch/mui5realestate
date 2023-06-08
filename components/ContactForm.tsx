@@ -202,7 +202,7 @@ const ContactForm = () => {
         <br/>
         <br/>
         <br/>
-        <Image src='/logo.png' layout='responsive' height={250} width={250}></Image>
+        <Image alt="logo" src='/logo.png' layout='responsive' height={250} width={250}></Image>
       </Grid>
     </Grid>
       </form>

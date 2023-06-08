@@ -51,7 +51,7 @@ const AboutContent = () => {
                     viewport={{ once: true, amount: 0.2 }}
                   >
               <motion.div className="card" variants={imageAnimateVariants}>
-            <Image src='/headshot1.webp' layout='responsive' height={3} width={2}></Image>
+            <Image alt="headshot" src='/headshot1.webp' layout='responsive' height={3} width={2}></Image>
             </motion.div>
             </motion.div>
         </Grid>
@@ -65,7 +65,7 @@ const AboutContent = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className="card" variants={imageAnimateVariantsPaula}>
-            <Image src='/headshot2.jpeg' layout='responsive' height={3} width={2}></Image>
+            <Image alt="headshot" src='/headshot2.jpeg' layout='responsive' height={3} width={2}></Image>
           </motion.div>
         </motion.div>
       </Grid>

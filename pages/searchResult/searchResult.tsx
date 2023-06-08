@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, ImageList, ImageListItem, Paper, Tab, Tabs, Typography } from "@mui/material";
 import { url } from "inspector";
 import primaryHomePhoto from "../../public/primaryhomephoto.jpg"
+import Image from "next/image"
 
 type PropertyData = {
     address: string,
@@ -181,9 +182,9 @@ return (
                 //   <img src={url} key={index} alt={`Property at ${selectedProperty.address}`} />
 
                 <ImageListItem key={index}>
-                <img
+                <Image
                     src={`${url}?w=164&h=164&fit=crop&auto=format`}
-                    srcSet={`${url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                    //srcSet={`${url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                     alt={'home image'}
                     loading="lazy"
                 />
