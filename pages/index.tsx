@@ -79,34 +79,34 @@ const Home: NextPage = () => {
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
         <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Call /> Office: (111)-111-1111
+          <Call /> Office:<br/> (111)-111-1111
           {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Call /> Cell: (111)-111-1111
+          <Call /> Cell:<br/> (111)-111-1111
           {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Fax /> (111)-111-1111
+          <Fax /> Fax:<br/> (111)-111-1111
           {/* </Link> */}
           </Typography>
         </Grid>
         <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
           <Typography className={styles.text1}>
           <Link href='mailto:test@email.com'>
-          <Mail />test@email.com
+          <Mail /><br/>test@email.com
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.facebook.com/'>
-          <Facebook />Follow us on Facebook!
+          <Facebook /><br/>Follow us on Facebook!
           </Link>
           </Typography>
           <Typography className={styles.text1}>
           <Link href='https://www.instagram.com/'>
-          <Instagram />Follow us on Instagram!
+          <Instagram /><br/>Follow us on Instagram!
           </Link>
           </Typography>
         </Grid>
