@@ -153,20 +153,6 @@ Archivo Narrow
   margin-top: 10px;
 }
 
-.left {
-  place-items: right;
-  margin-top: 10px;
-  padding-left: 10%;
-  padding-right: 45%;
-}
-
-.right {
-  place-items: right;
-  margin-top: 10px;
-  padding-left: 70%;
-  padding-right: 2%;
-}
-
 .testimonial2 {
   height: 20%;
   background-repeat: no-repeat;
@@ -185,6 +171,20 @@ Archivo Narrow
   place-items: center;
   background-image: url("/5.jpg");
   margin-top: 10px;
+}
+
+.left {
+  place-items: left;
+  margin-top: 10px;
+  padding-left: 10%;
+  padding-right: 45%;
+}
+
+.right {
+  place-items: right;
+  margin-top: 10px;
+  padding-left: 70%;
+  padding-right: 2%;
 }
 
 .textFirstRep {
