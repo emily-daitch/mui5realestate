@@ -29,26 +29,26 @@ Archivo Narrow
   color: white;
 }
 
-.centeredSlogan {
+.companyTitle {
+  color: #373737;
+  font-size: 6vw;
+  font-family: 'Archivo Narrow', sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(2px);
+}
+
+.slogan {
   color: #373737;
   font-size: 6vw;
   font-family: 'Archivo Narrow', sans-serif;
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 30%;
   transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
-}
-
-.construction {
-  color: #373737;
-  font-size: 6vw;
-  font-family: 'Archivo Narrow', sans-serif;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
 }
 
 .main {
@@ -69,19 +69,7 @@ Archivo Narrow
   text-align: center;
 }
 
-.text1 {
-  color: #6D2164;
-  padding: 1rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.text1b {
+.textCF {
   color: #000000;
   padding: 1rem;
   flex: 1;
@@ -93,18 +81,113 @@ Archivo Narrow
   text-align: center;
 }
 
-.ashley {
+.textLeft {
+  color: #000000;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 45%;
+  backdrop-filter: blur(20px);
+}
+
+.textRight {
+  color: #000000;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 2%;
+  margin-left: 70%;
+  backdrop-filter: blur(20px);
+}
+
+.textSecondRep {
+  color: #000000;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* color: white; */
+  margin-left: 50px;
+  margin-right: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.about {
   height: 20%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   place-items: center;
-  background-image: url("/atl_28.jpg");
+  background-image: url("/2.jpg");
 }
 
-.backdropAshley {
+.rep2 {
+  height: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+  background-image: url("/3.jpg");
+  margin-top: 10px;
+}
+
+.testimonial {
+  height: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+  background-image: url("/4.jpg");
+  margin-top: 10px;
+}
+
+.right {
+  place-items: right;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.testimonial2 {
+  height: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+  background-image: url("/1.jpg");
+  margin-top: 10px;
+}
+
+.testimonial3 {
+  height: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+  background-image: url("/5.jpg");
+  margin-top: 10px;
+}
+
+.textFirstRep {
   color: white;
   text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
   backdrop-filter: blur(10px);
 }
 
@@ -120,9 +203,20 @@ Archivo Narrow
   text-align: center;
 }
 
+.text1 {
+  color: #000000;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .text2 {
   color: #8D5286;
-  font-family: 'Bebas Neue', cursive;
   flex: 1;
   display: flex;
   flex-direction: column;

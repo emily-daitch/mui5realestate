@@ -44,7 +44,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <HeadComponent title={'Test Site'} metaData={'Test Site'} />
       <div className={styles.headerImageContainer}>
-      <Image layout='responsive' height={1589} width={2400} src='/bg.jpg'></Image>
+      <Image layout='responsive' height={1589} width={2400} src='/Michael Lewis Postcard.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
           scale: .8,
@@ -58,9 +58,9 @@ const Home: NextPage = () => {
           }
         }
       }}>
-        <div className={styles.centeredSlogan}>Company Title</div>
+        <div className={styles.companyTitle}>Company Title</div>
       </motion.div>
-      <div className={styles.construction}>Landing Page Slogan</div>
+      <div className={styles.slogan}>Landing Page Slogan</div>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <Image layout='fixed' height={515} width={422} src='/logo.png'></Image>
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
           </Typography>
           <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          Cell: (111)-111-1111
+          <Call /> Cell: (111)-111-1111
           {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
