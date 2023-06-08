@@ -91,8 +91,6 @@ Archivo Narrow
   align-content: center;
   align-items: center;
   text-align: center;
-  margin-left: 10%;
-  margin-right: 45%;
   backdrop-filter: blur(20px);
 }
 
@@ -106,8 +104,6 @@ Archivo Narrow
   align-content: center;
   align-items: center;
   text-align: center;
-  margin-right: 2%;
-  margin-left: 70%;
   backdrop-filter: blur(20px);
 }
 
@@ -157,11 +153,18 @@ Archivo Narrow
   margin-top: 10px;
 }
 
+.left {
+  place-items: right;
+  margin-top: 10px;
+  padding-left: 10%;
+  padding-right: 45%;
+}
+
 .right {
   place-items: right;
   margin-top: 10px;
-  padding-left: 50%;
-  width: 50%;
+  padding-left: 70%;
+  padding-right: 2%;
 }
 
 .testimonial2 {
