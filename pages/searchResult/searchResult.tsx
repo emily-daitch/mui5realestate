@@ -4,6 +4,19 @@ import { Box, ImageList, ImageListItem, Paper, Tab, Tabs, Typography } from "@mu
 import { url } from "inspector";
 import primaryHomePhoto from "../../public/primaryhomephoto.jpg"
 import Image from "next/image"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+type PropertyMedia = {
+  url: string
+}
+
+const gallery = [
+  { id: 1, imgUrl: "/1.jpg" },
+  { id: 2, imgUrl: "/2.jpg" },
+  { id: 3, imgUrl: "/3.jpg" },
+  { id: 4, imgUrl: "/4.jpg" },
+];
 
 type PropertyData = {
     address: string,
@@ -36,7 +49,7 @@ interface TabPanelProps {
         {...other}
       >
         {value === index && (
-          <Box sx={{ p: 3 }} >
+          <Box sx={{ p: 3, width: "60vw"}} >
             <Typography>{children}</Typography>
           </Box>
         )}
@@ -53,6 +66,7 @@ interface TabPanelProps {
 
 const SearchResult: React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
+
     const [tab, setTab] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newTab: number) => {
@@ -85,7 +99,8 @@ const SearchResult: React.FC = () => {
                 yearBuilt: 2000,
                 lotSize: 0,
                 predictedValue: 0,
-                media: ['']
+                media: ['http://fake-url'
+                ]
             }
         ]
     );
@@ -99,34 +114,12 @@ const SearchResult: React.FC = () => {
         }
     }, []);
 
-    console.log('propertyData.media', propertyData[0].media);
-
-//   return (
-//     <div>
-//         {propertyData.map((property, index) => (
-//         <div key={index}>
-//             <br/>
-//             <br/>
-//             <p> Demo API, Photos will be blurry for now. </p>
-//             <p>Address: {property.address}</p>
-//             <p>Price: {property.askPrice}</p>
-//             <p>SqFt: {property.sqFt}</p>
-//             <p>Beds: {property.beds}</p>
-//             <p>Baths: {property.baths}</p>
-//             <p>Year Built: {property.yearBuilt}</p>
-//             <p>Lot Size: {property.lotSize}</p>
-//             {property.media.map((url, index) => (
-//                 <img src={url} key={index} alt={`Property at ${property.address}`} />
-//             ))}
-//         </div>
-//         ))}
-//     </div>
-
-//   )
+    console.log('propertyData.media', propertyData[0]?.media);
 
 return (
   <div style={{marginTop: 70}}>
-    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
+    {isMobile 
+      ? <div style={{ display: 'flex', flexDirection: 'row' }}>
         {/* Summary list of results */}
         {/* <div style={{ flex: 1 }}> */}
         <Box
@@ -144,80 +137,153 @@ return (
         sx={{
         padding: 2,
         marginBottom: 1,
-        cursor: 'pointer',
-        '&:hover': {
-            backgroundColor: 'action.hover', // Material-UI theme color for hover
-            boxShadow: 2, // Increase box shadow on hover
-        },
+        // cursor: 'pointer',
+        // '&:hover': {
+        //     backgroundColor: 'action.hover', // Material-UI theme color for hover
+        //     boxShadow: 2, // Increase box shadow on hover
+        // },
         }}
-        onClick={() => setSelectedProperty(property)}
+        //onClick={() => setSelectedProperty(property)}
         >
-            <p>{property.address}</p>
-            <p>${property.askPrice}</p>
+            {property.address}<br/>
+            ${property.askPrice}<br/>
+            Address: {property.address}<br/>
+            Price: {property.askPrice}<br/>
+            SqFt: {property.sqFt}<br/>
+            Beds: {property.beds}<br/>
+            Baths: {property.baths}<br/>
+            Year Built: {property.yearBuilt}<br/>
+            Lot Size: {property.lotSize}<br/>
+            {/* <ImageList sx={{ width: '100%', height: '60vh' }} cols={1}>
+                {property.media.map((url, index) => (
+                //   <img src={url} key={index} alt={`Property at ${selectedProperty.address}`} />
+
+                <ImageListItem key={index}>
+                  <div style={{ position: 'relative', height: '300px' }}>
+                    <Image
+                        src={`${url}?auto=format`}
+                        layout="fill"
+                        objectFit="contain"
+                        loading="lazy"
+                        alt={'home image'}
+                    />
+                </div>
+                </ImageListItem>
+                ))}
+            </ImageList> */}
+              <Carousel>
+                {
+                  property.media.map((item) => {
+                    console.log('image url', item);
+                    return (
+                      <div>
+                        <img 
+                          src={item}
+                          //layout="responsive"
+                          //width= "20%"
+                          //height='400'
+                          //objectFit="contain"
+                          loading="lazy"
+                          alt={'home image'}
+                        />
+                      </div>
+                    )
+                  })
+                }
+              </Carousel>
             </Paper>
         ))}
+        </Box>
+        </div> 
+      : <div style={{ display: 'flex', flexDirection: 'row' }}>
+        {/* Summary list of results */}
+        <Box
+          sx={{
+          flex: 1,
+          width: "100%",
+          overflowY: 'auto',
+          maxHeight: '80vh', // Adjust the max height according to your needs
+          padding: 1,
+          marginRight: 2,
+          }}
+        >
+          {propertyData.map((property, index) => (
+            <Paper
+              key={index}
+              sx={{
+                padding: 2,
+                marginBottom: 1,
+                cursor: 'pointer',
+                '&:hover': {
+                  backgroundColor: 'action.hover', // Material-UI theme color for hover
+                  boxShadow: 2, // Increase box shadow on hover
+                },
+              }}
+              onClick={() => {
+                console.log('selected property', property);
+                setSelectedProperty(property);
+              }}
+            >
+              <p>Addressy: {property.address}</p>
+              <p>${property.askPrice}</p>
+            </Paper>
+          ))}
         </Box>
 
         {/* Detailed information and images */}
         {selectedProperty && (
-        <div style={{ flex: 2, marginLeft: isMobile ? 0 : 16 }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={tab} onChange={handleChange} aria-label="basic tabs example">
+          <div style={{ flex: 2, marginLeft: isMobile ? 0 : 16 }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              <Tabs value={tab} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="Info" {...a11yProps(0)} />
                 <Tab label="Photos" {...a11yProps(1)} />
-            </Tabs>
-        </Box>
-        <TabPanel value={tab} index={0}>
-            <p>Address: {selectedProperty.address}</p>
-            <p>Price: {selectedProperty.askPrice}</p>
-            <p>SqFt: {selectedProperty.sqFt}</p>
-            <p>Beds: {selectedProperty.beds}</p>
-            <p>Baths: {selectedProperty.baths}</p>
-            <p>Year Built: {selectedProperty.yearBuilt}</p>
-            <p>Lot Size: {selectedProperty.lotSize}</p>
-        </TabPanel>
-        <TabPanel value={tab} index={1}>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-                {selectedProperty.media.map((url, index) => (
-                //   <img src={url} key={index} alt={`Property at ${selectedProperty.address}`} />
-
-                <ImageListItem key={index}>
-                <Image
-                    src={`${url}?w=164&h=164&fit=crop&auto=format`}
-                    //srcSet={`${url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                    alt={'home image'}
-                    loading="lazy"
-                />
-                </ImageListItem>
-                ))}
-            </ImageList>
-        </TabPanel>
-        {/* {selectedProperty && (
-        <div style={{ flex: 2, marginLeft: isMobile ? 0 : 16 }}> */}
-            {/* <p>Address: {selectedProperty.address}</p>
-            <p>Price: {selectedProperty.askPrice}</p>
-            <p>SqFt: {selectedProperty.sqFt}</p>
-            <p>Beds: {selectedProperty.beds}</p>
-            <p>Baths: {selectedProperty.baths}</p>
-            <p>Year Built: {selectedProperty.yearBuilt}</p>
-            <p>Lot Size: {selectedProperty.lotSize}</p> */}
-            {/* <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-            {selectedProperty.media.map((url, index) => (
-            //   <img src={url} key={index} alt={`Property at ${selectedProperty.address}`} />
-
-            <ImageListItem key={index}>
-            <img
-                src={`${url}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={'home image'}
+              </Tabs>
+            </Box>
+            <TabPanel value={tab} index={0}>
+              <p>Address: {selectedProperty.address}</p>
+              <p>Price: {selectedProperty.askPrice}</p>
+              <p>SqFt: {selectedProperty.sqFt}</p>
+              <p>Beds: {selectedProperty.beds}</p>
+              <p>Baths: {selectedProperty.baths}</p>
+              <p>Year Built: {selectedProperty.yearBuilt}</p>
+              <p>Lot Size: {selectedProperty.lotSize}</p>
+              {selectedProperty?.media[0] ? 
+              <Image
+                src={`${selectedProperty?.media[0]}`}
+                layout="responsive"
+                width= "400"
+                height= "300"
+                objectFit="contain"
                 loading="lazy"
-            />
-            </ImageListItem>
-            ))}
-            </ImageList> */}
-        </div>
+                alt={'home image'}
+              /> : <>Photo</>}
+            </TabPanel>
+            <TabPanel value={tab} index={1}>
+              <Carousel>
+                {
+                  selectedProperty.media.map((item) => {
+                    console.log('image url', item);
+                    return (
+                      <div>
+                        <img 
+                          src={item}
+                          //layout="responsive"
+                          //width= "20%"
+                          //height='400'
+                          //objectFit="contain"
+                          loading="lazy"
+                          alt={'home image'}
+                        />
+                      </div>
+                    )
+                  })
+                }
+              </Carousel>
+            </TabPanel>
+          </div>
         )}
-    </div>
+      </div>
+    }
   </div>
 );
 
