@@ -173,10 +173,10 @@ return (
             </ImageList> */}
               <Carousel>
                 {
-                  property.media.map((item) => {
+                  property.media.map((item, index) => {
                     console.log('image url', item);
                     return (
-                      <div>
+                      <div key={index}>
                         <img 
                           src={item}
                           //layout="responsive"
@@ -261,10 +261,10 @@ return (
             <TabPanel value={tab} index={1}>
               <Carousel>
                 {
-                  selectedProperty.media.map((item) => {
+                  selectedProperty.media.map((item, index) => {
                     console.log('image url', item);
                     return (
-                      <div>
+                      <div key={index}>
                         <img 
                           src={item}
                           //layout="responsive"
