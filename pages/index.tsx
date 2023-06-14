@@ -67,7 +67,9 @@ const Home: NextPage = () => {
       </div>
       <main className={styles.main}>
       </main>
-      {/* <HomeSearchForm></HomeSearchForm> */}
+      <Typography className={styles.text1}>This site currently uses a test server for MLS data. It is limited, and not all zip codes will return results.<br/>
+       You may use Property Type: House, Zip: 78704, Beds/Baths: 1+, Min Price: $100000, Max Price: 500000 to get some good results.</Typography>
+      <HomeSearchForm></HomeSearchForm>
       <br/>
       <AboutContent></AboutContent>
       <ContactForm></ContactForm>

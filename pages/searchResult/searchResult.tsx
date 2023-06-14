@@ -1,8 +1,5 @@
-import Link from "next/link";
 import React, { useState, useEffect } from 'react';
-import { Box, ImageList, ImageListItem, Paper, Tab, Tabs, Typography } from "@mui/material";
-import { url } from "inspector";
-import primaryHomePhoto from "../../public/primaryhomephoto.jpg"
+import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -121,7 +118,6 @@ return (
     {isMobile 
       ? <div style={{ display: 'flex', flexDirection: 'row' }}>
         {/* Summary list of results */}
-        {/* <div style={{ flex: 1 }}> */}
         <Box
         sx={{
             flex: 1,
@@ -137,13 +133,7 @@ return (
         sx={{
         padding: 2,
         marginBottom: 1,
-        // cursor: 'pointer',
-        // '&:hover': {
-        //     backgroundColor: 'action.hover', // Material-UI theme color for hover
-        //     boxShadow: 2, // Increase box shadow on hover
-        // },
         }}
-        //onClick={() => setSelectedProperty(property)}
         >
             {property.address}<br/>
             ${property.askPrice}<br/>
@@ -154,23 +144,7 @@ return (
             Baths: {property.baths}<br/>
             Year Built: {property.yearBuilt}<br/>
             Lot Size: {property.lotSize}<br/>
-            {/* <ImageList sx={{ width: '100%', height: '60vh' }} cols={1}>
-                {property.media.map((url, index) => (
-                //   <img src={url} key={index} alt={`Property at ${selectedProperty.address}`} />
-
-                <ImageListItem key={index}>
-                  <div style={{ position: 'relative', height: '300px' }}>
-                    <Image
-                        src={`${url}?auto=format`}
-                        layout="fill"
-                        objectFit="contain"
-                        loading="lazy"
-                        alt={'home image'}
-                    />
-                </div>
-                </ImageListItem>
-                ))}
-            </ImageList> */}
+              <br/>The test data server responds with blurry pictures, unfortunately.
               <Carousel>
                 {
                   property.media.map((item, index) => {
@@ -179,10 +153,6 @@ return (
                       <div key={index}>
                         <img 
                           src={item}
-                          //layout="responsive"
-                          //width= "20%"
-                          //height='400'
-                          //objectFit="contain"
                           loading="lazy"
                           alt={'home image'}
                         />
@@ -240,6 +210,7 @@ return (
               </Tabs>
             </Box>
             <TabPanel value={tab} index={0}>
+              The test data server responds with blurry pictures, unfortunately.
               <p>Address: {selectedProperty.address}</p>
               <p>Price: {selectedProperty.askPrice}</p>
               <p>SqFt: {selectedProperty.sqFt}</p>
@@ -259,6 +230,7 @@ return (
               /> : <>Photo</>}
             </TabPanel>
             <TabPanel value={tab} index={1}>
+              The test data server responds with blurry pictures, unfortunately.
               <Carousel>
                 {
                   selectedProperty.media.map((item, index) => {
@@ -267,10 +239,6 @@ return (
                       <div key={index}>
                         <img 
                           src={item}
-                          //layout="responsive"
-                          //width= "20%"
-                          //height='400'
-                          //objectFit="contain"
                           loading="lazy"
                           alt={'home image'}
                         />
