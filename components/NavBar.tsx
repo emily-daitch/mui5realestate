@@ -10,7 +10,7 @@ import Image from 'next/image';
 import logo from './images/PA White Logo.png';
 
 // const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
-const pages = ['Home', 'About', 'Contact'];
+const pages = ['Home', 'About', 'Contact', 'MapSearch'];
 
 function ResponsiveAppBar(props: any) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
