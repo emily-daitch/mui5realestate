@@ -125,6 +125,7 @@ return (
             maxHeight: '80vh', // Adjust the max height according to your needs
             padding: 1,
             marginRight: 2,
+            backgroundColor: "#cccccc"
         }}
         >
         {propertyData.map((property, index) => (
@@ -135,15 +136,24 @@ return (
         marginBottom: 1,
         }}
         >
-            {property.address}<br/>
-            ${property.askPrice}<br/>
-            Address: {property.address}<br/>
-            Price: {property.askPrice}<br/>
-            SqFt: {property.sqFt}<br/>
-            Beds: {property.beds}<br/>
-            Baths: {property.baths}<br/>
-            Year Built: {property.yearBuilt}<br/>
-            Lot Size: {property.lotSize}<br/>
+            <Paper
+            key={index}
+            sx={{
+            padding: 2,
+            marginBottom: 1,
+            backgroundColor: "#eeeeee"
+            }}
+            >
+              <p>
+              <b>Address:</b> {property.address}<br/>
+              <b>Price:</b> ${property.askPrice}<br/>
+              <b>Size:</b> {property.sqFt} sqft.<br/>
+              <b>Beds:</b> {property.beds}<br/>
+              <b>Baths:</b> {property.baths}<br/>
+              <b>Year Built:</b> {property.yearBuilt}<br/>
+              <b>Lot Size:</b> {property.lotSize} acres<br/>
+              </p>
+            </Paper>
               <br/>The test data server responds with blurry pictures, unfortunately.
               <Carousel>
                 {
@@ -172,9 +182,10 @@ return (
           flex: 1,
           width: "100%",
           overflowY: 'auto',
-          maxHeight: '80vh', // Adjust the max height according to your needs
+          maxHeight: '90vh', // Adjust the max height according to your needs
           padding: 1,
           marginRight: 2,
+          backgroundColor: '#dddddd'
           }}
         >
           {propertyData.map((property, index) => (
@@ -194,8 +205,8 @@ return (
                 setSelectedProperty(property);
               }}
             >
-              <p>Addressy: {property.address}</p>
-              <p>${property.askPrice}</p>
+              <p><b>Address:</b> {property.address}</p>
+              <p><b>List Price:</b> ${property.askPrice}</p>
             </Paper>
           ))}
         </Box>
@@ -211,13 +222,15 @@ return (
             </Box>
             <TabPanel value={tab} index={0}>
               The test data server responds with blurry pictures, unfortunately.
-              <p>Address: {selectedProperty.address}</p>
-              <p>Price: {selectedProperty.askPrice}</p>
-              <p>SqFt: {selectedProperty.sqFt}</p>
-              <p>Beds: {selectedProperty.beds}</p>
-              <p>Baths: {selectedProperty.baths}</p>
-              <p>Year Built: {selectedProperty.yearBuilt}</p>
-              <p>Lot Size: {selectedProperty.lotSize}</p>
+              <p>
+              <b>Address:</b> {selectedProperty.address}<br/>
+              <b>Price:</b> ${selectedProperty.askPrice}<br/>
+              <b>Size:</b> {selectedProperty.sqFt} sqft.<br/>
+              <b>Beds:</b> {selectedProperty.beds}<br/>
+              <b>Baths:</b> {selectedProperty.baths}<br/>
+              <b>Year Built:</b> {selectedProperty.yearBuilt}<br/>
+              <b>Lot Size:</b> {selectedProperty.lotSize} acres<br/>
+              </p>
               {selectedProperty?.media[0] ? 
               <Image
                 src={`${selectedProperty?.media[0]}`}
