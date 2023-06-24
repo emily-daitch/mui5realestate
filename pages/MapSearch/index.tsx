@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 const MapComponent = dynamic(
   () => {
-    return import("./mapSearch");
+    return import("../../components/mapSearch");
   },
   { ssr: false }
 );
