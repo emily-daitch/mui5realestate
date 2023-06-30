@@ -23,34 +23,6 @@ Archivo Narrow
   color: white;
 }
 
-.logoContainer {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.companyTitle {
-  color: #373737;
-  font-size: 6vw;
-  font-family: 'Archivo Narrow', sans-serif;
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(2px);
-}
-
-.slogan {
-  color: #373737;
-  font-size: 6vw;
-  font-family: 'Archivo Narrow', sans-serif;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(2px);
-}
-
 .main {
   flex: 1;
   display: flex;

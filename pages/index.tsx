@@ -8,9 +8,11 @@ import AboutContent from '../components/AboutContent';
 import ContactForm from "../components/ContactForm";
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
+import { sloganStyles, titleStyles, logoStyles } from '../components/HomeContentStyles';
 
-import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box } from "@mui/material";
+import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box, Container, Theme } from "@mui/material";
 import { Call, Facebook, Fax, Google, Instagram, Mail } from '@mui/icons-material';
+import { useTheme } from '@mui/material/styles';
 
 const itemData = [
   {
@@ -40,10 +42,16 @@ const itemData = [
 ]
 
 const Home: NextPage = () => {
+  const theme = useTheme();
+  const sloganStyle = sloganStyles(theme);
+  const titleStyle = titleStyles(theme);
+  const logoStyle = logoStyles(theme);
+
   return (
     <div className={styles.container}>
       <HeadComponent title={'Test Site'} metaData={'Test Site'} />
       <div className={styles.headerImageContainer}>
+      <Container sx={{height: {xs: '70px', md: '0px'}}}></Container>
       <Image alt="background photo" layout='responsive' height={1589} width={2400} src='/Michael Lewis Postcard.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
@@ -58,9 +66,9 @@ const Home: NextPage = () => {
           }
         }
       }}>
-        <div className={styles.companyTitle}>Company Title</div>
+        <Box sx={titleStyle.root}>Company Title</Box>
       </motion.div>
-      <div className={styles.slogan}>Landing Page Slogan</div>
+      <Box sx={sloganStyle.root}>Landing Page Slogan</Box>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <Image alt="logo" layout='fixed' height={515} width={422} src='/logo.png'></Image>
@@ -75,7 +83,7 @@ const Home: NextPage = () => {
       <ContactForm></ContactForm>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid className={styles.logoContainer} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
+        <Grid sx={logoStyle.root} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
           <Image alt="logo" src='/logo.png' layout='fixed' height={240} width={200}></Image>
         </Grid>
         <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
