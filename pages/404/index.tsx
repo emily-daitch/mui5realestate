@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useTheme } from '@mui/material/styles';
-import { fourStyles } from "./404Style";
+import { fourStyles } from "../../components/404Style";
 
 const Page404 = () => {
   const theme = useTheme();

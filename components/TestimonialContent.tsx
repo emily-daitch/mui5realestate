@@ -81,7 +81,7 @@ const TestimonialContent = () => {
         // </Stack>
         <Carousel autoPlay={false} sx={testimonialTextStyle.carousel} >
             {testimonialTexts.map((item, i) => (
-                <div style={{justifyContent: 'center', display: 'flex', flexDirection: 'row'}}>
+                <div key={i} style={{justifyContent: 'center', display: 'flex', flexDirection: 'row'}}>
                     <Item key={i} {...item} />
                 </div>
             ))}
