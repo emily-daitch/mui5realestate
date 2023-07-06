@@ -1,13 +1,19 @@
+import React, { useState } from 'react';
+
 import type { NextPage } from 'next'
 import Image from "next/image"
 
 import { motion } from 'framer-motion';
 
 import AboutContent from '../components/AboutContent';
+import TestimonialContent from '../components/TestimonialContent';
 import ContactForm from "../components/ContactForm";
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
 import { titleStyles, sloganStyles, footerStyles, indexStyles } from '../components/HomeContentStyles';
+import { expanderStyles, expanderTextStyles } from '../components/AboutContentStyles';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 import { Typography, Grid, Link, Paper, Container, Box } from "@mui/material";
 import { Call, Facebook, Fax, Google, Instagram, Mail } from '@mui/icons-material';
@@ -46,11 +52,21 @@ const Home: NextPage = () => {
   const indexStyle = indexStyles(theme);
   const titleStyle = titleStyles(theme);
   const sloganStyle = sloganStyles(theme);
+  const expanderStyle = expanderStyles(theme);
+  const expanderTextStyle = expanderTextStyles(theme);
+  const [aboutExpanded, setAboutExpanded] = useState(true);
+  const [testimonialExpanded, setTestimonialExpanded] = useState(true);
+  const toggleAboutExpanded = () => {
+    setAboutExpanded(!aboutExpanded);
+  }
+  const toggleTestimonialExpanded = () => {
+    setTestimonialExpanded(!testimonialExpanded);
+  }
 
   return (
     <div style={indexStyle.container}>
       <HeadComponent title={'Test Site'} metaData={'Test Site'} />
-      <div style={indexStyle.headerImageContainer}>
+      <div title="testD" style={indexStyle.headerImageContainer}>
       <Container sx={{height: {xs: '70px', md: '0px'}}}></Container>
       <Image alt="background photo" layout='intrinsic' height={2000} width={2000} src='/Michael Lewis Postcard.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
@@ -63,7 +79,7 @@ const Home: NextPage = () => {
           opacity: 1,
           transition: {
             delay: .4
-          }
+        }
         }
       }}>
         <Box sx={titleStyle.root}>Paula and Ashley Homes</Box>
@@ -82,11 +98,33 @@ const Home: NextPage = () => {
        You may use Property Type: House, Zip: 78704, Beds/Baths: 1+, Min Price: $100000, Max Price: 500000 to get some good results.</Typography>
       <HomeSearchForm></HomeSearchForm>
       <br/>
-      <AboutContent></AboutContent>
+      <Grid container sx={expanderStyle.root}>
+        <Grid item sx={expanderTextStyle.root} key={'aboutSelector'} onClick={toggleAboutExpanded}>
+          <Typography sx={expanderTextStyle.root}>
+            About Us {aboutExpanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>}
+          </Typography>
+        </Grid>
+      </Grid>
+      {aboutExpanded ? 
+      <AboutContent></AboutContent> :
+      <></>}
+      <Grid container sx={expanderStyle.root}>
+        <Grid item sx={expanderTextStyle.root} key={'testimonialSelector'} onClick={toggleTestimonialExpanded}>
+          <Typography sx={expanderTextStyle.root}>
+            Testimonials {testimonialExpanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>}
+          </Typography>
+        </Grid>
+      </Grid>
+      {testimonialExpanded ?
+      <TestimonialContent></TestimonialContent> :
+      <></> }
       <ContactForm></ContactForm>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
           <Image alt="logo" src='/PA house logo.png' layout='intrinsic' height={306} width={1078}></Image>
+          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={12} lg={12} paddingLeft={5} paddingRight={5}>
+          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
+          </Grid>
         <Grid sx={footerStyle.root} item key={'link1'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
         <Typography style={indexStyle.text1}>
           <Call /> Office:<br/> (404)-564-5560
@@ -115,12 +153,13 @@ const Home: NextPage = () => {
           </Link>
           </Typography>
         </Grid>
-        <Typography style={indexStyle.text1}>
-            <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-              <Google/>We would love to hear your feedback, write a review!
-            </Link>
-          <br/>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
-        </Typography>
+        <Grid sx={footerStyle.root} item key={'link2'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
+          <Typography style={indexStyle.text1}>
+              <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+                <Google/><br/>We would love to hear your feedback, write a review!
+              </Link>
+          </Typography>
+        </Grid>
       </Grid>
       </Paper>
     </div>

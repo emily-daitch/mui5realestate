@@ -1,7 +1,7 @@
-import { Theme, withTheme } from '@mui/material';
+import { Theme } from '@mui/material';
 
   export const aboutstyles = (theme: Theme) => ({
-    root: {
+    rep1: {
     //   padding: theme.spacing(1),
     [theme.breakpoints.down("sm")]: {
         marginTop: '5px',
@@ -10,7 +10,7 @@ import { Theme, withTheme } from '@mui/material';
         backgroundSize: 'cover',
         placeItems: 'center',
         backgroundImage: 'none',
-        backgroundColor: 'gray',
+        backgroundColor: '#cccccc',
       },
       [theme.breakpoints.up("md")]: {
         marginTop: '5px',
@@ -21,6 +21,26 @@ import { Theme, withTheme } from '@mui/material';
         backgroundImage: `url(2.jpg)`,
       },
     },
+    rep2: {
+      //   padding: theme.spacing(1),
+      [theme.breakpoints.down("sm")]: {
+          marginTop: '5px',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          placeItems: 'center',
+          backgroundImage: 'none',
+          backgroundColor: '#cccccc',
+        },
+        [theme.breakpoints.up("md")]: {
+          marginTop: '5px',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          placeItems: 'center',
+          backgroundImage: `url(3.jpg)`,
+        },
+      },
   });
 
   export const expanderStyles = (theme: Theme) => ({
@@ -36,6 +56,7 @@ import { Theme, withTheme } from '@mui/material';
         placeItems: 'center',
         backgroundImage: 'none',
         backgroundColor: 'gray',
+        justifyContent: 'center'
       },
       [theme.breakpoints.up("md")]: {
         marginTop: '5px',
@@ -46,6 +67,7 @@ import { Theme, withTheme } from '@mui/material';
         backgroundSize: 'cover',
         placeItems: 'center',
         backgroundColor: 'gray',
+        justifyContent: 'center'
       },
     },
   });
@@ -77,7 +99,6 @@ import { Theme, withTheme } from '@mui/material';
 
   export const textFirstRepStyles = (theme: Theme) => ({
     root: {
-    //   padding: theme.spacing(1),
     [theme.breakpoints.down("sm")]: {
         color: 'white',
         textAlign: 'center',
@@ -87,6 +108,7 @@ import { Theme, withTheme } from '@mui/material';
         textAlign: 'center',
         marginLeft: '50px',
         marginRight: '50px',
+        backdropFilter: `blur(10px) brightness(60%)`,
       },
     },
   });

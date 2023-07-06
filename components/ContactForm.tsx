@@ -107,17 +107,18 @@ const ContactForm = () => {
         name="contact-form"
         onSubmit={sendEmail as any}
       >
-      <Grid container spacing={2}>
-      <Grid item xs={12} md={8}>
-        {/* Place your form component here */}
-        <Grid item>
-              <Typography sx={contactFormStyle.root} variant="h4" align="center">
-                <strong>Contact Form</strong>
-              </Typography>
-              <Typography sx={contactFormStyle.text2} variant="h6" color="textSecondary" align="center">
+                      <Typography sx={contactFormStyle.text2} variant="h4" color="textSecondary" align="center">
                 Contact Us
               </Typography>
-            </Grid>
+      <Grid container spacing={2} paddingBottom={'10px'}>
+      <Grid item xs={12} md={8}>
+        {/* Place your form component here */}
+        {/* <Grid item> */}
+              {/* <Typography sx={contactFormStyle.root} variant="h4" align="center">
+                <strong>Contact Form</strong>
+              </Typography> */}
+
+            {/* </Grid> */}
             <Grid item spacing={2} padding={1}>
               <TextField
                 placeholder="Name"

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import AboutContent from "../../components/AboutContent";
+import TestimonialContent from "../../components/TestimonialContent";
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
       </Head>
       <div style={{marginTop: 70}}>
         <AboutContent></AboutContent>
+        <TestimonialContent></TestimonialContent>
       </div>
     </>
   )

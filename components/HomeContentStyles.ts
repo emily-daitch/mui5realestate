@@ -13,23 +13,19 @@ import { Theme } from '@mui/material';
     [theme.breakpoints.up("xs")]: {
         color: '#373737',
         fontSize: '6vw',
+        position: 'absolute',
         fontFamily: 'Archivo Narrow',
-        /* position: absolute; */
-        /* top: 40%;
-        left: 30%; */
         width: '60vw',
-        transform: `translate(1%, -55vw)`,
+        transform: `translate(1%, -95vw)`,
         backdropFilter: `blur(2px)`,
       },
     [theme.breakpoints.up("md")]: {
         color: '#373737',
-        fontSize: '48px',
+        fontSize: '6vw',
+        position: 'absolute',
         fontFamily: 'Archivo Narrow',
-        /* position: absolute; */
-        /* top: 40%;
-        left: 30%; */
         width: '80vw',
-        transform: `translate(1%, -55vw)`,
+        transform: `translate(1%, -88vw)`,
         backdropFilter: `blur(2px)`,
       },
     },
@@ -40,23 +36,19 @@ import { Theme } from '@mui/material';
     [theme.breakpoints.up("xs")]: {
         color: '#373737',
         fontSize: '6vw',
+        position: 'absolute',
         fontFamily: 'Archivo Narrow',
-        /* position: absolute; */
-        /* top: 40%;
-        left: 30%; */
         width: '80vw',
-        transform: `translate(1%, -50vw)`,
+        transform: `translate(1%, -87vw)`,
         backdropFilter: `blur(2px)`,
       },
     [theme.breakpoints.up("md")]: {
         color: '#373737',
-        fontSize: '48px',
+        fontSize: '6vw',
+        position: 'absolute',
         fontFamily: 'Archivo Narrow',
-        /* position: absolute; */
-        /* top: 40%;
-        left: 30%; */
         width: '80vw',
-        transform: `translate(1%, -50vw)`,
+        transform: `translate(1%, -80vw)`,
         backdropFilter: `blur(2px)`,
       },
     },
