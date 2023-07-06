@@ -8,7 +8,7 @@ import AboutContent from '../components/AboutContent';
 import ContactForm from "../components/ContactForm";
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
-import { sloganStyles, titleStyles, logoStyles } from '../components/HomeContentStyles';
+import { sloganStyles, titleStyles, logoStyles, footerStyles } from '../components/HomeContentStyles';
 
 import { Typography, Stack, Grid, Link, ImageList, ImageListItem, Paper, Icon, Box, Container, Theme } from "@mui/material";
 import { Call, Facebook, Fax, Google, Instagram, Mail } from '@mui/icons-material';
@@ -46,6 +46,7 @@ const Home: NextPage = () => {
   const sloganStyle = sloganStyles(theme);
   const titleStyle = titleStyles(theme);
   const logoStyle = logoStyles(theme);
+  const footerStyle = footerStyles(theme);
 
   return (
     <div className={styles.container}>
@@ -66,12 +67,15 @@ const Home: NextPage = () => {
           }
         }
       }}>
-        <Box sx={titleStyle.root}>Company Title</Box>
+        {/* <Box sx={titleStyle.root}>Paula and Ashley Homes</Box> */}
       </motion.div>
-      <Box sx={sloganStyle.root}>Landing Page Slogan</Box>
+      {/* <Box sx={sloganStyle.root}>Passionate, Personal, Professional</Box> */}
       </div>
+      <Box sx={titleStyle.root}>Paula and Ashley Homes</Box>
+      <Box sx={sloganStyle.root}>Passionate, Personal, Professional</Box>
+
       <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Image alt="logo" layout='fixed' height={515} width={422} src='/logo.png'></Image>
+      <Image alt="logo" layout='intrinsic' height={306} width={1078} src='/PA house logo.png'></Image>
       </div>
       <main className={styles.main}>
       </main>
@@ -83,48 +87,48 @@ const Home: NextPage = () => {
       <ContactForm></ContactForm>
       <Paper sx={{backgroundColor: 'grey'}}>
       <Grid container sx={{justifyContent: 'center'}}>
-        <Grid sx={logoStyle.root} item key={'logo'} xs={12} md={12} lg={4} padding={5}>
-          <Image alt="logo" src='/logo.png' layout='fixed' height={240} width={200}></Image>
-        </Grid>
-        <Grid className={styles.link1} item key={'link1'} xs={12} md={6} lg={4} padding={5}>
+        {/* <Grid sx={logoStyle.root} item key={'logo'} xs={12} md={12} lg={4} padding={5}> */}
+          <Image alt="logo" src='/PA house logo.png' layout='intrinsic' height={306} width={1078}></Image>
+        {/* </Grid> */}
+        <Grid sx={footerStyle.root} item key={'link1'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
         <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Call /> Office:<br/> (111)-111-1111
+          <Call /> Office:<br/> (404)-564-5560
           {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Call /> Cell:<br/> (111)-111-1111
+          <Call /> Cell:<br/> (770)-722-4897
           {/* </Link> */}
           </Typography>
           <Typography className={styles.text1}>
           {/* <Link href='https://www.instagram.com/'> */}
-          <Fax /> Fax:<br/> (111)-111-1111
+          <Fax /> Fax:<br/> (404)-564-5561
           {/* </Link> */}
           </Typography>
         </Grid>
-        <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} padding={5}>
+        <Grid className={styles.link1} item key={'link2'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
           <Typography className={styles.text1}>
-          <Link href='mailto:test@email.com'>
-          <Mail /><br/>test@email.com
+          <Link href='mailto:PGirvan@kw.com'>
+          <Mail /><br/>PGirvan@kw.com
           </Link>
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.facebook.com/'>
+          <Link href='https://www.facebook.com/paulaandashleyhomes/'>
           <Facebook /><br/>Follow us on Facebook!
           </Link>
           </Typography>
           <Typography className={styles.text1}>
-          <Link href='https://www.instagram.com/'>
+          <Link href='https://www.instagram.com/paula.ashley.homes/'>
           <Instagram /><br/>Follow us on Instagram!
           </Link>
           </Typography>
         </Grid>
         <Typography className={styles.text1}>
-            {/* <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'> */}
+            <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
               <Google/>We would love to hear your feedback, write a review!
-            {/* </Link> */}
-          <br/>Test Address, Decatur, GA 30030
+            </Link>
+          <br/>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030
         </Typography>
       </Grid>
       </Paper>

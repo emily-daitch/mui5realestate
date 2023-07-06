@@ -96,13 +96,13 @@ const ContactForm = () => {
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
-    <div id='contact' style={{marginTop: 100}}>
+    <div id='contact'>
     <form 
         //headers='application/json'
         name="contact-form"
         onSubmit={sendEmail as any}
       >
-        <Grid container spacing={2}>
+      <Grid container spacing={2}>
       <Grid item xs={12} md={8}>
         {/* Place your form component here */}
         <Grid item>
@@ -113,7 +113,7 @@ const ContactForm = () => {
                 Contact Us
               </Typography>
             </Grid>
-            <Grid item spacing={2} padding={2}>
+            <Grid item spacing={2} padding={1}>
               <TextField
                 placeholder="Name"
                 label="Name *"
@@ -131,7 +131,7 @@ const ContactForm = () => {
                 value={formState.values.from_name || ''}
               />
             </Grid>
-            <Grid item spacing={2} padding={2}>
+            <Grid item spacing={2} padding={1}>
               <TextField
                 placeholder="E-mail"
                 label="E-mail *"
@@ -146,7 +146,7 @@ const ContactForm = () => {
                 value={formState.values.reply_to || ''}
               />
             </Grid>
-            <Grid item spacing={2} padding={2}>
+            <Grid item spacing={2} padding={1}>
               <TextField
                 placeholder="Subject"
                 label="Subject *"
@@ -161,7 +161,7 @@ const ContactForm = () => {
                 value={formState.values.subject || ''}
               />
             </Grid>
-            <Grid item spacing={2} padding={2}>
+            <Grid item spacing={2} padding={1}>
               <TextField
                 placeholder="Message"
                 label="Message *"
@@ -178,7 +178,7 @@ const ContactForm = () => {
                 rows={7}
               />
             </Grid>
-            <Grid item paddingBottom={2} sx={{
+            <Grid item sx={{
                   flex: "1",
                   display: "flex",
                   flexDirection: "row",
@@ -197,12 +197,19 @@ const ContactForm = () => {
               </Button>
             </Grid>
       </Grid>
-      <Grid item xs={0} md={4}>
+      <Grid item xs={0} md={4} sx={{
+                  flex: "1",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignContent: "center",
+                  alignItems: "center"
+              }}>
         {/* Place your image component here */}
         <br/>
         <br/>
         <br/>
-        <Image alt="logo" src='/logo.png' layout='responsive' height={250} width={250}></Image>
+        <Image alt="logo" src='/PAPurpleLogo.png' layout='intrinsic' height={250} width={250}></Image>
       </Grid>
     </Grid>
       </form>
