@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Grid, Button, TextField } from '@mui/material';
+import { contactFormStyles } from './HomeContentStyles';
 import Image from "next/image"
 import validate from 'validate.js';
 import emailjs from 'emailjs-com';
 import styles from '../styles/Home.module.css'
+import { useTheme } from '@mui/material/styles';
 
 const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USERID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID as string
@@ -33,6 +35,9 @@ const schema = {
 
 
 const ContactForm = () => {
+
+  const theme = useTheme();
+  const contactFormStyle = contactFormStyles(theme);
 
   const sendEmail = (e: Event) => {
     e.preventDefault();
@@ -106,10 +111,10 @@ const ContactForm = () => {
       <Grid item xs={12} md={8}>
         {/* Place your form component here */}
         <Grid item>
-              <Typography className={styles.textCF} variant="h4" align="center">
+              <Typography sx={contactFormStyle.root} variant="h4" align="center">
                 <strong>Contact Form</strong>
               </Typography>
-              <Typography className={styles.text2} variant="h6" color="textSecondary" align="center">
+              <Typography sx={contactFormStyle.text2} variant="h6" color="textSecondary" align="center">
                 Contact Us
               </Typography>
             </Grid>

@@ -4,7 +4,6 @@ import Image from "next/image"
 import styles from '../styles/Home.module.css'
 
 import { Typography, Grid, Box, Theme, Icon, Stack } from '@mui/material';
-import { makeStyles } from "@mui/styles";
 import { aboutstyles, textFirstRepStyles, testimonialStyles, expanderStyles, expanderTextStyles } from './AboutContentStyles';
 import { useTheme } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -187,13 +186,11 @@ Carlton and Richard.
       </Grid>
     </Grid>
     {testimonialExpanded ? <Stack sx={astyle.root} direction={'row'}>
-      {/* <Grid className={styles.right} item key={'firstTestimonial'} xs={12} md={12} lg={12}> */}
       <ChevronLeft onClick={decrementTestimonial}></ChevronLeft>
         <Typography sx={testimonialStyle.root} >
           {testimonialTexts[testimonial]}
         </Typography>
       <ChevronRight onClick={incrementTestimonial}></ChevronRight>
-      {/* </Grid> */}
     </Stack> : <></>}
     </>
   );

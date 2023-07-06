@@ -1,9 +1,13 @@
 import Link from "next/link";
-import styles from './Page404.module.css';
 import { useEffect } from "react";
 import { useRouter } from 'next/router';
+import { useTheme } from '@mui/material/styles';
+import { fourStyles } from "./404Style";
 
 const Page404 = () => {
+  const theme = useTheme();
+  const fourStyle = fourStyles(theme);
+
   const router = useRouter()
 
   useEffect(()=> {
@@ -13,14 +17,14 @@ const Page404 = () => {
   },[])
 
   return (
-    <div className={styles.container404}>
+    <div style={fourStyle.container404}>
       Opps.
-      <h1 className={styles.header404}>The page you are looking for does not exists.</h1>
+      <h1 style={fourStyle.header404}>The page you are looking for does not exists.</h1>
       <p>
         If you want to return home page
       </p>
       <Link href={'/'} >
-        <a className={styles.button404}>Click here</a>
+        <a style={fourStyle.button404}>Click here</a>
       </Link>
       <p> If you do not click the return home page button page will redirect you to home page in 10 seconds</p>
     </div>

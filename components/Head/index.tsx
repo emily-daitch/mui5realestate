@@ -9,7 +9,7 @@ type HeadComponentPropsType = {
 const HeadComponent = ({title, metaData}: HeadComponentPropsType) => {
   return (
     <Head>
-      <title className={styles.main}>{title}</title>
+      <title>{title}</title>
       <meta name="description" content={metaData} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
