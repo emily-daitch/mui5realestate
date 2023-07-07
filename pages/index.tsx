@@ -35,7 +35,7 @@ const Home: NextPage = ({feed}: any) => {
           <Grid container className="BannerGrid" justifyContent={'center'} direction={'row'}>
               {images.slice(i, i + sliderItems).map((da, index) => {
                 return (
-                <Grid item>
+                <Grid item key={index}>
                 <Grid container justifyContent={'center'} direction={'column'}>
                   <img 
                     style={{padding: '5px'}} 
