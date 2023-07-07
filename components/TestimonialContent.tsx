@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import ChevronRight from '@mui/icons-material/ChevronRight';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
-import { Typography, Stack, Paper, Button, Box } from '@mui/material';
+import { Typography, Stack, Paper, Button, Box, Grid } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import { aboutstyles, testimonialStyles } from './AboutContentStyles';
 import { testimonialTextStyles } from './TestimonialContentStyles';
 import { useTheme } from '@mui/material/styles';
+import Image from "next/image"
 
 const testimonialTexts = [
     { 
@@ -79,13 +80,20 @@ const TestimonialContent = () => {
         //     </Typography>
         // <ChevronRight onClick={incrementTestimonial}></ChevronRight>
         // </Stack>
-        <Carousel autoPlay={false} sx={testimonialTextStyle.carousel} >
-            {testimonialTexts.map((item, i) => (
-                <div key={i} style={{justifyContent: 'center', display: 'flex', flexDirection: 'row'}}>
-                    <Item key={i} {...item} />
-                </div>
-            ))}
-        </Carousel>
+        <Grid container>
+        <Grid item xs={0} md={6} padding={'15px'}>
+            <Image alt="logo" src='/4.jpg' layout='responsive' height={1429} width={2000}></Image>
+        </Grid>
+        <Grid item xs={12} md={6}>
+            <Carousel autoPlay={false} sx={testimonialTextStyle.carousel} >
+                {testimonialTexts.map((item, i) => (
+                    <div key={i} style={{justifyContent: 'center', display: 'flex', flexDirection: 'row'}}>
+                        <Item key={i} {...item} />
+                    </div>
+                ))}
+            </Carousel>
+        </Grid>
+        </Grid>
 
 )};
 

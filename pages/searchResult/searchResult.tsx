@@ -223,14 +223,32 @@ return (
             <TabPanel value={tab} index={0}>
               The test data server responds with blurry pictures, unfortunately.
               <p>
-              <b>Address:</b> {selectedProperty.address}<br/>
-              <b>Price:</b> ${selectedProperty.askPrice}<br/>
+              <b>Address:</b> {selectedProperty.address}
+              {/* <b>Price:</b> ${selectedProperty.askPrice}
               <b>Size:</b> {selectedProperty.sqFt} sqft.<br/>
-              <b>Beds:</b> {selectedProperty.beds}<br/>
+              <b>Beds:</b> {selectedProperty.beds}
               <b>Baths:</b> {selectedProperty.baths}<br/>
-              <b>Year Built:</b> {selectedProperty.yearBuilt}<br/>
-              <b>Lot Size:</b> {selectedProperty.lotSize} acres<br/>
+              <b>Year Built:</b> {selectedProperty.yearBuilt}
+              <b>Lot Size:</b> {selectedProperty.lotSize} acres<br/> */}
               </p>
+              <table style={{border: '1px solid', borderCollapse: 'collapse'}}>
+                <tr>
+                  <th style={{border: '1px solid', padding:'5px'}}>Price</th>
+                  <th style={{border: '1px solid', padding:'5px'}}>Size</th>
+                  <th style={{border: '1px solid', padding:'5px'}}>Beds</th>
+                  <th style={{border: '1px solid', padding:'5px'}}>Baths</th>
+                  <th style={{border: '1px solid', padding:'5px'}}>Year Built</th>
+                  <th style={{border: '1px solid', padding:'5px'}}>Lot Size</th>
+                </tr>
+                <tr>
+                  <td style={{border: '1px solid', padding:'5px'}}>${selectedProperty.askPrice}</td>
+                  <td style={{border: '1px solid', padding:'5px'}}>{selectedProperty.sqFt} sqft.</td>
+                  <td style={{border: '1px solid', padding:'5px'}}>{selectedProperty.beds}</td>
+                  <td style={{border: '1px solid', padding:'5px'}}>{selectedProperty.baths}</td>
+                  <td style={{border: '1px solid', padding:'5px'}}>{selectedProperty.yearBuilt}</td>
+                  <td style={{border: '1px solid', padding:'5px'}}>{selectedProperty.lotSize} acres</td>
+                </tr>
+              </table>
               {selectedProperty?.media[0] ? 
               <Image
                 src={`${selectedProperty?.media[0]}`}

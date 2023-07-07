@@ -67,8 +67,11 @@ const Home: NextPage = () => {
     <div style={indexStyle.container}>
       <HeadComponent title={'Test Site'} metaData={'Test Site'} />
       <div title="testD" style={indexStyle.headerImageContainer}>
-      <Container sx={{height: {xs: '70px', md: '0px'}}}></Container>
-      <Image alt="background photo" layout='intrinsic' height={2000} width={2000} src='/Michael Lewis Postcard.jpg'></Image>
+      <Container sx={{height: {xs: '70px'}}}></Container>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <Image alt="logo" layout='intrinsic' height={306} width={1078} src='/PA house logo.png'></Image>
+      </div>
+      <Image alt="background photo" layout='intrinsic' height={6270} width={10800} src='/Michael Lewis Postcard_Short.jpg'></Image>
       <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
           scale: .8,
@@ -82,16 +85,13 @@ const Home: NextPage = () => {
         }
         }
       }}>
-        <Box sx={titleStyle.root}>Paula and Ashley Homes</Box>
+        {/* <Box sx={titleStyle.root}>Paula and Ashley Homes</Box> */}
       </motion.div>
       <Box sx={sloganStyle.root}>Passionate, Personal, Professional</Box>
       </div>
       {/* <Box sx={titleStyle.root}>Paula and Ashley Homes</Box>
       <Box sx={sloganStyle.root}>Passionate, Personal, Professional</Box> */}
 
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Image alt="logo" layout='intrinsic' height={306} width={1078} src='/PA house logo.png'></Image>
-      </div>
       <main style={indexStyle.main}>
       </main>
       <Typography style={indexStyle.text1}>This site currently uses a test server for MLS data. It is limited, and not all zip codes will return results.<br/>
@@ -120,12 +120,17 @@ const Home: NextPage = () => {
       <></> }
       <ContactForm></ContactForm>
       <Paper sx={{backgroundColor: 'grey'}}>
-      <Grid container sx={{justifyContent: 'center'}}>
-          <Image alt="logo" src='/PA house logo.png' layout='intrinsic' height={306} width={1078}></Image>
-          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={12} lg={12} paddingLeft={5} paddingRight={5}>
-          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
+      <Grid container sx={{justifyContent: 'center', padding: '10px'}}>
+          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={4} lg={4} paddingLeft={5} paddingRight={5}>
+            <Image alt="logo" src='/PA house logo.png' layout='intrinsic' height={306} width={1078}></Image>
           </Grid>
-        <Grid sx={footerStyle.root} item key={'link1'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
+          {/* <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
+          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
+          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+            <Google/><br/>We would love to hear your feedback, write a review!
+          </Link>
+          </Grid> */}
+        <Grid sx={footerStyle.root} item key={'link1'} xs={12} md={3} lg={3} paddingLeft={5} paddingRight={5}>
         <Typography style={indexStyle.text1}>
           <Call /> Office:<br/> (404)-564-5560
           </Typography>
@@ -136,7 +141,7 @@ const Home: NextPage = () => {
           <Fax /> Fax:<br/> (404)-564-5561
           </Typography>
         </Grid>
-        <Grid sx={footerStyle.root} item key={'link2'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
+        <Grid sx={footerStyle.root} item key={'link2'} xs={12} md={3} lg={3} paddingLeft={5} paddingRight={5}>
           <Typography style={indexStyle.text1}>
           <Link href='mailto:PGirvan@kw.com'>
           <Mail /><br/>PGirvan@kw.com
@@ -153,13 +158,14 @@ const Home: NextPage = () => {
           </Link>
           </Typography>
         </Grid>
-        <Grid sx={footerStyle.root} item key={'link2'} xs={12} md={6} lg={4} paddingLeft={5} paddingRight={5}>
-          <Typography style={indexStyle.text1}>
-              <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-                <Google/><br/>We would love to hear your feedback, write a review!
-              </Link>
-          </Typography>
-        </Grid>
+        <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
+          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
+          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
+            <Google/><br/>We would love to hear your feedback, write a review!
+          </Link>
+          </Grid>
+          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
+          </Grid>
       </Grid>
       </Paper>
     </div>

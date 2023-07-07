@@ -39,7 +39,7 @@ import { Theme } from '@mui/material';
         position: 'absolute',
         fontFamily: 'Archivo Narrow',
         width: '80vw',
-        transform: `translate(1%, -87vw)`,
+        transform: `translate(10vw, -57vw)`,
         backdropFilter: `blur(2px)`,
       },
     [theme.breakpoints.up("md")]: {
@@ -48,7 +48,7 @@ import { Theme } from '@mui/material';
         position: 'absolute',
         fontFamily: 'Archivo Narrow',
         width: '80vw',
-        transform: `translate(1%, -80vw)`,
+        transform: `translate(10vw, -50vw)`,
         backdropFilter: `blur(2px)`,
       },
     },

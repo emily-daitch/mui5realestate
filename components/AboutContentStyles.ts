@@ -18,7 +18,7 @@ import { Theme } from '@mui/material';
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         placeItems: 'center',
-        backgroundImage: `url(2.jpg)`,
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(2.jpg)`,
       },
     },
     rep2: {
@@ -38,7 +38,7 @@ import { Theme } from '@mui/material';
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           placeItems: 'center',
-          backgroundImage: `url(3.jpg)`,
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(3.jpg)`,
         },
       },
   });

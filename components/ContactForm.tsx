@@ -194,9 +194,10 @@ const ContactForm = () => {
               }}>
               <Button
                 size="large"
-                variant="contained"
+                variant="outlined"
                 type="submit"
-                color="primary"
+                color="secondary"
+                sx={{borderRadius: '0px'}}
                 disabled={!formState.isValid}
               >
                 Send

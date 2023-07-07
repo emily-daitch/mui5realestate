@@ -13,7 +13,6 @@ const defaultValues = {
 };
 
 interface IFormInput {
-  cityZip: string;
   propertyType: string;
   beds: string;
   baths: string;
@@ -27,7 +26,7 @@ const getPropertyData = async (data: IFormInput) => {
   const baths = data.baths === '4+' ? '4' : data.baths;
   const url = 'https://api.bridgedataoutput.com/api/v2/OData/actris_ref/' +
     `Property?$filter=PropertyType eq \'${propertyType}\' ` +
-    `and PostalCode eq \'${data.cityZip}\' and StandardStatus eq \'Active\' ` +
+    `and PostalCode eq \'78704\' and StandardStatus eq \'Active\' ` +
     `and BedroomsTotal ge ${beds} ` +
     `and BathroomsFull ge ${baths} ` +
     `and ListPrice ge ${data.minPrice} ` +
@@ -55,7 +54,7 @@ const getPropertyData = async (data: IFormInput) => {
   }
 };
 
-export const HomeSearchForm = () => {
+export const MapSearchForm = () => {
   const router = useRouter();
 
   const methods = useForm<IFormInput>({ defaultValues: defaultValues });
@@ -64,7 +63,10 @@ export const HomeSearchForm = () => {
   const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
     console.log(data);
 
-    console.log('getting property data');
+    console.log('getting property data1');
+    const polygons = localStorage.getItem('polygons');
+    console.log('LS polygons', polygons);
+
     const pData = await getPropertyData(data);
     //e.preventDefault();
     const pDataSubsetArray = pData.value.map((home: any) => {
@@ -106,7 +108,7 @@ export const HomeSearchForm = () => {
                 border: "none"
             }}>
               <Grid container sx={{justifyContent: 'center'}}>
-                <Grid item key={'propertyType'} xs={12} md={6} lg={2}>
+                <Grid item key={'propertyType'} xs={12} md={6} lg={3}>
                   <FormInputDropdown name="propertyType" control={control} label="Property Type" options={[
                     {
                       label: "House",
@@ -118,10 +120,7 @@ export const HomeSearchForm = () => {
                     }
                   ]}/>
                 </Grid>
-                <Grid item key={'cityZip'} xs={12} md={6} lg={2}>
-                  <FormInputText name="cityZip" control={control} placeholder="City / Zip" />
-                </Grid>
-                <Grid item key={'beds'} xs={12} md={6} lg={2}>
+                <Grid item key={'beds'} xs={12} md={6} lg={3}>
                   <FormInputDropdown name="beds"control={control} label="Beds" options={[
                     {
                       label: "1+",
@@ -141,7 +140,7 @@ export const HomeSearchForm = () => {
                     }
                   ]}/>
                 </Grid>
-                <Grid item key={'baths'} xs={12} md={6} lg={2}>
+                <Grid item key={'baths'} xs={12} md={6} lg={3}>
                   <FormInputDropdown name="baths" control={control} label="Baths" options={[
                     {
                       label: "1+",
@@ -161,10 +160,10 @@ export const HomeSearchForm = () => {
                     }
                   ]}/>
                 </Grid>
-                <Grid item key={'minPrice'} xs={12} md={6} lg={2}>
+                <Grid item key={'minPrice'} xs={12} md={6} lg={3}>
                   <FormInputCurrency name="minPrice" setValue={setValue} control={control} placeholder="Min. Price ($USD)" />
                 </Grid>
-                <Grid item key={'maxPrice'} xs={12} md={6} lg={2}>
+                <Grid item key={'maxPrice'} xs={12} md={6} lg={3}>
                   <FormInputCurrency name="maxPrice" setValue={setValue} control={control} placeholder="Max. Price ($USD)" />
                 </Grid>
               </Grid>
@@ -178,7 +177,7 @@ export const HomeSearchForm = () => {
                 alignContent: "center",
                 alignItems: "center",
             }}>
-              <Button onClick={handleSubmit(onSubmit)} color={'secondary'} variant={"outlined"} sx={{borderRadius: '0px', marginRight: '10px'}}>
+              <Button onClick={handleSubmit(onSubmit)} variant={"outlined"} sx={{borderRadius: '0px', marginRight: '10px'}}>
                 Search
               </Button>
               <Button onClick={() => reset()} variant={"outlined"} sx={{borderRadius: '0px'}}>
