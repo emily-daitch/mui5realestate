@@ -160,10 +160,10 @@ export const MapSearchForm = () => {
                     }
                   ]}/>
                 </Grid>
-                <Grid item key={'minPrice'} xs={12} md={6} lg={3}>
+                <Grid item key={'minPrice'} xs={12} md={6} lg={4}>
                   <FormInputCurrency name="minPrice" setValue={setValue} control={control} placeholder="Min. Price ($USD)" />
                 </Grid>
-                <Grid item key={'maxPrice'} xs={12} md={6} lg={3}>
+                <Grid item key={'maxPrice'} xs={12} md={6} lg={4}>
                   <FormInputCurrency name="maxPrice" setValue={setValue} control={control} placeholder="Max. Price ($USD)" />
                 </Grid>
               </Grid>
@@ -177,10 +177,10 @@ export const MapSearchForm = () => {
                 alignContent: "center",
                 alignItems: "center",
             }}>
-              <Button onClick={handleSubmit(onSubmit)} variant={"outlined"} sx={{borderRadius: '0px', marginRight: '10px'}}>
+              <Button onClick={handleSubmit(onSubmit)} color={'secondary'} variant={"outlined"} sx={{borderRadius: '0px', marginRight: '10px'}}>
                 Search
               </Button>
-              <Button onClick={() => reset()} variant={"outlined"} sx={{borderRadius: '0px'}}>
+              <Button onClick={() => reset()} color={'secondary'} variant={"outlined"} sx={{borderRadius: '0px'}}>
                 Reset
               </Button>
             </Box>

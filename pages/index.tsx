@@ -8,45 +8,54 @@ import { motion } from 'framer-motion';
 import AboutContent from '../components/AboutContent';
 import TestimonialContent from '../components/TestimonialContent';
 import ContactForm from "../components/ContactForm";
+import InstagramPreview from "../components/InstagramPreview"
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
 import { titleStyles, sloganStyles, footerStyles, indexStyles } from '../components/HomeContentStyles';
 import { expanderStyles, expanderTextStyles } from '../components/AboutContentStyles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import Carousel from 'react-material-ui-carousel';
 
-import { Typography, Grid, Link, Paper, Container, Box } from "@mui/material";
-import { Call, Facebook, Fax, Google, Instagram, Mail } from '@mui/icons-material';
+import { Typography, Grid, Link, Paper, Container, Box, Card } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
-const itemData = [
-  {
-    img: '/insta1.png',
-    title: ''
-  },
-  {
-    img: '/insta2.png',
-    title: ''
-  },
-  {
-    img: '/insta3.png',
-    title: ''
-  },
-  {
-    img: '/insta4.png',
-    title: ''
-  },
-  {
-    img: '/insta1.png',
-    title: ''
-  },
-  {
-    img: '/insta2.png',
-    title: ''
-  }
-]
+const Home: NextPage = ({feed}: any) => {
+  console.log('feed', feed);
+  const images = feed.data.filter((image) => image.media_type === 'CAROUSEL_ALBUM');
+  //const images = feed.data;
 
-const Home: NextPage = () => {
+  const sliderItems: number = images.length > 3 ? 3 : images.length;
+  const items: Array<any> = [];
+
+  for (let i = 0; i < images.length; i += sliderItems) {
+    if (i % sliderItems === 0) {
+      items.push(
+        <Card className="Banner" key={i.toString()}>
+          <Grid container className="BannerGrid" justifyContent={'center'} direction={'row'}>
+              {images.slice(i, i + sliderItems).map((da, index) => {
+                return (
+                <Grid item>
+                <Grid container justifyContent={'center'} direction={'column'}>
+                  <img 
+                    style={{padding: '5px'}} 
+                    width={'220px'} 
+                    height={'220px'} 
+                    key={index.toString()} 
+                    src={da.media_url} 
+                  />
+                  <div style={{overflow: "auto", maxHeight: '150px', textOverflow: "ellipsis", width: '220px'}}>
+                  <Typography width={'200px'}>{da.caption}</Typography>
+                  </div>
+                </Grid>
+                </Grid>);
+              })}
+          </Grid>
+        </Card>
+      );
+    }
+  }
+
   const theme = useTheme();
   const footerStyle = footerStyles(theme);
   const indexStyle = indexStyles(theme);
@@ -98,78 +107,47 @@ const Home: NextPage = () => {
        You may use Property Type: House, Zip: 78704, Beds/Baths: 1+, Min Price: $100000, Max Price: 500000 to get some good results.</Typography>
       <HomeSearchForm></HomeSearchForm>
       <br/>
-      <Grid container sx={expanderStyle.root}>
-        <Grid item sx={expanderTextStyle.root} key={'aboutSelector'} onClick={toggleAboutExpanded}>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}} key={'aboutSelector'} onClick={toggleAboutExpanded}>
           <Typography sx={expanderTextStyle.root}>
             About Us {aboutExpanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>}
           </Typography>
-        </Grid>
-      </Grid>
+        </div>
       {aboutExpanded ? 
       <AboutContent></AboutContent> :
       <></>}
-      <Grid container sx={expanderStyle.root}>
-        <Grid item sx={expanderTextStyle.root} key={'testimonialSelector'} onClick={toggleTestimonialExpanded}>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}} key={'testimonialSelector'} onClick={toggleTestimonialExpanded}>
           <Typography sx={expanderTextStyle.root}>
             Testimonials {testimonialExpanded ? <ExpandLessIcon></ExpandLessIcon> : <ExpandMoreIcon></ExpandMoreIcon>}
           </Typography>
-        </Grid>
-      </Grid>
+        </div>
       {testimonialExpanded ?
       <TestimonialContent></TestimonialContent> :
       <></> }
       <ContactForm></ContactForm>
-      <Paper sx={{backgroundColor: 'grey'}}>
-      <Grid container sx={{justifyContent: 'center', padding: '10px'}}>
-          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={4} lg={4} paddingLeft={5} paddingRight={5}>
-            <Image alt="logo" src='/PA house logo.png' layout='intrinsic' height={306} width={1078}></Image>
-          </Grid>
-          {/* <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
-          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
-          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-            <Google/><br/>We would love to hear your feedback, write a review!
-          </Link>
-          </Grid> */}
-        <Grid sx={footerStyle.root} item key={'link1'} xs={12} md={3} lg={3} paddingLeft={5} paddingRight={5}>
-        <Typography style={indexStyle.text1}>
-          <Call /> Office:<br/> (404)-564-5560
-          </Typography>
-          <Typography style={indexStyle.text1}>
-          <Call /> Cell:<br/> (770)-722-4897
-          </Typography>
-          <Typography style={indexStyle.text1}>
-          <Fax /> Fax:<br/> (404)-564-5561
-          </Typography>
-        </Grid>
-        <Grid sx={footerStyle.root} item key={'link2'} xs={12} md={3} lg={3} paddingLeft={5} paddingRight={5}>
-          <Typography style={indexStyle.text1}>
-          <Link href='mailto:PGirvan@kw.com'>
-          <Mail /><br/>PGirvan@kw.com
-          </Link>
-          </Typography>
-          <Typography style={indexStyle.text1}>
-          <Link href='https://www.facebook.com/paulaandashleyhomes/'>
-          <Facebook /><br/>Follow us on Facebook!
-          </Link>
-          </Typography>
-          <Typography style={indexStyle.text1}>
-          <Link href='https://www.instagram.com/paula.ashley.homes/'>
-          <Instagram /><br/>Follow us on Instagram!
-          </Link>
-          </Typography>
-        </Grid>
-        <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
-          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
-          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-            <Google/><br/>We would love to hear your feedback, write a review!
-          </Link>
-          </Grid>
-          <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
-          </Grid>
-      </Grid>
-      </Paper>
+      {/* InstagramPreview To be implemented, must pass data from get static props here */}
+      <InstagramPreview></InstagramPreview>
+      {images && 
+        <><Typography display={'flex'} flexDirection={'row'} justifyContent={'center'}>Follow us on Instagram! &nbsp;<Link href='https://www.instagram.com/27.plants/'>@27.plants</Link></Typography><br/>
+        <Carousel animation="slide" autoPlay={false} cycleNavigation>
+          {items}
+        </Carousel></>
+      }
     </div>
   )
+}
+
+export const getStaticProps = async () => {
+  console.log('getStaticProps');
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
+  const data = await fetch(url);
+  const feed = await data.json();
+
+  //console.log('feed', feed);
+  return {
+    props: {
+      feed
+    }
+  }
 }
 
 export default Home

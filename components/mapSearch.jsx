@@ -250,8 +250,8 @@ const MapComponent = () => {
             ?
             <div className='map-container' style={{ position: 'relative' }}>
                 <Typography>Choose by regions:</Typography>
-                <Button onClick={chooseDowntown} variant={"outlined"} sx={{borderRadius: '0px', margin: '5px'}}>Downtown</Button>
-                <Button onClick={chooseTucker} variant={"outlined"} sx={{borderRadius: '0px', margin: '5px'}}>Tucker</Button>
+                <Button onClick={chooseDowntown} color={'secondary'} variant={"outlined"} sx={{borderRadius: '0px', margin: '5px'}}>Downtown</Button>
+                <Button onClick={chooseTucker} color={'secondary'} variant={"outlined"} sx={{borderRadius: '0px', margin: '5px'}}>Tucker</Button>
                 {
                     drawingManagerRef.current
                     &&
