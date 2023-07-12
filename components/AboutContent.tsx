@@ -8,56 +8,56 @@ import { aboutstyles, textFirstRepStyles, testimonialStyles } from './AboutConte
 import { useTheme } from '@mui/material/styles';
 
 const imageAnimateVariants: Variants = {
-  offscreen: {
-    x: 500
-  },
-  onscreen: {
-    x: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
-  }
+	offscreen: {
+		x: 500
+	},
+	onscreen: {
+		x: 0,
+		transition: {
+			type: "spring",
+			bounce: 0.4,
+			duration: 0.8
+		}
+	}
 };
 
 const imageAnimateVariantsPaula: Variants = {
-  offscreen: {
-    x: -400
-  },
-  onscreen: {
-    x: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
-  }
+	offscreen: {
+		x: -400
+	},
+	onscreen: {
+		x: 0,
+		transition: {
+			type: "spring",
+			bounce: 0.4,
+			duration: 0.8
+		}
+	}
 };
 
 const AboutContent = () => {
 
-  const theme = useTheme();
-  const astyle = aboutstyles(theme);
-  const firstRepStyle = textFirstRepStyles(theme);
+	const theme = useTheme();
+	const astyle = aboutstyles(theme);
+	const firstRepStyle = textFirstRepStyles(theme);
 
-  return (
-    <>
-        <Grid container sx={astyle.rep1}>
-          <Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
-            {/* <motion.div
-                        className="card-container"
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.2 }}
-                      >
-                  <motion.div className="card" variants={imageAnimateVariants}> */}
-                <Image alt="headshot" src='/Paula Headshot Postcard.JPG' layout='responsive' height={3} width={3}></Image>
-                {/* </motion.div>
-              </motion.div> */}
-          </Grid>
-          <Grid item key={'firstRep'} xs={12} sm= {8} md={8} lg={8}>
-              <Typography sx={firstRepStyle.root} padding={3}>
+	return (
+		<>
+			<Grid container sx={astyle.rep1}>
+				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
+					<motion.div
+						className="card-container"
+						initial="offscreen"
+						whileInView="onscreen"
+						viewport={{ once: true, amount: 0.2 }}
+					>
+						<motion.div className="card" variants={imageAnimateVariants}>
+							<Image alt="headshot" src='/Paula Headshot Postcard.JPG' layout='responsive' height={3} width={3}></Image>
+						</motion.div>
+					</motion.div>
+				</Grid>
+				<Grid item key={'firstRep'} xs={12} sm= {8} md={8} lg={8}>
+					<Typography sx={firstRepStyle.root} padding={3}>
               Paula Girvan is from the hills of Tennessee but planted her roots in
 Georgia when she was 18 years old. She decided to call Atlanta
 home and make a name for herself by owning famous
@@ -72,23 +72,11 @@ their homes and making forever friends. She currently lives in her
 mid-century modern dream house in Decatur with her 2 dogs and
 
 husband Mike. </Typography>
-          </Grid>
-        </Grid>
-        <Grid container sx={astyle.rep2}>
-          <Grid item key={'pic'} xs={12} sm={4}  md={4} lg={4} padding={3}>
-            {/* <motion.div
-              className="card-container"
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <motion.div className="card" variants={imageAnimateVariantsPaula}> */}
-                <Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
-              {/* </motion.div>
-            </motion.div> */}
-          </Grid>
-          <Grid item key={'secondRep'} xs={12} sm={8} md={8} lg={8} >
-                <Typography sx={firstRepStyle.root} padding={3}>
+				</Grid>
+			</Grid>
+			<Grid container sx={astyle.rep2}>
+				<Grid item key={'secondRep'} xs={12} sm={8} md={8} lg={8} >
+					<Typography sx={firstRepStyle.root} padding={3}>
                 Ashley Bowman is a Georgia native. Her father and
 grandfather were on the building and construction side of real
 estate and her mother owned her own interior designing
@@ -108,11 +96,23 @@ purchased her first home in Decatur and now currently
 resides in Tucker with her husband Craig and their two pugs,
 
 Carlton and Richard.
-                </Typography>
-          </Grid>
-        </Grid>
-    </>
-  );
+					</Typography>
+				</Grid>
+				<Grid item key={'pic'} xs={12} sm={4}  md={4} lg={4} padding={3}>
+					<motion.div
+						className="card-container"
+						initial="offscreen"
+						whileInView="onscreen"
+						viewport={{ once: true, amount: 0.2 }}
+					>
+						<motion.div className="card" variants={imageAnimateVariantsPaula}>
+							<Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
+						</motion.div>
+					</motion.div>
+				</Grid>
+			</Grid>
+		</>
+	);
 };
 
 export default AboutContent;

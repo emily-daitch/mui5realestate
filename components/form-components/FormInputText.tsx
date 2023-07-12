@@ -4,26 +4,26 @@ import TextField from "@mui/material/TextField";
 import { FormInputProps } from "./FormInputProps";
 
 export const FormInputText = ({ name, control, label, placeholder }: FormInputProps) => {
-  return (
-    <Controller
-      name={name}
-      control={control}
-      render={({
-        field: { onChange, value },
-        fieldState: { error },
-        formState,
-      }) => (
-        <TextField
-          helperText={error ? error.message : null}
-          size="small"
-          error={!!error}
-          onChange={onChange}
-          value={value}
-          fullWidth
-          variant="outlined"
-          placeholder={placeholder}
-        />
-      )}
-    />
-  );
+	return (
+		<Controller
+			name={name}
+			control={control}
+			render={({
+				field: { onChange, value },
+				fieldState: { error },
+				formState,
+			}) => (
+				<TextField
+					helperText={error ? error.message : null}
+					size="small"
+					error={!!error}
+					onChange={onChange}
+					value={value}
+					fullWidth
+					variant="standard"
+					placeholder={placeholder}
+				/>
+			)}
+		/>
+	);
 };

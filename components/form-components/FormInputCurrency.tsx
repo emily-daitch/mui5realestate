@@ -7,51 +7,51 @@ import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 
 export const FormInputCurrency = ({ name, control, setValue, placeholder }: FormInputProps) => {
-  const [number, setNumber] = useState('');
-  const [rawNumber, setRawNumber] = useState(0);
+	const [number, setNumber] = useState('');
+	const [rawNumber, setRawNumber] = useState(0);
 
-  useEffect(() => {
-    if (rawNumber) setValue(name, rawNumber);
-  }, [rawNumber]);
+	useEffect(() => {
+		if (rawNumber) setValue(name, rawNumber);
+	}, [rawNumber]);
 
-  const handleChange = (event: any) => {
-    const { value } = event.target;
+	const handleChange = (event: any) => {
+		const { value } = event.target;
 
-    // Remove any existing commas from the input
-    const sanitizedValue = value.replace(/,/g, '');
+		// Remove any existing commas from the input
+		const sanitizedValue = value.replace(/,/g, '');
 
-    // Format the number with commas
-    const formattedValue = Number(sanitizedValue).toLocaleString();
+		// Format the number with commas
+		const formattedValue = Number(sanitizedValue).toLocaleString();
 
-    setNumber(formattedValue);
-    setRawNumber(sanitizedValue);
-};
+		setNumber(formattedValue);
+		setRawNumber(sanitizedValue);
+	};
 
-  return (
-    <Controller
-      name={name}
-      control={control}
-      render={({
-        field: { onChange, value },
-        fieldState: { error },
-        formState,
-      }) => (
-        <TextField
-          helperText={error ? error.message : null}
-          size="small"
-          error={!!error}
-          onChange={handleChange}
-          value={number}
-          fullWidth
-          variant="outlined"
-          placeholder={placeholder}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">$</InputAdornment>,
-          }}
-        />
-        // <Input name="maxPrice" placeholder="Max. Price ($USD)"
-        // startAdornment={<InputAdornment position="start">$</InputAdornment>} />
-      )}
-    />
-  );
+	return (
+		<Controller
+			name={name}
+			control={control}
+			render={({
+				field: { onChange, value },
+				fieldState: { error },
+				formState,
+			}) => (
+				<TextField
+					helperText={error ? error.message : null}
+					size="small"
+					error={!!error}
+					onChange={handleChange}
+					value={number}
+					fullWidth
+					variant="standard"
+					placeholder={placeholder}
+					InputProps={{
+						startAdornment: <InputAdornment position="start">$</InputAdornment>,
+					}}
+				/>
+				// <Input name="maxPrice" placeholder="Max. Price ($USD)"
+				// startAdornment={<InputAdornment position="start">$</InputAdornment>} />
+			)}
+		/>
+	);
 };

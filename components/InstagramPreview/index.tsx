@@ -24,13 +24,13 @@ import { indexStyles, footerStyles } from '../../components/HomeContentStyles';
 */
 
 const InstagramPreview = () => {
-  const theme = useTheme();
+	const theme = useTheme();
 
-  return (
-    <Paper sx={{backgroundColor: 'grey'}}>
+	return (
+		<Paper sx={{backgroundColor: 'grey'}}>
 
-    </Paper>
-  )
+		</Paper>
+	)
 }
 
 export default InstagramPreview;

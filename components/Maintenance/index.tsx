@@ -1,11 +1,11 @@
 //import HomeHeader from "../homeHeader";
 
 const Maintenance = () => {
-  return (
-    <>
+	return (
+		<>
       Site Under Maintenance
-    </>
-  )
+		</>
+	)
 }
 
 export default Maintenance;

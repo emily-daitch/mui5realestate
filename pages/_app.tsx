@@ -5,22 +5,22 @@ import Maintenance from "../components/Maintenance";
 import { createTheme, ThemeProvider } from '@mui/material'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const theme = createTheme({
-    palette: {
-      mode: "light",
-      primary: {
-        main: '#c0c0c0'
-      }
-    }
-  });
+	const theme = createTheme({
+		palette: {
+			mode: "light",
+			primary: {
+				main: '#c0c0c0'
+			}
+		}
+	});
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  )
+	return (
+		<ThemeProvider theme={theme}>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		</ThemeProvider>
+	)
 
 }
 

@@ -12,216 +12,216 @@ const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID as string
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICEID as string
 
 const schema = {
-  from_name: {
-    presence: { allowEmpty: false, message: 'is required' },
-    length: {
-      maximum: 128,
-    },
-  } as any,
-  reply_to: {
-    presence: { allowEmpty: false, message: 'is required' },
-    email: true,
-    length: {
-      maximum: 300,
-    },
-  } as any,
-  message: {
-    presence: { allowEmpty: false, message: 'isrequired' },
-    length: {
-        maximum: 1000,
-    }
-  } as any
+	from_name: {
+		presence: { allowEmpty: false, message: 'is required' },
+		length: {
+			maximum: 128,
+		},
+	} as any,
+	reply_to: {
+		presence: { allowEmpty: false, message: 'is required' },
+		email: true,
+		length: {
+			maximum: 300,
+		},
+	} as any,
+	message: {
+		presence: { allowEmpty: false, message: 'isrequired' },
+		length: {
+			maximum: 1000,
+		}
+	} as any
 };
 
 
 const ContactForm = () => {
 
-  const theme = useTheme();
-  const contactFormStyle = contactFormStyles(theme);
+	const theme = useTheme();
+	const contactFormStyle = contactFormStyles(theme);
 
-  const sendEmail = (e: Event) => {
-    e.preventDefault();
-        console.log('user id', USER_ID);
-        console.log('service id', SERVICE_ID);
-        emailjs.sendForm(
-          SERVICE_ID,
-          TEMPLATE_ID,
+	const sendEmail = (e: Event) => {
+		e.preventDefault();
+		console.log('user id', USER_ID);
+		console.log('service id', SERVICE_ID);
+		emailjs.sendForm(
+			SERVICE_ID,
+			TEMPLATE_ID,
           e.target as any,
           USER_ID
-        )
-        .then((res) => console.log('SUCCESS!', res.status, res.text))
-        .catch(error => console.log('FAILED...', error));
+		)
+			.then((res) => console.log('SUCCESS!', res.status, res.text))
+			.catch(error => console.log('FAILED...', error));
 
-        setFormState(formState => ({
-          ...formState,
-          isValid: false,
-          values: {},
-          touched: {},
-          errors: {}
-        }));
-  }
+		setFormState(formState => ({
+			...formState,
+			isValid: false,
+			values: {},
+			touched: {},
+			errors: {}
+		}));
+	}
 
-  const [formState, setFormState] = useState({
-    isValid: false,
-    values: {} as any,
-    touched: {} as any,
-    errors: {} as any,
-  });
+	const [formState, setFormState] = useState({
+		isValid: false,
+		values: {} as any,
+		touched: {} as any,
+		errors: {} as any,
+	});
 
-  useEffect(() => {
-    const errors = validate(formState.values, schema);
+	useEffect(() => {
+		const errors = validate(formState.values, schema);
 
-    setFormState(formState => ({
-      ...formState,
-      isValid: errors ? false : true,
-      errors: errors || {},
-    }));
-  }, [formState.values]);
+		setFormState(formState => ({
+			...formState,
+			isValid: errors ? false : true,
+			errors: errors || {},
+		}));
+	}, [formState.values]);
 
-  const handleChange = (e: any) => {
-    e.persist();
+	const handleChange = (e: any) => {
+		e.persist();
 
-    setFormState(formState => ({
-      ...formState,
-      values: {
-        ...formState.values,
-        [e.target.name]:
+		setFormState(formState => ({
+			...formState,
+			values: {
+				...formState.values,
+				[e.target.name]:
           e.target.type === 'checkbox'
-            ? e.target.checked
-            : e.target.value,
-      },
-      touched: {
-        ...formState.touched,
-        [e.target.name]: true,
-      },
-    }));
-  };
+          	? e.target.checked
+          	: e.target.value,
+			},
+			touched: {
+				...formState.touched,
+				[e.target.name]: true,
+			},
+		}));
+	};
 
-  const hasError = (field: any) =>
-    formState.touched[field] && formState.errors[field] ? true : false;
+	const hasError = (field: any) =>
+		formState.touched[field] && formState.errors[field] ? true : false;
 
-  return (
-    <div id='contact'>
-    <form 
-        //headers='application/json'
-        name="contact-form"
-        onSubmit={sendEmail as any}
-      >
-                      <Typography sx={contactFormStyle.text2} variant="h4" color="textSecondary" align="center">
-                Contact Us
-              </Typography>
-      <Grid container spacing={2} paddingBottom={'10px'}>
-      <Grid item xs={12} md={8}>
-        {/* Place your form component here */}
-        {/* <Grid item> */}
-              {/* <Typography sx={contactFormStyle.root} variant="h4" align="center">
+	return (
+		<div id='contact'>
+			<form 
+				//headers='application/json'
+				name="contact-form"
+				onSubmit={sendEmail as any}
+			>
+				<Typography sx={contactFormStyle.text2} variant="h4" color="textSecondary" align="center" paddingTop={'4px'}>
+                CONTACT US
+				</Typography>
+				<Grid container spacing={2} paddingBottom={'10px'} paddingLeft={'8px'}>
+					<Grid item xs={12} md={8}>
+						{/* Place your form component here */}
+						{/* <Grid item> */}
+						{/* <Typography sx={contactFormStyle.root} variant="h4" align="center">
                 <strong>Contact Form</strong>
               </Typography> */}
 
-            {/* </Grid> */}
-            <Grid item spacing={2} padding={1}>
-              <TextField
-                placeholder="Name"
-                label="Name *"
-                variant="outlined"
-                size="medium"
-                name="from_name"
-                id="from_name"
-                fullWidth
-                helperText={
-                  hasError('from_name') ? formState.errors.from_name[0] : null
-                }
-                error={hasError('from_name')}
-                onChange={handleChange}
-                type="text"
-                value={formState.values.from_name || ''}
-              />
-            </Grid>
-            <Grid item spacing={2} padding={1}>
-              <TextField
-                placeholder="E-mail"
-                label="E-mail *"
-                variant="outlined"
-                size="medium"
-                name="reply_to"
-                fullWidth
-                helperText={hasError('reply_to') ? formState.errors.reply_to[0] : null}
-                error={hasError('reply_to')}
-                onChange={handleChange}
-                type="email"
-                value={formState.values.reply_to || ''}
-              />
-            </Grid>
-            <Grid item spacing={2} padding={1}>
-              <TextField
-                placeholder="Subject"
-                label="Subject *"
-                variant="outlined"
-                size="medium"
-                name="subject"
-                fullWidth
-                helperText={hasError('subject') ? formState.errors.subject[0] : null}
-                error={hasError('subject')}
-                onChange={handleChange}
-                type="text"
-                value={formState.values.subject || ''}
-              />
-            </Grid>
-            <Grid item spacing={2} padding={1}>
-              <TextField
-                placeholder="Message"
-                label="Message *"
-                variant="outlined"
-                size="medium"
-                name="message"
-                fullWidth
-                helperText={hasError('message') ? formState.errors.message[0] : null}
-                error={hasError('message')}
-                onChange={handleChange}
-                type="text"
-                value={formState.values.message || ''}
-                multiline={true}
-                rows={7}
-              />
-            </Grid>
-            <Grid item sx={{
-                  flex: "1",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  alignItems: "center"
-              }}>
-              <Button
-                size="large"
-                variant="outlined"
-                type="submit"
-                color="secondary"
-                sx={{borderRadius: '0px'}}
-                disabled={!formState.isValid}
-              >
+						{/* </Grid> */}
+						<Grid item spacing={2} padding={1}>
+							<TextField
+								placeholder="Name"
+								label="Name *"
+								variant="standard"
+								size="medium"
+								name="from_name"
+								id="from_name"
+								fullWidth
+								helperText={
+									hasError('from_name') ? formState.errors.from_name[0] : null
+								}
+								error={hasError('from_name')}
+								onChange={handleChange}
+								type="text"
+								value={formState.values.from_name || ''}
+							/>
+						</Grid>
+						<Grid item spacing={2} padding={1}>
+							<TextField
+								placeholder="E-mail"
+								label="E-mail *"
+								variant="standard"
+								size="medium"
+								name="reply_to"
+								fullWidth
+								helperText={hasError('reply_to') ? formState.errors.reply_to[0] : null}
+								error={hasError('reply_to')}
+								onChange={handleChange}
+								type="email"
+								value={formState.values.reply_to || ''}
+							/>
+						</Grid>
+						<Grid item spacing={2} padding={1}>
+							<TextField
+								placeholder="Subject"
+								label="Subject *"
+								variant="standard"
+								size="medium"
+								name="subject"
+								fullWidth
+								helperText={hasError('subject') ? formState.errors.subject[0] : null}
+								error={hasError('subject')}
+								onChange={handleChange}
+								type="text"
+								value={formState.values.subject || ''}
+							/>
+						</Grid>
+						<Grid item spacing={2} padding={1}>
+							<TextField
+								placeholder="Message"
+								label="Message *"
+								variant="standard"
+								size="medium"
+								name="message"
+								fullWidth
+								helperText={hasError('message') ? formState.errors.message[0] : null}
+								error={hasError('message')}
+								onChange={handleChange}
+								type="text"
+								value={formState.values.message || ''}
+								multiline={true}
+								rows={7}
+							/>
+						</Grid>
+						<Grid item sx={{
+							flex: "1",
+							display: "flex",
+							flexDirection: "row",
+							justifyContent: "center",
+							alignContent: "center",
+							alignItems: "center"
+						}}>
+							<Button
+								size="large"
+								variant="outlined"
+								type="submit"
+								color="secondary"
+								sx={{borderRadius: '0px'}}
+								disabled={!formState.isValid}
+							>
                 Send
-              </Button>
-            </Grid>
-      </Grid>
-      <Grid item xs={0} md={4} sx={{
-                  flex: "1",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  alignItems: "center"
-              }}>
-        {/* Place your image component here */}
-        <br/>
-        <br/>
-        <br/>
-        <Image alt="logo" src='/PAPurpleLogo.png' layout='intrinsic' height={250} width={250}></Image>
-      </Grid>
-    </Grid>
-      </form>
-    </div>
-  );
+							</Button>
+						</Grid>
+					</Grid>
+					<Grid item xs={0} md={4} sx={{
+						flex: "1",
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "center",
+						alignContent: "center",
+						alignItems: "center"
+					}}>
+						{/* Place your image component here */}
+						<br/>
+						<br/>
+						<br/>
+						<Image alt="logo" src='/PAPurpleLogo.png' layout='intrinsic' height={250} width={250}></Image>
+					</Grid>
+				</Grid>
+			</form>
+		</div>
+	);
 };
 
 export default ContactForm;
