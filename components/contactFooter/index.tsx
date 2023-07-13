@@ -12,12 +12,6 @@ const ContactFooter = () => {
 	return (
 		<Paper sx={{backgroundColor: 'grey'}}>
 			<Grid container sx={{justifyContent: 'center', padding: '10px'}}>
-				{/* <Grid sx={footerStyle.root} item key={'addy'} xs={12} md={6} lg={6} paddingLeft={5} paddingRight={5}>
-          <Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
-          <Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-            <Google/><br/>We would love to hear your feedback, write a review!
-          </Link>
-          </Grid> */}
 				<Grid sx={footerStyle.root} item key={'link1'} xs={12} md={3} lg={3} paddingLeft={1} paddingRight={2}>
 					<Typography style={indexStyle.text1}>
 						<Call /> Office:<br/> (404)-564-5560
@@ -52,7 +46,9 @@ const ContactFooter = () => {
 				<Grid sx={footerStyle.root} item key={'addy'} xs={12} md={12} lg={12} paddingLeft={5} paddingRight={5}>
 					<Typography>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
 					<Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
-						<Google/><br/>We would love to hear your feedback, write a review!
+						<Typography>
+							<Google/><br/>We would love to hear your feedback, write a review!
+						</Typography>
 					</Link>
 				</Grid>
 				<Grid sx={footerStyle.root} item key={'addy'} xs={12} md={12} lg={12} paddingLeft={5} paddingRight={5}>

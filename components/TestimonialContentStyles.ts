@@ -14,8 +14,8 @@ export const testimonialTextStyles = (theme: Theme) => ({
 			backdropFilter: `blur(10px) brightness(60%)`,
 			marginTop: '10px',
 			marginBottom: '5px',
-			marginLeft: '30px',
-			marginRight: '30px'
+			marginLeft: '10px',
+			marginRight: '10px'
 		},
 	},
 	p: {
@@ -42,7 +42,7 @@ export const testimonialTextStyles = (theme: Theme) => ({
 			justifyContent: 'center', 
 			alignContent: 'center', 
 			alignItems:'center',
-			margin: '20px',
+			margin: '10px',
 			paddingTop: '15px'
 		},
 	},
