@@ -5,7 +5,7 @@ import { indexStyles, footerStyles } from '../../components/HomeContentStyles';
 
 import Image from "next/image";
 
-const ContactFooter = () => {
+const ContactFooter = ({deviceType}) => {
 	const theme = useTheme();
 	const indexStyle = indexStyles(theme);
 	const footerStyle = footerStyles(theme);
@@ -14,10 +14,16 @@ const ContactFooter = () => {
 			<Grid container sx={{justifyContent: 'center', padding: '10px'}}>
 				<Grid sx={footerStyle.root} item key={'link1'} xs={12} md={3} lg={3} paddingLeft={1} paddingRight={2}>
 					<Typography style={indexStyle.text1}>
-						<Call /> Office:<br/> (404)-564-5560
+						{deviceType === 'mobile' ? 
+							<><Call /> Office:<br/> <a style={{textDecoration: 'underline'}} href="tel:+4045645560">(404)-564-5560</a></>
+							: <><Call /> Office:<br/> (404)-564-5560</>
+						}
 					</Typography>
 					<Typography style={indexStyle.text1}>
-						<Call /> Cell:<br/> (770)-722-4897
+						{deviceType === 'mobile' ? 
+							<><Call /> Cell:<br/> <a style={{textDecoration: 'underline'}} href="tel:+7707224897">(770)-722-4897</a></>
+							: <><Call /> Cell:<br/> (770)-722-4897</>
+						}
 					</Typography>
 					<Typography style={indexStyle.text1}>
 						<Fax /> Fax:<br/> (404)-564-5561

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 
-import ChevronRight from '@mui/icons-material/ChevronRight';
-import ChevronLeft from '@mui/icons-material/ChevronLeft';
-import { Typography, Stack, Paper, Button, Box, Grid } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import { aboutstyles, testimonialStyles } from './AboutContentStyles';
 import { contactFormStyles, sloganStyles } from './HomeContentStyles';
 import { testimonialTextStyles } from './TestimonialContentStyles';
 import { useTheme } from '@mui/material/styles';
-import Image from "next/image"
 
 const testimonialTexts = [
 	{ 
@@ -48,10 +45,7 @@ const testimonialTexts = [
 
 const TestimonialContent = () => {
 	const theme = useTheme();
-	const testimonialStyle = testimonialStyles(theme);
 	const testimonialTextStyle = testimonialTextStyles(theme);
-	const contactFormStyle = contactFormStyles(theme);
-	const aboutStyle = aboutstyles(theme);
 	const sloganStyle = sloganStyles(theme);
 
 	const Item = ({testimonial, name}) => {
@@ -74,13 +68,6 @@ const TestimonialContent = () => {
 	}
 
 	return ( 
-	// <Stack sx={aboutStyle.root} direction={'row'}>
-	// <ChevronLeft onClick={decrementTestimonial}></ChevronLeft>
-	//     <Typography sx={testimonialStyle.root} >
-	//     {testimonialTexts[testimonial]}
-	//     </Typography>
-	// <ChevronRight onClick={incrementTestimonial}></ChevronRight>
-	// </Stack>
 		<div style={{padding: '10px'}}>
 			<Grid container sx={testimonialTextStyle.topContainer} direction={'row'} >
 				<Grid item xs={12} md={6}>

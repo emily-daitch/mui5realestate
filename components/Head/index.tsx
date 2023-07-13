@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../../styles/Head.module.css"
 
 type HeadComponentPropsType = {
   title: string;

@@ -4,17 +4,6 @@ import Image from "next/image"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-type PropertyMedia = {
-  url: string
-}
-
-const gallery = [
-	{ id: 1, imgUrl: "/1.jpg" },
-	{ id: 2, imgUrl: "/2.jpg" },
-	{ id: 3, imgUrl: "/3.jpg" },
-	{ id: 4, imgUrl: "/4.jpg" },
-];
-
 type PropertyData = {
     address: string,
     lastSoldPrice: number,
@@ -111,8 +100,6 @@ const SearchResult: React.FC = () => {
 		}
 	}, []);
 
-	console.log('propertyData.media', propertyData[0]?.media);
-
 	return (
 		<div style={{marginTop: 70}}>
 			{isMobile 
@@ -158,7 +145,6 @@ const SearchResult: React.FC = () => {
 								<Carousel>
 									{
 										property.media.map((item, index) => {
-											console.log('image url', item);
 											return (
 												<div key={index}>
 													<img 
@@ -201,7 +187,6 @@ const SearchResult: React.FC = () => {
 									},
 								}}
 								onClick={() => {
-									console.log('selected property', property);
 									setSelectedProperty(property);
 								}}
 							>
@@ -224,12 +209,6 @@ const SearchResult: React.FC = () => {
               The test data server responds with blurry pictures, unfortunately.
 								<p>
 									<b>Address:</b> {selectedProperty.address}
-									{/* <b>Price:</b> ${selectedProperty.askPrice}
-              <b>Size:</b> {selectedProperty.sqFt} sqft.<br/>
-              <b>Beds:</b> {selectedProperty.beds}
-              <b>Baths:</b> {selectedProperty.baths}<br/>
-              <b>Year Built:</b> {selectedProperty.yearBuilt}
-              <b>Lot Size:</b> {selectedProperty.lotSize} acres<br/> */}
 								</p>
 								<table style={{border: '1px solid', borderCollapse: 'collapse'}}>
 									<tr>
@@ -265,7 +244,6 @@ const SearchResult: React.FC = () => {
 								<Carousel>
 									{
 										selectedProperty.media.map((item, index) => {
-											console.log('image url', item);
 											return (
 												<div key={index}>
 													<img 

@@ -7,7 +7,13 @@ const Footer = () => {
 	const theme = useTheme();
 	const footerStyle = footerStyles(theme);
 	return (
-		<footer style={footerStyle.root}>
+		<footer style={
+			{
+				display: 'flex',
+				flexDirection: 'row',
+				justifyContent: 'center',
+			}
+		}>
 			<a
 				href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
 				target="_blank"

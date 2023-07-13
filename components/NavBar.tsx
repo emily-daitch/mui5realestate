@@ -6,10 +6,7 @@ import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
 import { AppBar, Box, Button, Container, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions,
 	IconButton, Link, Menu, MenuItem, Toolbar, Tooltip, Typography, useScrollTrigger  } from '@mui/material';
-import Image from 'next/image';
-import logo from './images/PA White Logo.png';
 
-// const pages = ['Home', 'About', 'Properties', 'Communities', 'Buyers', 'Sellers', 'Contact'];
 const pages = ['Home', 'About', 'Contact', 'MapSearch'];
 
 function ResponsiveAppBar(props: any) {
@@ -44,7 +41,7 @@ function ResponsiveAppBar(props: any) {
 	});
 
 	return (
-		<AppBar position="fixed" elevation={0} sx={{color:'#8D5286', height: 70, borderBottom: 2, borderColor: '#dddddd', background: { xs: '#ddd', md: trigger ? "#ddd" : "transparent"}}}>
+		<AppBar position="fixed" elevation={0} sx={{color:'#8D5286', height: 70, borderBottom: 2, borderColor: '#dddddd', background: { xs: trigger ? '#ddd' : '#fff', md: trigger ? "#ddd" : "transparent"}}}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
@@ -63,7 +60,9 @@ function ResponsiveAppBar(props: any) {
 						}}
 					>
 					</Typography>
-					<img src='/output-onlinepngtools.png' height={50} width={100} alt="Logo" />
+					<Link href='/'>
+						<img src='/output-onlinepngtools.png' height={50} width={100} alt="Logo" />
+					</Link>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 						<Tooltip title="Menu">
@@ -146,7 +145,7 @@ function ResponsiveAppBar(props: any) {
 
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Call Us">
-							<a href="tel:+4045645560" onClick={(e) => { if (window.innerWidth > 768) { e.preventDefault(); handleOpenDialog(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+							<a href="tel:+4045645560" onClick={(e) => { if (props.deviceType === 'desktop') { e.preventDefault(); handleOpenDialog(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
 								<IconButton sx={{ p: 0 }}>
 									<CallIcon />
 								</IconButton>
@@ -176,4 +175,5 @@ function ResponsiveAppBar(props: any) {
 		</AppBar>
 	);
 }
+
 export default ResponsiveAppBar;

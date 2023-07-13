@@ -5,14 +5,13 @@ import {useRouter} from 'next/router'
 
 const libraries = ['places', 'drawing'];
 const MapComponent = () => {
-	const router = useRouter();
 
 	const mapRef = useRef();
 	const polygonRefs = useRef([]);
 	const activePolygonIndex = useRef();
 	const drawingManagerRef = useRef();
 
-	const { isLoaded, loadError } = useJsApiLoader({
+	const { isLoaded } = useJsApiLoader({
 		googleMapsApiKey: process.env.NEXT_PUBLIC_GMAPS_JS_KEY,
 		libraries
 	});
@@ -86,12 +85,10 @@ const MapComponent = () => {
 	}
 
 	const onLoadPolygon = (polygon, index) => {
-		console.log('onLoadPolygon', index);
 		polygonRefs.current[index] = polygon;
 	}
 
 	const onClickPolygon = (index) => {
-		console.log('onClickPolygon', index);
 		activePolygonIndex.current = index; 
 	}
 
@@ -110,7 +107,6 @@ const MapComponent = () => {
 			const startPoint = newPolygon[0];
 			newPolygon.push(startPoint);
 			$overlayEvent.overlay?.setMap(null);
-			console.log('onOverlayComplete polygon', newPolygon);
 			setPolygonsLocally([...polygons, newPolygon]);
 		}
 	}
@@ -121,7 +117,6 @@ const MapComponent = () => {
 	}
 
 	const onEditPolygon = (index) => {
-		console.log('onEditPolygon');
 		const polygonRef = polygonRefs.current[index];
 		if (polygonRef) {
 			const coordinates = polygonRef.getPath()
@@ -133,9 +128,6 @@ const MapComponent = () => {
 			setPolygonsLocally(allPolygons)
 		}
 	}
-
-	console.log('polygons from return', polygons);
-	console.log('polygon refs from return', polygonRefs);
 
 	return (
 		isLoaded
@@ -154,7 +146,7 @@ const MapComponent = () => {
                     Delete Selected Shape
                     </Button>
 				}
-				<Typography>Click the polygon at the top center of the map to draw a custom region.</Typography>
+				{/* <Typography>Click the polygon at the top center of the map to draw a custom region.</Typography> */}
 				{/* <button onClick={searchFromMap}>Search Selection for Homes</button> */}
 				<GoogleMap
 					zoom={11}

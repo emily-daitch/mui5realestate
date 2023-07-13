@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormInputProps } from "./FormInputProps";
-import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 
 export const FormInputCurrency = ({ name, control, setValue, placeholder }: FormInputProps) => {
@@ -32,9 +31,7 @@ export const FormInputCurrency = ({ name, control, setValue, placeholder }: Form
 			name={name}
 			control={control}
 			render={({
-				field: { onChange, value },
 				fieldState: { error },
-				formState,
 			}) => (
 				<TextField
 					helperText={error ? error.message : null}
@@ -49,8 +46,6 @@ export const FormInputCurrency = ({ name, control, setValue, placeholder }: Form
 						startAdornment: <InputAdornment position="start">$</InputAdornment>,
 					}}
 				/>
-				// <Input name="maxPrice" placeholder="Max. Price ($USD)"
-				// startAdornment={<InputAdornment position="start">$</InputAdornment>} />
 			)}
 		/>
 	);

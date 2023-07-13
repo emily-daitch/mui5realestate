@@ -36,6 +36,7 @@ export const sloganStyles = (theme: Theme) => ({
 			fontSize: '2rem',
 			textAlign: 'center',
 			margin: '20px',
+			marginBottom: '5px'
 		},
 		[theme.breakpoints.up("md")]: {
 			color: '#373737',
@@ -56,6 +57,7 @@ export const sloganStyles = (theme: Theme) => ({
 			fontSize: '2rem',
 			textAlign: 'center',
 			margin: '20px',
+			marginBottom: '5px'
 		},
 		[theme.breakpoints.up("md")]: {
 			color: '#373737',
@@ -101,7 +103,7 @@ export const footerStyles = (theme: Theme) => ({
 			height: '1em',
 			marginLeft: '0.5rem'
 		},
-	}
+	},
 })
 
 export const contactFormStyles = (theme: Theme) => ({

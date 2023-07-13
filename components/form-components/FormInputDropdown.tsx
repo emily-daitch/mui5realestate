@@ -1,6 +1,6 @@
 import React from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useFormContext, Controller } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
 
 export const FormInputDropdown: React.FC<FormInputProps> = ({
@@ -9,7 +9,6 @@ export const FormInputDropdown: React.FC<FormInputProps> = ({
 	label,
 	options
 }) => {
-	console.log('options', options);
 	const generateSingleOptions = (options: any) => {
 		return options.map((option: any) => {
 			return (

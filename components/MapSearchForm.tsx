@@ -1,13 +1,8 @@
-import { Button, Typography, Paper, Box, Grid } from "@mui/material";
-import Input from '@mui/material/Input';
-import InputAdornment from '@mui/material/InputAdornment';
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { Button, Paper, Box, Grid } from "@mui/material";
+import { SubmitHandler, useForm } from "react-hook-form";
 import {useRouter} from 'next/router'
 import { FormInputCurrency } from "./form-components/FormInputCurrency";
-import { FormInputText } from "./form-components/FormInputText";
-import { FormInputMultiCheckbox } from "./form-components/FormInputMultiCheckbox";
 import { FormInputDropdown } from "./form-components/FormInputDropdown";
-import { FormInputSlider } from "./form-components/FormInputSlider";
 
 const defaultValues = {
 };
@@ -32,7 +27,6 @@ const getPropertyData = async (data: IFormInput) => {
     `and ListPrice ge ${data.minPrice} ` +
     `and ListPrice le ${data.maxPrice}`;
 	const urlWithSpaces = url.replace(/%20/g, ' ');
-	console.log('url with spaces', urlWithSpaces);
 
 	const response = await fetch(urlWithSpaces, {
 		method: 'GET',
@@ -46,7 +40,6 @@ const getPropertyData = async (data: IFormInput) => {
 
 	if (response.ok) {
 		const jsonResponse = await response.json();
-		console.log(jsonResponse);
 		return jsonResponse;
 	} else {
 		console.error(`Error fetching data: ${response.status} ${response.statusText}`);
@@ -61,14 +54,10 @@ export const MapSearchForm = () => {
 
 	const { handleSubmit, reset, control, setValue } = methods;
 	const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
-		console.log(data);
 
-		console.log('getting property data1');
 		const polygons = localStorage.getItem('polygons');
-		console.log('LS polygons', polygons);
 
 		const pData = await getPropertyData(data);
-		//e.preventDefault();
 		const pDataSubsetArray = pData.value.map((home: any) => {
 			const photos = home.Media.map((media: any) => {
 				return media.MediaURL;
@@ -86,7 +75,6 @@ export const MapSearchForm = () => {
 				media: photos
 			}
 		});
-		console.log('pDataSubsetArray', pDataSubsetArray);
 
 		localStorage.setItem('propertyData', JSON.stringify(pDataSubsetArray));
 		router.push("searchResult/searchResult");
@@ -96,8 +84,6 @@ export const MapSearchForm = () => {
 		<Paper sx={{
 			boxShadow: 'none'
 		}}>
-			{/* <Typography variant="h6"> Form Demo </Typography> */}
-			{/* <FormProvider> */}
 			<Box sx={{
 				flex: "1",
 				display: "flex",
@@ -184,7 +170,6 @@ export const MapSearchForm = () => {
                 Reset
 				</Button>
 			</Box>
-			{/* </FormProvider> */}
 		</Paper>
 	);
 };

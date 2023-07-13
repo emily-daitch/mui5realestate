@@ -1,9 +1,9 @@
 import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormInputProps } from "./FormInputProps";
 
-export const FormInputText = ({ name, control, label, placeholder }: FormInputProps) => {
+export const FormInputText = ({ name, control, placeholder }: FormInputProps) => {
 	return (
 		<Controller
 			name={name}
@@ -11,7 +11,6 @@ export const FormInputText = ({ name, control, label, placeholder }: FormInputPr
 			render={({
 				field: { onChange, value },
 				fieldState: { error },
-				formState,
 			}) => (
 				<TextField
 					helperText={error ? error.message : null}

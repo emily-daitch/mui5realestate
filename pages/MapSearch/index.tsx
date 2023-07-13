@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { MapSearchForm } from "../../components/MapSearchForm";
-import { Typography, Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import Image from "next/image"
 
 const MapComponent = dynamic(

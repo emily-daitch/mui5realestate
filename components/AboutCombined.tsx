@@ -1,40 +1,11 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { Variants } from 'framer-motion';
 import Image from "next/image"
-import styles from '../styles/Home.module.css'
 
-import { Typography, Grid, Box, Theme, Icon, Stack } from '@mui/material';
-import { aboutstyles, textFirstRepStyles, testimonialStyles } from './AboutContentStyles';
+import { Typography, Grid, Button } from '@mui/material';
+import { aboutstyles, textFirstRepStyles } from './AboutContentStyles';
 import { sloganStyles } from './HomeContentStyles';
 import { useTheme } from '@mui/material/styles';
-
-const imageAnimateVariants: Variants = {
-	offscreen: {
-		x: 500
-	},
-	onscreen: {
-		x: 0,
-		transition: {
-			type: "spring",
-			bounce: 0.4,
-			duration: 0.8
-		}
-	}
-};
-
-const imageAnimateVariantsPaula: Variants = {
-	offscreen: {
-		x: -400
-	},
-	onscreen: {
-		x: 0,
-		transition: {
-			type: "spring",
-			bounce: 0.4,
-			duration: 0.8
-		}
-	}
-};
 
 const AboutCombined = () => {
 
@@ -72,6 +43,18 @@ const AboutCombined = () => {
 	When it comes to pricing, we conduct thorough market analysis to help you determine the best value for your property.
 	Our ultimate goal is your satisfaction. We measure our success by the positive experiences and successful outcomes our clients enjoy. 
 	Choose our real estate team for a professional, personalized, and rewarding real estate experience.  </Typography>
+					</Grid>
+					<Grid item key={'readMore'} xs={12} md={6}>
+						<div style={{display: 'flex', justifyContent: 'center'}}>
+							<Button
+								size="large"
+								variant="contained"
+								href={'/About'}
+								sx={{borderRadius: '0px', margin: '10px', borderColor: '#000000', border: '1px', backgroundColor: '#eeeeee'}}
+							>
+								Read More
+							</Button>
+						</div>
 					</Grid>
 				</Grid>
 			</Grid>

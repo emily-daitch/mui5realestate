@@ -1,25 +1,21 @@
 import React from 'react';
 
 import type { NextPage } from 'next'
-import Image from "next/image"
-
-import { motion } from 'framer-motion';
 
 import AboutCombined from '../components/AboutCombined';
 import LandingGraphic from '../components/LandingGraphic';
 import TestimonialContent from '../components/TestimonialContent';
 import ContactForm from "../components/ContactForm";
-import InstagramPreview from "../components/InstagramPreview"
+// import InstagramPreview from "../components/InstagramPreview"
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
-import { sloganStyles, footerStyles, indexStyles } from '../components/HomeContentStyles';
+import { indexStyles } from '../components/HomeContentStyles';
 import Carousel from 'react-material-ui-carousel';
 
 import { Typography, Grid, Link, Box } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
 const Home: NextPage = ({feed}: any) => {
-	console.log('feed', feed);
 	const images = feed.data.filter((image) => image.media_type === 'CAROUSEL_ALBUM');
 
 	const sliderItems: number = images.length > 2 ? 2 : images.length;
@@ -44,25 +40,20 @@ const Home: NextPage = ({feed}: any) => {
 							</Grid>);
 					})}
 				</Grid>
-				// </Card>
 			);
 		}
 	}
 
 	const theme = useTheme();
-	const footerStyle = footerStyles(theme);
 	const indexStyle = indexStyles(theme);
-	const sloganStyle = sloganStyles(theme);
 
 	return (
 		<div style={indexStyle.container}>
 			<HeadComponent title={'Paula and Ashley Homes'} metaData={'Paula and Ashley Homes'} />
 			<LandingGraphic></LandingGraphic>
 
-			{/* <main style={indexStyle.main}>
-			</main> */}
-			{/* <Typography style={indexStyle.text1}>This site currently uses a test server for MLS data. It is limited, and not all zip codes will return results.<br/>
-       You may use Property Type: House, Zip: 78704, Beds/Baths: 1+, Min Price: $100000, Max Price: 500000 to get some good results.</Typography> */}
+			<Typography style={indexStyle.text1}>This site currently uses a test server for MLS data. It is limited, and not all zip codes will return results.<br/>
+       You may use Property Type: House, Zip: 78704, Beds/Baths: 1+, Min Price: $100000, Max Price: 500000 to get some good results.</Typography>
 			<HomeSearchForm></HomeSearchForm>
 			<br/>
 			<AboutCombined></AboutCombined>
@@ -71,7 +62,7 @@ const Home: NextPage = ({feed}: any) => {
 				<ContactForm></ContactForm>
 			</div>
 			{/* InstagramPreview To be implemented, must pass data from get static props here */}
-			<InstagramPreview></InstagramPreview>
+			{/* <InstagramPreview></InstagramPreview> */}
 			{images && 
 			<div style={{padding: '10px'}}>
 				<Grid container sx={indexStyle.instaSection}>
@@ -105,12 +96,10 @@ const Home: NextPage = ({feed}: any) => {
 }
 
 export const getStaticProps = async () => {
-	console.log('getStaticProps');
 	const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
 	const data = await fetch(url);
 	const feed = await data.json();
 
-	//console.log('feed', feed);
 	return {
 		props: {
 			feed

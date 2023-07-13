@@ -4,7 +4,6 @@ import { contactFormStyles } from './HomeContentStyles';
 import Image from "next/image"
 import validate from 'validate.js';
 import emailjs from 'emailjs-com';
-import styles from '../styles/Home.module.css'
 import { useTheme } from '@mui/material/styles';
 
 const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USERID
@@ -41,8 +40,6 @@ const ContactForm = () => {
 
 	const sendEmail = (e: Event) => {
 		e.preventDefault();
-		console.log('user id', USER_ID);
-		console.log('service id', SERVICE_ID);
 		emailjs.sendForm(
 			SERVICE_ID,
 			TEMPLATE_ID,
@@ -103,7 +100,6 @@ const ContactForm = () => {
 	return (
 		<div id='contact'>
 			<form 
-				//headers='application/json'
 				name="contact-form"
 				onSubmit={sendEmail as any}
 			>
@@ -112,13 +108,6 @@ const ContactForm = () => {
 				</Typography>
 				<Grid container spacing={2} paddingBottom={'10px'} paddingLeft={'8px'}>
 					<Grid item xs={12} md={8}>
-						{/* Place your form component here */}
-						{/* <Grid item> */}
-						{/* <Typography sx={contactFormStyle.root} variant="h4" align="center">
-                <strong>Contact Form</strong>
-              </Typography> */}
-
-						{/* </Grid> */}
 						<Grid item spacing={2} padding={1}>
 							<TextField
 								placeholder="Name"

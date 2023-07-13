@@ -45,6 +45,7 @@ export const textFirstRepStyles = (theme: Theme) => ({
 			textAlign: 'center',
 			margin: '10px',
 			backdropFilter: `blur(10px) brightness(60%)`,
+			padding: '10px',
 		},
 		[theme.breakpoints.up("md")]: {
 			color: 'white',
@@ -54,6 +55,7 @@ export const textFirstRepStyles = (theme: Theme) => ({
 			marginLeft: '10px',
 			marginRight: '10px',
 			backdropFilter: `blur(10px) brightness(60%)`,
+			padding: '10px'
 		},
 	},
 });

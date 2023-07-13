@@ -1,4 +1,3 @@
-//import HomeHeader from "../homeHeader";
 
 const Maintenance = () => {
 	return (

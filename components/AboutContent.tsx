@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from "next/image"
-import styles from '../styles/Home.module.css'
 
-import { Typography, Grid, Box, Theme, Icon, Stack } from '@mui/material';
-import { aboutstyles, textFirstRepStyles, testimonialStyles } from './AboutContentStyles';
+import { Typography, Grid } from '@mui/material';
+import { aboutstyles, textFirstRepStyles } from './AboutContentStyles';
 import { useTheme } from '@mui/material/styles';
 
 const imageAnimateVariants: Variants = {
