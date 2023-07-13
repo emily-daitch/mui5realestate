@@ -188,7 +188,6 @@ export const indexStyles = (theme: Theme) => ({
 		},
 	},
 	grid: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("md")]: {
 			placeItems: 'center',
 			backgroundRepeat: 'none',
@@ -270,7 +269,6 @@ export const indexStyles = (theme: Theme) => ({
 	},
 	instaSection: {
 		[theme.breakpoints.up("xs")]: {
-			//backgroundColor: '#aaaaaa',
 			border: '1px',
 			borderStyle: 'solid',
 			borderColor: 'purple',

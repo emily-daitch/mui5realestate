@@ -26,11 +26,9 @@ export const testimonialTextStyles = (theme: Theme) => ({
 		},
 		[theme.breakpoints.up("md")]: {
 			justifyContent:'center', display:'flex', flexDirection:'row',
-			//backgroundImage: `url(4.jpg)`,
 			backdropFilter: `opacity(60%)`,
 			height: '500px',
 			opacity: '0%',
-			//backgroundSize: 'cover'
 		},
 	},
 	p: {
@@ -72,7 +70,6 @@ export const testimonialTextStyles = (theme: Theme) => ({
 	},
 	topContainer: {
 		[theme.breakpoints.down("md")]: {
-			// backgroundColor: '#dddddd',
 			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/4.jpg)`,
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',

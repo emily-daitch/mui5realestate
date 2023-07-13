@@ -2,10 +2,7 @@ import { Theme } from '@mui/material';
 
 export const aboutstyles = (theme: Theme) => ({
 	rep1: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("md")]: {
-			// placeItems: 'center',
-			// backgroundColor: '#cccccc',
 			placeItems: 'center',
 			backgroundRepeat: 'no-repeat',
 			backgroundPosition: 'center',
@@ -21,7 +18,6 @@ export const aboutstyles = (theme: Theme) => ({
 		},
 	},
 	rep2: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("sm")]: {
 			marginTop: '5px',
 			backgroundRepeat: 'no-repeat',
@@ -59,7 +55,6 @@ export const aboutstyles = (theme: Theme) => ({
 
 export const expanderStyles = (theme: Theme) => ({
 	root: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("sm")]: {
 			marginTop: '5px',
 			height: '40px',
@@ -92,7 +87,6 @@ export const expanderStyles = (theme: Theme) => ({
 
 export const expanderTextStyles = (theme: Theme) => ({
 	root: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("sm")]: {
 			height: '30px',
 			color: 'white',
@@ -145,7 +139,6 @@ export const textFirstRepStyles = (theme: Theme) => ({
 
 export const testimonialStyles = (theme: Theme) => ({
 	root: {
-		//   padding: theme.spacing(1),
 		[theme.breakpoints.down("sm")]: {
 			color: 'white',
 			textAlign: 'center',
