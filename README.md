@@ -1,3 +1,5 @@
+This repository (main branch) drives a vercel deployment that is production and available to google results, so the main branch implements an Under Maintenance page and does not have the latest version of the site available [here](https://mui5realestate-git-v3-emily-daitch.vercel.app/). **The latest code is on branch v3.**
+
 originally based on https://github.com/hadnazzar/nextjs-materialui template
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
