@@ -44,7 +44,7 @@ const ContactFooter = () => {
 					</Typography>
 				</Grid>
 				<Grid sx={footerStyle.root} item key={'addy'} xs={12} md={12} lg={12} paddingLeft={5} paddingRight={5}>
-					<Typography style={indexStyle.text1}>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
+					<Typography style={indexStyle.text1}><br/>315 W Ponce de Leon Ave Suite 100, Decatur, GA 30030</Typography>
 					<Link href='https://goo.gl/maps/QN7E6Eh1g5xYhXd48?coh=178571&entry=tt'>
 						<Typography style={indexStyle.text1}>
 							<Google/><br/>We would love to hear your feedback, write a review!

@@ -52,7 +52,14 @@ const AboutCombined = () => {
 							ABOUT US
 						</Typography>
 					</Grid>
-					<Grid item key={'pic'} xs={12} md={6} sx={{margin: {xs: '80px', md: '10px'}}}>
+					<Grid item key={'pic'} xs={12} md={6} sx={
+						{
+							marginTop: {xs: '20px', md: '30px'},
+							marginBottom: {xs: '20px', md: '30px'},
+							marginLeft: {xs: '20px', sm: '100px', md: '80px'},
+							marginRight: {xs: '20px', sm: '100px', md: '80px'}
+						}
+					}>
 						<Image alt="headshot" src='/group-1.JPG' layout='responsive' width={3456} height={5184}></Image>
 					</Grid>
 				</Grid>
