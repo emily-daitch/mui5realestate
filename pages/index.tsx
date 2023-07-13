@@ -79,7 +79,7 @@ const Home: NextPage = ({feed}: any) => {
 			<InstagramPreview></InstagramPreview>
 			{images && 
 			<div style={{padding: '10px'}}>
-        <Grid container sx={indexStyle.instaSection}>
+				<Grid container sx={indexStyle.instaSection}>
         	<Grid item sx={indexStyle.instaText} xs={12} md={6}>
         		<Grid container sx={indexStyle.instaTextGrid}>
         			<Grid item >
@@ -103,7 +103,7 @@ const Home: NextPage = ({feed}: any) => {
         			{items}
         		</Carousel>
         	</Grid>
-        </Grid></div>
+				</Grid></div>
 			}
 		</div>
 	)
