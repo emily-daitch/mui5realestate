@@ -94,7 +94,7 @@ export const MapSearchForm = () => {
 				border: "none"
 			}}>
 				<Grid container sx={{justifyContent: 'center'}}>
-					<Grid item key={'propertyType'} xs={12} md={8} lg={3}>
+					<Grid item key={'propertyType'} xs={12} md={8} lg={3} padding={'8px'}>
 						<FormInputDropdown name="propertyType" control={control} label="Property Type" options={[
 							{
 								label: "House",
@@ -106,7 +106,7 @@ export const MapSearchForm = () => {
 							}
 						]}/>
 					</Grid>
-					<Grid item key={'beds'} xs={12} md={8} lg={3}>
+					<Grid item key={'beds'} xs={12} md={8} lg={3} padding={'8px'}>
 						<FormInputDropdown name="beds"control={control} label="Beds" options={[
 							{
 								label: "1+",
@@ -126,7 +126,7 @@ export const MapSearchForm = () => {
 							}
 						]}/>
 					</Grid>
-					<Grid item key={'baths'} xs={12} md={8} lg={3}>
+					<Grid item key={'baths'} xs={12} md={8} lg={3} padding={'8px'}>
 						<FormInputDropdown name="baths" control={control} label="Baths" options={[
 							{
 								label: "1+",
@@ -146,10 +146,10 @@ export const MapSearchForm = () => {
 							}
 						]}/>
 					</Grid>
-					<Grid item key={'minPrice'} xs={12} md={8} lg={4}>
+					<Grid item key={'minPrice'} xs={12} md={8} lg={4} padding={'8px'}>
 						<FormInputCurrency name="minPrice" setValue={setValue} control={control} placeholder="Min. Price ($USD)" />
 					</Grid>
-					<Grid item key={'maxPrice'} xs={12} md={8} lg={4}>
+					<Grid item key={'maxPrice'} xs={12} md={8} lg={4} padding={'8px'}>
 						<FormInputCurrency name="maxPrice" setValue={setValue} control={control} placeholder="Max. Price ($USD)" />
 					</Grid>
 				</Grid>
