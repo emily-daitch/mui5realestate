@@ -1,15 +1,16 @@
-//import HomeHeader from "../homeHeader";
-import NavBar from "../../components/NavBar"
+import NavBarWrapper from "../../components/NavBarWrapper"
 import Footer from "../footer";
+import ContactFooter from "../contactFooter";
 
-const Layout = ({children} : JSX.ElementChildrenAttribute) => {
-  return (
-    <>
-      <NavBar />
-      {children}
-      <Footer />
-    </>
-  )
+const Layout = ({children, deviceType}) => {
+	return (
+		<>
+			<NavBarWrapper {...{deviceType: deviceType}}/>
+			{children}
+			<ContactFooter {...{deviceType: deviceType}}/>
+			<Footer />
+		</>
+	)
 }
 
 export default Layout;
