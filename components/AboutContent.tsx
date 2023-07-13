@@ -50,7 +50,7 @@ const AboutContent = () => {
 						whileInView="onscreen"
 						viewport={{ once: true, amount: 0.2 }}
 					>
-						<motion.div className="card" variants={imageAnimateVariants}>
+						<motion.div className="card" variants={imageAnimateVariantsPaula}>
 							<Image alt="headshot" src='/Paula Headshot Postcard.JPG' layout='responsive' height={3} width={3}></Image>
 						</motion.div>
 					</motion.div>
@@ -104,7 +104,7 @@ Carlton and Richard.
 						whileInView="onscreen"
 						viewport={{ once: true, amount: 0.2 }}
 					>
-						<motion.div className="card" variants={imageAnimateVariantsPaula}>
+						<motion.div className="card" variants={imageAnimateVariants}>
 							<Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
 						</motion.div>
 					</motion.div>

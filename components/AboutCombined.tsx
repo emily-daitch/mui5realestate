@@ -1,5 +1,4 @@
 import React from 'react';
-import { Variants } from 'framer-motion';
 import Image from "next/image"
 
 import { Typography, Grid, Button } from '@mui/material';
