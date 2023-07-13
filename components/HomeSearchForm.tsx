@@ -129,9 +129,6 @@ export const HomeSearchForm = () => {
 							}
 						]}/>
 					</Grid>
-					<Grid item key={'minPrice'} xs={12} md={6} lg={2} paddingLeft={2} paddingRight={2} marginTop={2}>
-						<FormInputCurrency name="minPrice" setValue={setValue} control={control} placeholder="Min. Price ($USD)" />
-					</Grid>
 					<Grid item key={'baths'} xs={12} md={6} lg={2} paddingLeft={2} paddingRight={2}>
 						<FormInputDropdown name="baths" control={control} label="Baths" options={[
 							{
@@ -151,6 +148,9 @@ export const HomeSearchForm = () => {
 								value: "4"
 							}
 						]}/>
+					</Grid>
+					<Grid item key={'minPrice'} xs={12} md={6} lg={2} paddingLeft={2} paddingRight={2} marginTop={2}>
+						<FormInputCurrency name="minPrice" setValue={setValue} control={control} placeholder="Min. Price ($USD)" />
 					</Grid>
 					<Grid item key={'maxPrice'} xs={12} md={6} lg={2} paddingLeft={2} paddingRight={2} marginTop={2}>
 						<FormInputCurrency name="maxPrice" setValue={setValue} control={control} placeholder="Max. Price ($USD)" />
