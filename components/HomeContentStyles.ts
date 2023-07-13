@@ -67,6 +67,7 @@ export const sloganStyles = (theme: Theme) => ({
 			fontSize: '3rem',
 			textAlign: 'center',
 			margin: '10px',
+			marginTop: '40px'
 		},
 	},
 });

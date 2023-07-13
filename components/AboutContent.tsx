@@ -43,17 +43,17 @@ const AboutContent = () => {
 	return (
 		<>
 			<Grid container sx={aboutStyle.rep1}>
-				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
-					<motion.div
+				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={6}>
+					{/* <motion.div
 						className="card-container"
 						initial="offscreen"
 						whileInView="onscreen"
 						viewport={{ once: true, amount: 0.2 }}
 					>
-						<motion.div className="card" variants={imageAnimateVariantsPaula}>
-							<Image alt="headshot" src='/Paula Headshot Postcard.JPG' layout='responsive' height={3} width={3}></Image>
-						</motion.div>
-					</motion.div>
+						<motion.div className="card" variants={imageAnimateVariantsPaula}> */}
+					<Image alt="headshot" src='/Paula Headshot Postcard.JPG' layout='responsive' height={3} width={3}></Image>
+					{/* </motion.div>
+					</motion.div> */}
 				</Grid>
 				<Grid item key={'firstRep'} xs={12} sm= {8} md={8} lg={8}>
 					<Typography sx={firstRepStyle.root} padding={3}>
@@ -74,6 +74,21 @@ husband Mike. </Typography>
 				</Grid>
 			</Grid>
 			<Grid container sx={aboutStyle.rep2}>
+				<Grid item key={'pic'} xs={12} sm={0} md={0} lg={0} xl={0} padding={6} sx={{display: {
+					xs: 'grid',
+					sm: 'none'
+				}}}>
+					{/* <motion.div
+						className="card-container"
+						initial="offscreen"
+						whileInView="onscreen"
+						viewport={{ once: true, amount: 0.2 }}
+					>
+						<motion.div className="card" variants={imageAnimateVariants}> */}
+					<Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
+					{/* </motion.div> */}
+					{/* </motion.div> */}
+				</Grid>
 				<Grid item key={'secondRep'} xs={12} sm={8} md={8} lg={8} >
 					<Typography sx={firstRepStyle.root} padding={3}>
                 Ashley Bowman is a Georgia native. Her father and
@@ -97,17 +112,20 @@ resides in Tucker with her husband Craig and their two pugs,
 Carlton and Richard.
 					</Typography>
 				</Grid>
-				<Grid item key={'pic'} xs={12} sm={4}  md={4} lg={4} padding={3}>
-					<motion.div
+				<Grid item key={'pic'} xs={0} sm={4}  md={4} lg={4} padding={3} sx={{display: {
+					xs: 'none',
+					sm: 'grid'
+				}}}>
+					{/* <motion.div
 						className="card-container"
 						initial="offscreen"
 						whileInView="onscreen"
 						viewport={{ once: true, amount: 0.2 }}
 					>
-						<motion.div className="card" variants={imageAnimateVariants}>
-							<Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
-						</motion.div>
-					</motion.div>
+						<motion.div className="card" variants={imageAnimateVariants}> */}
+					<Image alt="headshot" src='/Ashley Headshot Postcard.png' layout='responsive' height={3} width={2}></Image>
+					{/* </motion.div> */}
+					{/* </motion.div> */}
 				</Grid>
 			</Grid>
 		</>

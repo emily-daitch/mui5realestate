@@ -24,8 +24,7 @@ export const aboutstyles = (theme: Theme) => ({
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
 			placeItems: 'center',
-			backgroundImage: 'none',
-			backgroundColor: '#cccccc',
+			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(5.jpg)`,
 		},
 		[theme.breakpoints.up("sm")]: {
 			marginTop: '5px',
@@ -33,7 +32,7 @@ export const aboutstyles = (theme: Theme) => ({
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
 			placeItems: 'center',
-			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(3.jpg)`,
+			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(5.jpg)`,
 		},
 	}
 });
