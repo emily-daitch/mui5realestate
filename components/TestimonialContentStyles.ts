@@ -4,11 +4,11 @@ export const testimonialTextStyles = (theme: Theme) => ({
 	carousel: {
 		[theme.breakpoints.down("md")]: {
 			justifyContent: 'center',
-			//backgroundColor: `rgba(255,255,255,.4)`,
+			backdropFilter: `blur(10px) brightness(60%)`,
 			marginTop: '5px',
 			marginBottom: '5px',
-			marginLeft: '15px',
-			marginRight: '15px'		},
+			marginLeft: '5px',
+			marginRight: '5px'		},
 		[theme.breakpoints.up("md")]: {
 			justifyContent: 'center',
 			backdropFilter: `blur(10px) brightness(60%)`,
@@ -35,23 +35,14 @@ export const testimonialTextStyles = (theme: Theme) => ({
 	},
 	p: {
 		[theme.breakpoints.down("md")]: {
-			textAlign:'center', 
-			color: '#444444',
-			//backdropFilter: `blur(6px) brightness(.7)`, 
-			backgroundColor: '#cccccc',
-			margin: 'auto',
-			fontSize: '.8rem'
-		},
-		[theme.breakpoints.up("md")]: {
-			// textAlign:'center', 
-			// color: '#444444',
-			// //backdropFilter: `blur(6px) brightness(.7)`, 
-			// backgroundColor: '#cccccc',
-			// margin: 'auto',
 			textSize: '4vw',
 			color: 'white',
 			textAlign: 'center',
-			// backdropFilter: `blur(10px) brightness(60%)`,
+		},
+		[theme.breakpoints.up("md")]: {
+			textSize: '4vw',
+			color: 'white',
+			textAlign: 'center',
 		},
 	},
 	box: {
@@ -59,34 +50,20 @@ export const testimonialTextStyles = (theme: Theme) => ({
 			justifyContent: 'center', 
 			alignContent: 'center', 
 			alignItems:'center',
-			backgroundImage: 'none',
-			backgroundSize: 'contain',
-			backgroundRepeat: 'no-repeat',
-			backgroundPosition: 'center',
-			//backdropFilter: `opacity(.2)`,
+			margin: '15px',
 			paddingTop: '5px',
 		},
 		[theme.breakpoints.up("md")]: {
 			justifyContent: 'center', 
 			alignContent: 'center', 
 			alignItems:'center',
-			//backgroundImage: `url(4.jpg)`,
-			//backgroundSize: 'contain',
-			//backgroundRepeat: 'no-repeat',
-			//backgroundPosition: 'center',
-			//backdropFilter: `opacity(.2)`,
-			//height: '400px',
-			//width: '800px',
 			margin: '20px',
 			paddingTop: '15px'
 		},
 	},
 	gridCarousel: {
 		[theme.breakpoints.down("md")]: {
-			marginTop: '20px',
-			marginBottom: '10px',
-			marginRight: '50px',
-			marginLeft: '50px'
+			margin: '10px',
 		},
 		[theme.breakpoints.up("md")]: {
 			marginTop: '40px',

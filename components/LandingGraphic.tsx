@@ -18,7 +18,7 @@ const LandingGraphic = () => {
 			</div> */}
 			<Grid container direction={'row'} sx={indexStyle.grid}>
 				<Grid container xs={12} md={12} direction={'row'} justifyContent={'center'}>
-					<Grid item xs={12} md={12} marginTop={'25px'} marginBottom={'20px'}>
+					<Grid item xs={12} md={12} marginTop={'25px'} marginBottom={'20px'} sx={{backgroundColor: `rgba(255, 255, 255, 0.5)`}}>
 						<Image alt="logo" layout='responsive' height={306} width={1078} src='/PA house logo.png'></Image>
 					</Grid>
 					<Grid item xs={8} md={8} height={'30vw'} marginTop={'5vw'}>

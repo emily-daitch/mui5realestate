@@ -128,7 +128,7 @@ export const textFirstRepStyles = (theme: Theme) => ({
 		[theme.breakpoints.down("md")]: {
 			color: 'white',
 			textAlign: 'center',
-			margin: '20px',
+			margin: '10px',
 			backdropFilter: `blur(10px) brightness(60%)`,
 		},
 		[theme.breakpoints.up("md")]: {

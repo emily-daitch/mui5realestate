@@ -58,7 +58,7 @@ const AboutCombined = () => {
 				</Grid>
 				<Grid container xs={12} md={6} direction={'column'} justifyContent={'center'}>
 					<Grid item key={'firstRep'} xs={12} md={6}>
-						<Typography padding={3} sx={firstRepStyle.root}>
+						<Typography sx={firstRepStyle.root}>
 				Our real estate team brings years of industry knowledge and experience to the table. We understand the market trends, local neighborhoods, and the intricacies of the buying and selling process.
 	We believe in delivering a personalized experience tailored to your unique needs. We take the time to understand your preferences and goals.
 	Over the years, we have built a vast network of professionals in the real estate industry - from mortgage brokers and lawyers to home inspectors and contractors. 

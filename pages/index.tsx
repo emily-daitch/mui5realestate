@@ -78,6 +78,7 @@ const Home: NextPage = ({feed}: any) => {
 			{/* InstagramPreview To be implemented, must pass data from get static props here */}
 			<InstagramPreview></InstagramPreview>
 			{images && 
+			<div style={{padding: '10px'}}>
         <Grid container sx={indexStyle.instaSection}>
         	<Grid item sx={indexStyle.instaText} xs={12} md={6}>
         		<Grid container sx={indexStyle.instaTextGrid}>
@@ -102,7 +103,7 @@ const Home: NextPage = ({feed}: any) => {
         			{items}
         		</Carousel>
         	</Grid>
-        </Grid>
+        </Grid></div>
 			}
 		</div>
 	)

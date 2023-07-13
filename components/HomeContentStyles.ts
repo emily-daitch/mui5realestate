@@ -194,13 +194,14 @@ export const indexStyles = (theme: Theme) => ({
 			backgroundRepeat: 'none',
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
-			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(MichaelLewisPostcard_Short.jpg)`,		},
+			backgroundImage: `url(MichaelLewisPostcard_Short.jpg)`
+		},
 		[theme.breakpoints.up("md")]: {
 			placeItems: 'center',
 			backgroundRepeat: 'none',
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
-			backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(MichaelLewisPostcard_Short.jpg)`,
+			backgroundImage: `url(MichaelLewisPostcard_Short.jpg)`,
 		},
 	},
 	headerImageContainer: {
@@ -270,6 +271,9 @@ export const indexStyles = (theme: Theme) => ({
 	instaSection: {
 		[theme.breakpoints.up("xs")]: {
 			//backgroundColor: '#aaaaaa',
+			border: '1px',
+			borderStyle: 'solid',
+			borderColor: 'purple',
 		},
 	},
 	instaCarousel: {
