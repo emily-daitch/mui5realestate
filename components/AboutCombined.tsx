@@ -39,13 +39,13 @@ const imageAnimateVariantsPaula: Variants = {
 const AboutCombined = () => {
 
 	const theme = useTheme();
-	const astyle = aboutstyles(theme);
+	const aboutStyle = aboutstyles(theme);
 	const sloganStyle = sloganStyles(theme);
 	const firstRepStyle = textFirstRepStyles(theme);
 
 	return (
 		<div style={{padding: '10px'}}>
-			<Grid container sx={astyle.rep1} direction={'row'}>
+			<Grid container sx={aboutStyle.rep1} direction={'row'}>
 				<Grid container xs={12} md={6} direction={'row'} justifyContent={'center'}>
 					<Grid item xs={12} md={6}>
 						<Typography sx={sloganStyle.about}>

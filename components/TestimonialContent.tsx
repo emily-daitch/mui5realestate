@@ -51,7 +51,7 @@ const TestimonialContent = () => {
 	const testimonialStyle = testimonialStyles(theme);
 	const testimonialTextStyle = testimonialTextStyles(theme);
 	const contactFormStyle = contactFormStyles(theme);
-	const astyle = aboutstyles(theme);
+	const aboutStyle = aboutstyles(theme);
 	const sloganStyle = sloganStyles(theme);
 
 	const Item = ({testimonial, name}) => {
@@ -74,7 +74,7 @@ const TestimonialContent = () => {
 	}
 
 	return ( 
-	// <Stack sx={astyle.root} direction={'row'}>
+	// <Stack sx={aboutStyle.root} direction={'row'}>
 	// <ChevronLeft onClick={decrementTestimonial}></ChevronLeft>
 	//     <Typography sx={testimonialStyle.root} >
 	//     {testimonialTexts[testimonial]}

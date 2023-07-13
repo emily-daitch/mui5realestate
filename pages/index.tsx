@@ -12,8 +12,7 @@ import ContactForm from "../components/ContactForm";
 import InstagramPreview from "../components/InstagramPreview"
 import HeadComponent from "../components/Head";
 import { HomeSearchForm } from '../components/HomeSearchForm';
-import { titleStyles, sloganStyles, footerStyles, indexStyles } from '../components/HomeContentStyles';
-import { expanderTextStyles } from '../components/AboutContentStyles';
+import { sloganStyles, footerStyles, indexStyles } from '../components/HomeContentStyles';
 import Carousel from 'react-material-ui-carousel';
 
 import { Typography, Grid, Link, Box } from "@mui/material";
@@ -22,7 +21,6 @@ import { useTheme } from '@mui/material/styles';
 const Home: NextPage = ({feed}: any) => {
 	console.log('feed', feed);
 	const images = feed.data.filter((image) => image.media_type === 'CAROUSEL_ALBUM');
-	//const images = feed.data;
 
 	const sliderItems: number = images.length > 2 ? 2 : images.length;
 	const items: Array<any> = [];
@@ -30,7 +28,6 @@ const Home: NextPage = ({feed}: any) => {
 	for (let i = 0; i < images.length; i += sliderItems) {
 		if (i % sliderItems === 0) {
 			items.push(
-				// <Card className="Banner" key={i.toString()}>
 				<Grid container className="BannerGrid" justifyContent={'center'} direction={'row'}>
 					{images.slice(i, i + sliderItems).map((da, index) => {
 						return (
@@ -55,9 +52,7 @@ const Home: NextPage = ({feed}: any) => {
 	const theme = useTheme();
 	const footerStyle = footerStyles(theme);
 	const indexStyle = indexStyles(theme);
-	const titleStyle = titleStyles(theme);
 	const sloganStyle = sloganStyles(theme);
-	const expanderTextStyle = expanderTextStyles(theme);
 
 	return (
 		<div style={indexStyle.container}>

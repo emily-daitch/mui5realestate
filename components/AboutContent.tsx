@@ -38,12 +38,12 @@ const imageAnimateVariantsPaula: Variants = {
 const AboutContent = () => {
 
 	const theme = useTheme();
-	const astyle = aboutstyles(theme);
+	const aboutStyle = aboutstyles(theme);
 	const firstRepStyle = textFirstRepStyles(theme);
 
 	return (
 		<>
-			<Grid container sx={astyle.rep1}>
+			<Grid container sx={aboutStyle.rep1}>
 				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
 					<motion.div
 						className="card-container"
@@ -74,7 +74,7 @@ mid-century modern dream house in Decatur with her 2 dogs and
 husband Mike. </Typography>
 				</Grid>
 			</Grid>
-			<Grid container sx={astyle.rep2}>
+			<Grid container sx={aboutStyle.rep2}>
 				<Grid item key={'secondRep'} xs={12} sm={8} md={8} lg={8} >
 					<Typography sx={firstRepStyle.root} padding={3}>
                 Ashley Bowman is a Georgia native. Her father and

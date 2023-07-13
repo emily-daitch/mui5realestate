@@ -18,19 +18,6 @@ export const testimonialTextStyles = (theme: Theme) => ({
 			marginRight: '30px'
 		},
 	},
-	paper: {
-		[theme.breakpoints.down("md")]: {
-			justifyContent:'center', display:'flex', flexDirection:'row',
-			marginTop: '5px',
-			backgroundColor: '#cccccc',
-		},
-		[theme.breakpoints.up("md")]: {
-			justifyContent:'center', display:'flex', flexDirection:'row',
-			backdropFilter: `opacity(60%)`,
-			height: '500px',
-			opacity: '0%',
-		},
-	},
 	p: {
 		[theme.breakpoints.down("md")]: {
 			textSize: '4vw',

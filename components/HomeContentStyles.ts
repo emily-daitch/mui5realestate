@@ -8,29 +8,6 @@ import { Theme } from '@mui/material';
     xl, extra-large: 1536px
 */
 
-export const titleStyles = (theme: Theme) => ({
-	root: {
-		[theme.breakpoints.up("xs")]: {
-			color: '#373737',
-			fontSize: '6rem',
-			position: 'absolute',
-			fontFamily: 'Archivo Narrow',
-			width: '60rem',
-			transform: `translate(1%, -95rem)`,
-			backdropFilter: `blur(2px)`,
-		},
-		[theme.breakpoints.up("md")]: {
-			color: '#373737',
-			fontSize: '6rem',
-			position: 'absolute',
-			fontFamily: 'Archivo Narrow',
-			width: '80rem',
-			transform: `translate(1%, -88rem)`,
-			backdropFilter: `blur(2px)`,
-		},
-	},
-});
-
 export const sloganStyles = (theme: Theme) => ({
 	root: {
 		[theme.breakpoints.down("md")]: {
@@ -127,17 +104,6 @@ export const footerStyles = (theme: Theme) => ({
 	}
 })
 
-export const homeHeaderStyles = (theme: Theme) => ({
-	root: {
-		[theme.breakpoints.up("xs")]: {
-			margin: '0',
-			lineHeight: '1.15',
-			fontSize: '4rem',
-			textAlign: 'center'
-		}
-	}
-})
-
 export const contactFormStyles = (theme: Theme) => ({
 	root: {
 		[theme.breakpoints.up("xs")]: {
@@ -168,16 +134,6 @@ export const contactFormStyles = (theme: Theme) => ({
 	}
 })
 
-export const logoStyles = (theme: Theme) => ({
-	root: {
-		[theme.breakpoints.up("xs")]: {
-			position: 'relative',
-			textAlign: 'center',
-			color: 'white',
-		},
-	},
-});
-
 export const indexStyles = (theme: Theme) => ({
 	container: {
 		[theme.breakpoints.up("xs")]: {
@@ -203,13 +159,6 @@ export const indexStyles = (theme: Theme) => ({
 			backgroundImage: `url(MichaelLewisPostcard_Short.jpg)`,
 		},
 	},
-	headerImageContainer: {
-		[theme.breakpoints.up("xs")]: {
-			position: 'relative',
-			textAlign: 'center',
-			color: 'white'
-		},
-	},
 	main: {
 		[theme.breakpoints.up("xs")]: {
 			flex: '1',
@@ -227,19 +176,6 @@ export const indexStyles = (theme: Theme) => ({
 			flex: '1',
 			display: 'flex',
 			flexDirection: 'column',
-			justifyContent: 'center',
-			alignContent: 'center',
-			alignItems: 'center',
-			textAlign: 'center'
-		},
-	},
-	link1: {
-		[theme.breakpoints.up("xs")]: {
-			color: '#000000',
-			padding: '1rem',
-			flex: '1',
-			display: 'flex',
-			flexDirection: 'row',
 			justifyContent: 'center',
 			alignContent: 'center',
 			alignItems: 'center',
