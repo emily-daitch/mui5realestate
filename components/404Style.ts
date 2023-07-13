@@ -8,7 +8,8 @@ export const fourStyles = (theme: Theme) => ({
 			display: 'flex',
 			flexDirection: 'column',
 			justifyContent: 'center',
-			alignItems: 'center'
+			alignItems: 'center',
+			marginTop: '70px'
 		},
 	},
 	header404: {
