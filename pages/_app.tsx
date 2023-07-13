@@ -2,10 +2,11 @@ import '../styles/globals.css'
 import Layout from "../components/Layout";
 import { createTheme, ThemeProvider } from '@mui/material'
 
-function MyApp({ Component, pageProps, }) {//props }) {
-	const props = {
-		deviceType: 'mobile'
-	}
+function MyApp({ Component, pageProps, props}) {//props }) {
+	// const props = {
+	// 	deviceType: 'mobile'
+	// }
+	console.log('props', props);
 	const theme = createTheme({
 		palette: {
 			mode: "light",
@@ -25,17 +26,19 @@ function MyApp({ Component, pageProps, }) {//props }) {
 
 }
 
-// MyApp.getInitialProps = async(context) => {
-// 	const UA = context.ctx.req.headers['user-agent'];
-// 	const isMobile = Boolean(UA?.match(
-// 	  /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-// 	))
+MyApp.getInitialProps = async(context) => {
+	console.log('getInitialProps');
+	const UA = context.ctx.req.headers['user-agent'];
+	const isMobile = Boolean(UA?.match(
+	  /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+	))
+	console.log('isMobile', isMobile);
 	
-// 	return {
-// 	  props: {
-// 			deviceType: isMobile ? 'mobile' : 'desktop'
-// 	  }
-// 	}
-// }
+	return {
+	  props: {
+			deviceType: isMobile ? 'mobile' : 'desktop'
+	  }
+	}
+}
 
 export default MyApp
