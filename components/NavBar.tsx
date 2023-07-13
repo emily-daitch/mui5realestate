@@ -145,7 +145,7 @@ function ResponsiveAppBar(props: any) {
 
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Call Us">
-							<a href="tel:+4045645560" onClick={(e) => { if (props.deviceType === 'desktop') { e.preventDefault(); handleOpenDialog(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+							<a href="tel:+4045645560" onClick={(e) => { e.preventDefault(); handleOpenDialog(); }} style={{ textDecoration: 'none', color: 'inherit' }}>
 								<IconButton sx={{ p: 0 }}>
 									<CallIcon />
 								</IconButton>
@@ -155,7 +155,7 @@ function ResponsiveAppBar(props: any) {
 					<Dialog open={openDialog} onClose={handleCloseDialog}>
 						<DialogTitle>Call Us</DialogTitle>
 						<DialogContent>
-							<DialogContentText>Please call us at: +4045645560</DialogContentText>
+							<DialogContentText>Please call us at: <a style={{textDecoration: 'underline'}} href="tel:+4045645560">(404)-564-5560</a></DialogContentText>
 						</DialogContent>
 						<DialogActions>
 							<Button onClick={handleCloseDialog} color="primary">

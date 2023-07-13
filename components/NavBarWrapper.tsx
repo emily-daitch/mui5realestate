@@ -7,10 +7,10 @@ const NavBarComponent = dynamic(
 	{ ssr: false }
 );
 
-const NavBarWrapper = ({deviceType}) => {
+const NavBarWrapper = () => {
 	return (
 		<div>
-			<NavBarComponent {...{deviceType: deviceType}}></NavBarComponent>
+			<NavBarComponent></NavBarComponent>
 		</div>
 
 	)

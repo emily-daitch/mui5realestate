@@ -1,13 +1,13 @@
 import NavBarWrapper from "../../components/NavBarWrapper"
 import Footer from "../footer";
-import ContactFooter from "../contactFooter";
+import ContactFooterWrapper from "../contactFooter/ContactFooterWrapper";
 
-const Layout = ({children, deviceType}) => {
+const Layout = ({children}) => {
 	return (
 		<>
-			<NavBarWrapper {...{deviceType: deviceType}}/>
+			<NavBarWrapper/>
 			{children}
-			<ContactFooter {...{deviceType: deviceType}}/>
+			<ContactFooterWrapper/>
 			<Footer />
 		</>
 	)
