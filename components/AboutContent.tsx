@@ -43,7 +43,7 @@ const AboutContent = () => {
 	return (
 		<>
 			<Grid container sx={aboutStyle.rep1}>
-				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={6}>
+				<Grid item key={'pic'} xs={12} sm={4} md={4} lg={4} padding={3}>
 					{/* <motion.div
 						className="card-container"
 						initial="offscreen"
